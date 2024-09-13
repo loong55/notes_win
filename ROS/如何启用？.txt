@@ -1,0 +1,4 @@
+终端输入：python -m http.server 8000
+不行的话输入：python -m SimpleHTTPServer 8000
+浏览器输入：http://localhost:8000/Desktop/ROS/book/ROSTutorials/index.htm
+之后将网页收藏即可
