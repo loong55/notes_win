@@ -782,6 +782,8 @@ int main ()
       printf("很棒！\n" );
       break;
    case 'B' :
+      printf("做得好\n" );
+      break;           
    case 'C' :
       printf("做得好\n" );
       break;
@@ -873,7 +875,6 @@ int main()
 
 ```c
 #include <stdio.h>
- 
 int main ()
 {
    /* 局部变量定义 */
@@ -1997,8 +1998,6 @@ Enter a value :runoob
 You entered: runoob
 ```
 
-
-
 # 头文件
 
 ```c
@@ -2471,7 +2470,17 @@ while(!strcmp(a,p->name) || p != NULL)
 }
 ```
 
-# 题目
+# 标准库
+
+#### math.h
+
+```c
+double x = pow(a,b)	//x = a^b
+double x = sqrt(a)	//x = a^(-2)
+double x = fabs(a)	//x = |a|
+```
+
+#  题目
 
 #### 递归--斐波那契数列
 
@@ -2513,7 +2522,7 @@ i从b开始递减至0，a和b对其取余，直到取余结果为0输出i
 #include<stdio.h>
 //求两个数的最大公约数和最小公倍数
 int maxYue(int x,int y){
-    //预处理： x>y
+    //预处理：x>y
     if (y>x)
     {
         int t=x;
@@ -2627,6 +2636,7 @@ int zhi_shu(int x){
             break;
         }            
     }
+    
     return flag;
 }
 int main()
@@ -2659,7 +2669,7 @@ int binaryToTen(int x){
         {
             sum = sum + pow(2,i);
         }            
-        before = before/10;
+        before = before/10;//舍弃个位
         i++;
     }    
     return sum;
@@ -2687,8 +2697,8 @@ void decimalToBinary(int n) {
     
     // 将十进制数转换为二进制数
     while (n > 0) {
-        binaryNum[i] = n % 2;
-        n = n / 2;
+        binaryNum[i] = n % 2;//除二取余法
+        n = n / 2;//舍弃余数
         i++;
     }
     
@@ -2717,7 +2727,7 @@ int main() {
 
 ```c
 #include<stdio.h>
-#include<stdio.h>
+#include<string.h>
 //字符串翻转
 int main()
 {
@@ -2826,7 +2836,6 @@ int main()
     printf("请输入字符串1：\n");
     scanf("%s",str1);
 
-
     printf("请输入字符串2：\n");
     scanf("%s",str2);
   
@@ -2879,7 +2888,7 @@ int main()
         scanf("%s",str[i]);
     }
     
-    //冒泡排序
+    //选择排序（比较相邻数据，交换位置）
     for (int i = 0; i < n-1; i++)
     {
         for (int j = i+1; j < n; j++)
@@ -2942,11 +2951,11 @@ int main() {
 int main(){
     char c;
     int count = 0;
-    int space=0;
+    int space = 0;
     int other = 0;
     while ((c = getchar()) != '\n')
     {
-        if ((c>='a' && c<='z')||((c>='A' && c<='Z')))
+        if ((c>='a' && c<='z')||(c>='A' && c<='Z'))
         {
             count++;
         }
