@@ -623,6 +623,8 @@ I/O端口位的基本结构
 
 p-mos不起作用，输入1时，n-mos关闭，io电平不由单片机控制，由外部电路控制；输入0时，n-mos开启，io电平为低电平
 
+高电平没有驱动能力，只用低电平驱动能力
+
 开漏输出模式下，通过设置位设置/清除寄存器或者输出数据寄存器的值，控制MOS管的导通。这里要注意N-MOS管，当设置输出的值为1的时候，N-MOS管处于关闭状态，此时I/O端口的电平就不会由输出的高低电平决定，而是由I/O端口外部的上拉或者下拉决定；当设置输出的值为0的时候，N-MOS管处于开启状态，此时I/O端口的电平就是低电平。同时，I/O端口的电平也可以通过输入电路进行读取；注意，I/O端口的电平不一定是输出的电平。通常使用开漏输出时外部要加一个上拉电阻。
 
 ![在这里插入图片描述](pic_win/5559d3d7e3ee28371188625a8e35f049.png)
@@ -672,3 +674,312 @@ p-mos不起作用，输入1时，n-mos关闭，io电平不由单片机控制，�
 ### 07\. 附录
 
 参考: [【STM32】江科大STM32学习笔记汇总](https://blog.csdn.net/u010249597/article/details/134762513)
+
+## 3-2GPIO相关API
+
+#### 3个时钟外设
+
+声明在rcc.h中
+
+```c
+//外设时钟控制函数：第一个参数选择外设，第二个参数选择使能或失能
+void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState);
+void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);
+void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);
+```
+
+```c
+void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState)
+/**
+  * @brief  Enables or disables the AHB peripheral clock.
+  * @param  RCC_AHBPeriph: specifies the AHB peripheral to gates its clock.
+  *   
+  *   For @b STM32_Connectivity_line_devices, this parameter can be any combination
+  *   of the following values:        
+  *     @arg RCC_AHBPeriph_DMA1
+  *     @arg RCC_AHBPeriph_DMA2
+  *     @arg RCC_AHBPeriph_SRAM
+  *     @arg RCC_AHBPeriph_FLITF
+  *     @arg RCC_AHBPeriph_CRC
+  *     @arg RCC_AHBPeriph_OTG_FS    
+  *     @arg RCC_AHBPeriph_ETH_MAC   
+  *     @arg RCC_AHBPeriph_ETH_MAC_Tx
+  *     @arg RCC_AHBPeriph_ETH_MAC_Rx
+  * 
+  *   For @b other_STM32_devices, this parameter can be any combination of the 
+  *   following values:        
+  *     @arg RCC_AHBPeriph_DMA1
+  *     @arg RCC_AHBPeriph_DMA2
+  *     @arg RCC_AHBPeriph_SRAM
+  *     @arg RCC_AHBPeriph_FLITF
+  *     @arg RCC_AHBPeriph_CRC
+  *     @arg RCC_AHBPeriph_FSMC
+  *     @arg RCC_AHBPeriph_SDIO
+  *   
+  * @note SRAM and FLITF clock can be disabled only during sleep mode.
+  * @param  NewState: new state of the specified peripheral clock.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+```
+
+```c
+void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
+/**
+  * @brief  Enables or disables the High Speed APB (APB2) peripheral clock.
+  * @param  RCC_APB2Periph: specifies the APB2 peripheral to gates its clock.
+  *   This parameter can be any combination of the following values:
+  *     @arg RCC_APB2Periph_AFIO, RCC_APB2Periph_GPIOA, RCC_APB2Periph_GPIOB,
+  *          RCC_APB2Periph_GPIOC, RCC_APB2Periph_GPIOD, RCC_APB2Periph_GPIOE,
+  *          RCC_APB2Periph_GPIOF, RCC_APB2Periph_GPIOG, RCC_APB2Periph_ADC1,
+  *          RCC_APB2Periph_ADC2, RCC_APB2Periph_TIM1, RCC_APB2Periph_SPI1,
+  *          RCC_APB2Periph_TIM8, RCC_APB2Periph_USART1, RCC_APB2Periph_ADC3,
+  *          RCC_APB2Periph_TIM15, RCC_APB2Periph_TIM16, RCC_APB2Periph_TIM17,
+  *          RCC_APB2Periph_TIM9, RCC_APB2Periph_TIM10, RCC_APB2Periph_TIM11     
+  * @param  NewState: new state of the specified peripheral clock.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+```
+
+```c
+void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
+/**
+  * @brief  Enables or disables the Low Speed APB (APB1) peripheral clock.
+  * @param  RCC_APB1Periph: specifies the APB1 peripheral to gates its clock.
+  *   This parameter can be any combination of the following values:
+  *     @arg RCC_APB1Periph_TIM2, RCC_APB1Periph_TIM3, RCC_APB1Periph_TIM4,
+  *          RCC_APB1Periph_TIM5, RCC_APB1Periph_TIM6, RCC_APB1Periph_TIM7,
+  *          RCC_APB1Periph_WWDG, RCC_APB1Periph_SPI2, RCC_APB1Periph_SPI3,
+  *          RCC_APB1Periph_USART2, RCC_APB1Periph_USART3, RCC_APB1Periph_USART4, 
+  *          RCC_APB1Periph_USART5, RCC_APB1Periph_I2C1, RCC_APB1Periph_I2C2,
+  *          RCC_APB1Periph_USB, RCC_APB1Periph_CAN1, RCC_APB1Periph_BKP,
+  *          RCC_APB1Periph_PWR, RCC_APB1Periph_DAC, RCC_APB1Periph_CEC,
+  *          RCC_APB1Periph_TIM12, RCC_APB1Periph_TIM13, RCC_APB1Periph_TIM14
+  * @param  NewState: new state of the specified peripheral clock.
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+```
+
+#### gpio.h库函数
+
+```c
+void GPIO_DeInit(GPIO_TypeDef* GPIOx);//复位GPIO，参数GPIOA、GPIOB
+void GPIO_AFIODeInit(void);//复位AFIO外设
+
+//重要！gpio初始化函数，用结构体初始化
+void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);
+
+void GPIO_StructInit(GPIO_InitTypeDef* GPIO_InitStruct);//结构体变量赋一个默认值
+
+/*gpio读取函数*/
+uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx);
+uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);
+
+/*gpio写入函数*/
+void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);//将指定端口设置为高电平
+void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);//将指定端口设置为低电平
+//如GPIO_ResetBits(GPIOA,GPIO_Pin_0);
+
+void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal);//根据BitVal设置指定端口电平
+//如GPIO_WriteBit(GPIOA,GPIO_Pin_0,Bit_RESET)，设置低电平
+//如GPIO_WriteBit(GPIOA,GPIO_Pin_0,Bit_SET)，设置高电平
+
+
+void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal);//对16个端口进行写入操作
+//如GPIO_Write(GPIOA, ~0x0001)，设置A0端口为低电平
+//如GPIO_Write(GPIOA, 0x0001)，设置A0端口为高电平
+```
+
+#### gpio初始化
+
+这里初始化GPIOA，用结构体给初始化函数传参
+
+```c
+//首先实例化结构体对象，并初始化
+GPIO_InitTypeDef GPIO_InitStructure;
+
+//用.操作列出待初始化属性，右键查看定义，如查看GPIO_Mode，出现：
+/*  GPIOMode_TypeDef GPIO_Mode;    /*!< Specifies the operating mode for the selected pins.
+                                      This parameter can be a value of @ref GPIOMode_TypeDef */*/
+/*ctrl+f查找GPIOMode_TypeDef，gpio的8种工作模式
+typedef enum
+{ GPIO_Mode_AIN = 0x0,//模拟输入
+  GPIO_Mode_IN_FLOATING = 0x04,//浮空输入
+  GPIO_Mode_IPD = 0x28,//下拉输入
+  GPIO_Mode_IPU = 0x48,//上拉输入
+  GPIO_Mode_Out_OD = 0x14,//开漏输出
+  GPIO_Mode_Out_PP = 0x10,//推挽输出
+  GPIO_Mode_AF_OD = 0x1C,//复用开漏
+  GPIO_Mode_AF_PP = 0x18//复用推挽
+}GPIOMode_TypeDef;
+这里用推挽输出*/                                          
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;//推挽输出
+/*右键查看GPIO_Pin定义，选择Class:member，出现
+  uint16_t GPIO_Pin;   /*!< Specifies the GPIO pins to be configured.
+                       This parameter can be any value of @ref GPIO_pins_define */*/
+//ctrl+f 查找GPIO_pins_define，选择GPIO_Pin_0
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+
+//用同样的方法
+GPIO_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;
+
+GPIO_Init(GPIOA, GPIO_InitStructure);
+//此时gpio-A0被设置成以50MHz推挽输出模式
+//有8个gpio外设，分别是GPIOA~GPIOG；每个gpio外设可设置16个pin，可用于16个引脚输出输入电平
+```
+
+#### dalay函数
+
+点灯文件中新建System文件夹，移入delay.c和delay.h
+
+点击品字箱子，添加工程System，移入delay.c和delay.h
+
+点击魔术棒，C/C++,添加头文件路径
+
+新文件引用延时函数
+
+```c
+#include "delay.h"
+Delay_ms(500);
+```
+
+## 3-3点灯
+
+### 01\. GPIO之LED[电路图](https://so.csdn.net/so/search?q=%E7%94%B5%E8%B7%AF%E5%9B%BE&spm=1001.2101.3001.7020)
+
+电路图示例1
+
+![在这里插入图片描述](pic_win/78dc2c340e1824dfda1df244eae9789d.png)
+
+电路图示例2
+
+![在这里插入图片描述](pic_win/693cac0b004a7e4699d5a6a9e0131519.png)
+
+### 02\. GPIO之LED接线图
+
+![在这里插入图片描述](pic_win/60ec2044decfd62edfd2c835656bc64c.png)
+
+### 03\. LED闪烁程序示例
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "delay.h"
+int main(void)
+{
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+	
+	GPIO_InitTypeDef GPIO_InitStructure;	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;	
+	GPIO_Init(GPIOA,&GPIO_InitStructure);
+	
+	GPIO_WriteBit(GPIOA, GPIO_Pin_0,Bit_SET);
+	while(1)
+	{
+		GPIO_WriteBit(GPIOA, GPIO_Pin_0,Bit_SET);
+		Delay_ms(500);
+		GPIO_WriteBit(GPIOA, GPIO_Pin_0,Bit_RESET);	
+		Delay_ms(500);
+	}
+}
+
+
+```
+
+### 04\. LED闪烁程序下载
+
+接线图如下图所示：
+
+![在这里插入图片描述](pic_win/b1ddbc7c90f8452e0a76b42342dd1196.png)
+
+点击下载，现象为LED闪烁。
+
+### 05\. LED[流水灯](https://so.csdn.net/so/search?q=%E6%B5%81%E6%B0%B4%E7%81%AF&spm=1001.2101.3001.7020)接线图
+
+![在这里插入图片描述](pic_win/a9d9318862de1628ac959897b9bfb687.png)
+
+### 06\. LED流水灯程序示例
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "delay.h"
+int main(void)
+{
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+	
+	GPIO_InitTypeDef GPIO_InitStructure;	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All ;
+	GPIO_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;	
+	GPIO_Init(GPIOA,&GPIO_InitStructure);
+	
+	GPIO_WriteBit(GPIOA, GPIO_Pin_0,Bit_SET);
+	while(1)
+	{
+		/*使用GPIO_Write，同时设置GPIOA所有引脚的高低电平，实现LED流水灯*/
+		GPIO_Write(GPIOA, ~0x0001);	//0000 0000 0000 0001，PA0引脚为低电平，其他引脚均为高电平，注意数据有按位取反
+		Delay_ms(500);				//延时100ms
+		GPIO_Write(GPIOA, ~0x0002);	//0000 0000 0000 0010，PA1引脚为低电平，其他引脚均为高电平
+		Delay_ms(500);				//延时100ms
+		GPIO_Write(GPIOA, ~0x0004);	//0000 0000 0000 0100，PA2引脚为低电平，其他引脚均为高电平
+		Delay_ms(500);				//延时100ms
+		GPIO_Write(GPIOA, ~0x0008);	//0000 0000 0000 1000，PA3引脚为低电平，其他引脚均为高电平
+		Delay_ms(500);				//延时100ms
+		GPIO_Write(GPIOA, ~0x0010);	//0000 0000 0001 0000，PA4引脚为低电平，其他引脚均为高电平
+		Delay_ms(500);				//延时100ms
+		GPIO_Write(GPIOA, ~0x0020);	//0000 0000 0010 0000，PA5引脚为低电平，其他引脚均为高电平
+		Delay_ms(500);				//延时100ms
+		GPIO_Write(GPIOA, ~0x0040);	//0000 0000 0100 0000，PA6引脚为低电平，其他引脚均为高电平
+		Delay_ms(500);				//延时100ms
+		GPIO_Write(GPIOA, ~0x0080);	//0000 0000 1000 0000，PA7引脚为低电平，其他引脚均为高电平
+		Delay_ms(500);				//延时100ms
+	}
+}
+
+
+```
+
+### 07\. 蜂鸣器接线图
+
+![在这里插入图片描述](pic_win/6e7324810087f16869c8a7bc9d5f643c.png)
+
+### 08\. 蜂鸣器程序示例
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "delay.h"
+int main(void)
+{
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
+	
+	GPIO_InitTypeDef GPIO_InitStructure;	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
+	GPIO_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;	
+	GPIO_Init(GPIOB,&GPIO_InitStructure);
+	
+	while(1)
+	{
+		GPIO_WriteBit(GPIOB, GPIO_Pin_12,Bit_SET);
+		Delay_ms(500);
+		GPIO_WriteBit(GPIOB, GPIO_Pin_12,Bit_RESET);	
+		Delay_ms(500);
+	}
+}
+
+
+```
