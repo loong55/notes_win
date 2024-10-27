@@ -623,7 +623,7 @@ I/O端口位的基本结构
 
 p-mos不起作用，输入1时，n-mos关闭，io电平不由单片机控制，由外部电路控制；输入0时，n-mos开启，io电平为低电平
 
-高电平没有驱动能力，只用低电平驱动能力
+**高电平没有驱动能力，只用低电平驱动能力**
 
 开漏输出模式下，通过设置位设置/清除寄存器或者输出数据寄存器的值，控制MOS管的导通。这里要注意N-MOS管，当设置输出的值为1的时候，N-MOS管处于关闭状态，此时I/O端口的电平就不会由输出的高低电平决定，而是由I/O端口外部的上拉或者下拉决定；当设置输出的值为0的时候，N-MOS管处于开启状态，此时I/O端口的电平就是低电平。同时，I/O端口的电平也可以通过输入电路进行读取；注意，I/O端口的电平不一定是输出的电平。通常使用开漏输出时外部要加一个上拉电阻。
 
@@ -774,10 +774,13 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);
 void GPIO_StructInit(GPIO_InitTypeDef* GPIO_InitStruct);//结构体变量赋一个默认值
 
 /*gpio读取函数*/
-uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx);
-uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);
+//读取单片机外部输入的数据（输入数据寄存器）
+uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);//读取某个针脚输入数据
+uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx);//读取整个输入数据寄存器（如GPIOA）
+
+//读取单片机自己当前的输出电平（输出数据寄存器）
+uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);//读取某个针脚输输出数据
+uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);//读取整个输出数据寄存器
 
 /*gpio写入函数*/
 void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);//将指定端口设置为高电平
@@ -978,6 +981,639 @@ int main(void)
 		Delay_ms(500);
 		GPIO_WriteBit(GPIOB, GPIO_Pin_12,Bit_RESET);	
 		Delay_ms(500);
+	}
+}
+
+
+```
+
+## 3-4GPIO输入
+
+**目录**
+
+[按键简介](https://blog.csdn.net/m0_61712829/article/details/132413539#t0)
+
+ [传感器模块简介](https://blog.csdn.net/m0_61712829/article/details/132413539#t1)
+
+[按键和传感器硬件电路](https://blog.csdn.net/m0_61712829/article/details/132413539#t2)
+
+[C语言数据类型](https://blog.csdn.net/m0_61712829/article/details/132413539#t3) 
+
+[C语言宏定义](https://blog.csdn.net/m0_61712829/article/details/132413539#t4)
+
+[C语言typedef](https://blog.csdn.net/m0_61712829/article/details/132413539#t5)
+
+[C语言结构体](https://blog.csdn.net/m0_61712829/article/details/132413539#t6)
+
+[C语言枚举](https://blog.csdn.net/m0_61712829/article/details/132413539#t7)
+
+[其它](https://blog.csdn.net/m0_61712829/article/details/132413539#t8)
+
+[0\. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发\_stm32江协大 csdn-CSDN博客文章浏览阅读3.4k次，点赞47次，收藏143次。江协科技/江科大-STM32标准库开发-各章节详细笔记-传送门至各个章节笔记。基本上课程讲的每句都详细记录，方便回顾。\_stm32江协大 csdn![](pic_win/be19846480ab44ce477585fc567aeaa0.png)https://blog.csdn.net/m0\_61712829/article/details/132434192?spm=1001.2014.3001.5501](https://blog.csdn.net/m0_61712829/article/details/132434192?spm=1001.2014.3001.5501 "0. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发_stm32江协大 csdn-CSDN博客")GPIO输入模式硬件以及c语言下面知识点是库函数反复出现的东西，了解后会对库函数的执行逻辑更加清晰明了。另外还有c语言的指针，在后面文章会单独进行阐述。
+
+___
+
+### 按键简介
+
+按键：常见的输入设备，按下导通，松手断开
+
+![](pic_win/44422ed8e3afadc176944bafc33c96b0.png)
+
+ 按键抖动：由于按键内部使用的是机械式弹簧片来进行通断的，所以在按下和松手的瞬间会伴随有一连串的抖动
+
+![](pic_win/65fcbc237fff6c8d9126f755e703e9cb.png)
+
+###  传感器模块简介
+
+传感器模块：传感器元件（传感器模块就是利用传感器元件，比如如下图的光敏电阻/热敏电阻/红外接收管等）的电阻会随外界模拟量的变化而变化（比如光线越强，光敏电阻的阻值就越小），通过与定值电阻进行**串联分压**即可得到模拟电压输出，再通过电压比较器进行二值化（二值化就是要么是高要么是低）即可得到数字电压输出
+
+![](pic_win/c37c303af80730fa3c9d0e3087d37878.png)
+
+ 如下为传感器模块的基本电路，详细介绍。
+
+![](pic_win/101ee809978a762f4f0122c175fc7c37.png)
+
+![](pic_win/d7fc87862f40722612bae8de546bc099.png)这个N1就是传感器元件所代表的可变电阻，它的阻值可以根据环境的光线、温度等模拟两进行变化
+
+![](pic_win/78b26d267d88908e2cd0c24764d330de.png)N1上面的R1，是和N1进行分压的定值电阻，R1和N1串联，一端接VCC一端接VSS，这就构成了基本的分压电路，AO电压就由R1和N1两个电阻的分压得到。
+
+![](pic_win/5ff0f0cd0400466d1fd990d429eb2fba.png)AO电压就由R1和N1两个电阻的分压得到。
+
+![](pic_win/8b9522b0c695510e6ea4cd52b1e07b7c.png)N1左边的C2是一个滤波电容，它是为了给中间的电压输出进行滤波的，用来滤除一些干扰，保证输出电压波形的平滑。一般我们在电路中遇到一端接到电路中，另一端接地的电容，都可以考虑一下是不是滤波电容的作用，并不是电路的主要框架，这时候我们进行分析电路时，就可以先把这个电容抹掉，这样就可使我们的电路分析更加简单。
+
+![](pic_win/f1ad925ef62adab2a645cb4c836b0a1f.png)二值化输出是通过这个LM393芯片来完成，是一个电压比较器芯片，里面由两个独立的电压比较器电路，然后剩下的是VCC和GND供电，里面电容是一个电源供电的滤波电容，**这个电压比较器其实就是一个运算放大器**，当同向输入端的电压大于反向输入端的电压时，输出就会瞬间升高为最大值也就是输出接VCC；反之当同向输入端的电压小于反向输入端的电压时，输出就会瞬间降为最小值，也就是输出接GND，这样就可以对一个模拟电压进行二值化了，DO就是最后数字电压的输出。
+
+![](pic_win/fa681491ce08e03af686318858fd3b24.png)
+
+ 可以用**上下拉电阻的思维分析传感器电阻的阻值变化对输出电压的影响**，如下：
+
+AO这个输出端可以把它想象成一个水平杆子（下图红色直线），R1上拉电阻相当于拴在上方的弹簧，将杆子向上拉，N1下拉电阻相当于拴在地面的弹簧，将杆子向下拉；电阻的阻值越小，弹簧的拉力就越强，杆子的高度就相当于电路中的电压，杠子向拉力强的一端偏移（取决于两个弹簧的弹力之差）；如果上下弹簧拉力一致，杆子处于居中位置也就是电路输出VCC/2的电压；如果上面的阻值小，拉力强，输出电压就会变高；反之下面的阻值小，输出电压就会变低 ；如果上下拉电阻的阻值都为0，就是两个无穷大的力在对抗，在电路中呈现的就是电源短路（应该避免）。单片机电路中会常出现这种上拉下拉电阻，比如弱上拉，强上拉等（强和弱就是指电阻阻值的大小，也就是这个弹簧拉力大小） ，最终输出电压就是在弹簧拉扯下最终杆子的高低。
+
+ ![](pic_win/41578666b260c68b126eab789b6cf838.png)
+
+### 按键和传感器硬件电路
+
+下接按键的方式如下，**一般来说我们用下接按键的方**式，这个原因和LED的接法类似，是电路设计习惯和规范；下左图中，按键按下时，PA0直接下拉到GND，此时读取PA0口的电压就是低电平，在这种接法下，必须要求PA0是上拉输入模式，使按键松下，还是高电平。下右图，外部接了一个上拉电阻，当按键松手时，引脚由于上拉作用，保持为高电平，此时PA0引脚就可以配置为浮空输入或者上拉输入。
+
+![](pic_win/bf80f8754eec67cdac0f58766705c847.png)![](pic_win/e90ebfe673a16e1d53eabcee26736066.png)
+
+上接按键的方式（仅了解）如下，左图1中，要求将PA0必须配置成下拉输入模式，松手时，引脚会回到默认值低电平。   
+
+![](pic_win/a1a336ddf0c326b8ba23a0672f19e1f5.png) ![](pic_win/3fe34a1751e00328e9121e812073d394.png)
+
+传感器模块电路如下，DO是数字输出端口，PA0用于读取数字量。
+
+![](pic_win/79498ecc27d391afc34fb75e27c270b8.png)
+
+### [C语言数据类型](https://so.csdn.net/so/search?q=C%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&spm=1001.2101.3001.7020) 
+
+<table><tbody><tr><td><p><strong><span>关键字</span></strong></p></td><td><p><strong><span>位数</span></strong></p></td><td><p><strong><span>表示范围</span></strong></p></td><td><p><strong><span>stdint</span></strong><strong><span>关键字</span></strong></p></td><td><p><strong><span>ST</span></strong><strong><span>关键字</span></strong></p></td><td><p><strong><span>ST</span></strong><strong><span>关键字</span></strong></p></td></tr><tr><td><p><span>char</span></p></td><td><p><span>8</span></p></td><td><p><span>-128&nbsp;~&nbsp;127</span></p></td><td><p><span>int8_t</span></p></td><td><p><span>s8</span></p></td><td><p><span>s8</span></p></td></tr><tr><td><p><span>unsigned&nbsp;char</span></p></td><td><p><span>8</span></p></td><td><p><span>0&nbsp;~&nbsp;255</span></p></td><td><p><span>uint8_t</span></p></td><td><p><span>u8</span></p></td><td><p><span>u8</span></p></td></tr><tr><td><p><span>short</span></p></td><td><p><span>16</span></p></td><td><p><span>-32768&nbsp;~&nbsp;32767</span></p></td><td><p><span>int16_t</span></p></td><td><p><span>s16</span></p></td><td><p><span>s16</span></p></td></tr><tr><td><p><span>unsigned&nbsp;short</span></p></td><td><p><span>16</span></p></td><td><p><span>0&nbsp;~&nbsp;65535</span></p></td><td><p><span>uint16_t</span></p></td><td><p><span>u16</span></p></td><td><p><span>u16</span></p></td></tr><tr><td><p><span>int</span></p></td><td><p><span>32</span></p></td><td><p><span>-2147483648&nbsp;~&nbsp;2147483647</span></p></td><td><p><span>int32_t</span></p></td><td><p><span>s32</span></p></td><td><p><span>s32</span></p></td></tr><tr><td><p><span>unsigned&nbsp;int</span></p></td><td><p><span>32</span></p></td><td><p><span>0&nbsp;~&nbsp;4294967295</span></p></td><td><p><span>uint32_t</span></p></td><td><p><span>u32</span></p></td><td><p><span>u32</span></p></td></tr><tr><td><p><span>long</span></p></td><td><p><span>32</span></p></td><td><p><span>-2147483648&nbsp;~&nbsp;2147483647</span></p></td><td></td><td></td><td></td></tr><tr><td><p><span>unsigned&nbsp;long</span></p></td><td><p><span>32</span></p></td><td><p><span>0&nbsp;~&nbsp;4294967295</span></p></td><td></td><td></td><td></td></tr><tr><td><p><span>long&nbsp;long</span></p></td><td><p><span>64</span></p></td><td><p><span>-(2^64)/2&nbsp;~&nbsp;(2^64)/2-1</span></p></td><td><p><span>int64_t</span></p></td><td></td><td></td></tr><tr><td><p><span>unsigned&nbsp;long&nbsp;long</span></p></td><td><p><span>64</span></p></td><td><p><span>0&nbsp;~&nbsp;(2^64)-1</span></p></td><td><p><span>uint64_t</span></p></td><td></td><td></td></tr><tr><td><p><span>float</span></p></td><td><p><span>32</span></p></td><td><p><span>-3.4e38&nbsp;~&nbsp;3.4e38</span></p></td><td></td><td></td><td></td></tr><tr><td><p><span>double</span></p></td><td><p><span>64</span></p></td><td><p><span>-1.7e308&nbsp;~&nbsp;1.7e308</span></p></td><td></td><td></td><td></td></tr></tbody></table>
+
+单片机中用char也就是int8\_t来存放整数而不是字符等，有一定的区别需要注意。
+
+C语言提供的stdint头文件，使用新的名字。比如int8\_t就是char的新名字，表示的意思就是8位        整型的数据,右边加个\_t 表示这是用typedef重新命名的变量类型。
+
+ST关键字是老版本用的。
+
+### [C语言宏定义](https://so.csdn.net/so/search?q=C%E8%AF%AD%E8%A8%80%E5%AE%8F%E5%AE%9A%E4%B9%89&spm=1001.2101.3001.7020)
+
+**前为新，后为旧**
+
+关键字：#define
+
+用途：用一个字符串代替一个数字，便于理解，防止出错；提取程序中经常出现的参数，便于快速修改
+
+定义宏定义：     #define ABC 12345
+
+引用宏定义：     int a = ABC;    //等效于int a = 12345;
+
+### C语言typedef
+
+**前为旧，后为新**
+
+**typedef只能专门给变量类型换名字，更加安全（不是变量类型的名字是不行的）；所以宏定义的改名范围更宽**       
+
+关键字：typedef
+
+用途：将一个比较长的变量类型名换个名字，便于使用
+
+定义typedef：     typedef unsigned char uint8\_t;
+
+引用typedef：      uint8\_t a;    //等效于unsigned char a;
+
+### C语言结构体
+
+结构体也是一种数据类型，比如char、int等是基本数据类型；数组是由许多相同基本数据类型的组合；与数组一样，但是**若组合不同的数据类型就用结构体**。
+
+关键字：struct
+
+用途：数据打包，不同类型变量的集合
+
+定义结构体变量：struct{char x; int y; float z;} StructName;
+
+StructName是结构体变量的名字
+
+因为结构体变量类型较长，所以通常用typedef更改变量类型名
+
+引用结构体成员：
+
+StructName.x = 'A';   
+
+StructName.y = 66;  
+
+StructName.z = 1.23;
+
+或是用结构体指针方式，因为结构体是一种组合数据类型，在函数之间的数据传递中，通常用的是地址传递而不是值传递（看一下指针教程）
+
+杠大于号，结构体成员名
+
+pStructName->x = 'A';    //pStructName为结构体的地址 
+
+pStructName->y = 66;   
+
+pStructName->z = 1.23;
+
+代码理解，如下
+
+```cobol
+struct c；
+
+//定义了一个结构体类型，名字叫c，这是不完整的，还需加一个附加声明{打包的变量}，如下
+
+struct {char x; int y; float z} c；
+
+//定义一个结构体变量，名字叫c，其中包含char型的x，int型的y和float型的z三个子项
+
+c.x = 'a';
+
+c.y = 66;
+
+c.z = 1.23;
+
+//结构体的引用，需写结构体名字c，然后用运算符取索引，索引是结构体子项的名字，如结构体名称.结构体子项
+```
+
+ ![](pic_win/3117988bd4ddaada155b2464f058859f.png)
+
+使用typedef 解决结构体名字太长的问题
+
+```cpp
+struct {char x; int y; float z} c；
+
+struct {char x; int y; float z} d；
+
+typedef struct {char x; int y; float z} struct_t;
+
+typedef struct {
+
+char x;
+
+int y;
+
+float z
+
+} struct_t;
+
+struct {
+
+char x;
+
+int y;
+
+float z
+
+}
+
+typedef struct {
+
+char x;
+
+int y;
+
+float z
+
+} struct_t;
+
+struct_t c；
+
+struct_t d；
+
+c.x = 'a';
+```
+
+### C语言枚举
+
+和结构体差不多，也是一个数据类型
+
+**只能在它给定的参数列表里赋值，不能赋其它的值**
+
+**枚举值也不是必须赋值给枚举变量的，也可以赋值给随意一个变量。所以说枚举也是一个宏定义的集合。**
+
+关键字：enum
+
+用途：1.定义一个取值受限制的整型变量，用于限制变量取值范围（比如我们定义一个变量用来存储星期的值，理论上这个变量只能取1到7的值，若定义的是整形变量这时可能会出现数据不合法，比如星期8的情况出现，所以这时候需要定义一个**取值受限制的整形变量**，这个变量就是枚举）；2.宏定义的集合
+
+定义枚举变量： 
+
+enum{FALSE = 0, TRUE = 1} EnumName;  （需要用逗号，限制EnumName的取值范围）
+
+因为枚举变量类型较长，所以通常用typedef更改变量类型名：
+
+typedef  enum{FALSE = 0, TRUE = 1}  EnumName\_t  
+
+使用新的名字EnumName\_t  来定义枚举变量，命名为EnumName：
+
+EnumName\_t   EnumName
+
+只能引用下面两种：
+
+EnumName = FALSE； // EnumName = 0
+
+EnumName = TRUE ； // EnumName = 1
+
+引用枚举成员：     EnumName = FALSE;     EnumName = TRUE;
+
+### 其它
+
+对于C语言来说，主要由两个功能，一个是定义数据，一个是引用数据。
+
+数组的引用如下：
+
+```cobol
+int b[5]；
+
+//是定义了一个5个int型数据的数组，名字叫b
+
+b[0] = 11;
+
+//数组的引用是数组名b，加上方括号取索引；数组的第0个元素等于11
+
+b[1] = 66;
+```
+
+![](pic_win/1c4c6366f8a29fda3a03585fd641b68d.png)
+
+## 3-5按键输入
+
+### 01\. 按键控制LED接线图
+
+![在这里插入图片描述](pic_win/ff95843d26030fb97406a6632bac6044.png)
+
+### 02\. 按键控制LED程序示例
+
+代码提示快捷键：ctrl+alt+空格
+
+led.h
+
+```c
+#ifndef __LED_H
+#define __LED_H
+
+void LED_Init(void);
+void LED1_ON(void);
+void LED1_OFF(void);
+void LED1_Turn(void);
+void LED2_ON(void);
+void LED2_OFF(void);
+void LED2_Turn(void);
+
+#endif
+
+```
+
+led.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+
+/**
+  * 函    数：LED初始化
+  * 参    数：无
+  * 返 回 值：无
+  */
+void LED_Init(void)
+{
+	/*开启时钟*/
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);		//开启GPIOA的时钟
+	
+	/*GPIO初始化*/
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);						//将PA1和PA2引脚初始化为推挽输出
+	
+	/*设置GPIO初始化后的默认电平*/
+	GPIO_SetBits(GPIOA, GPIO_Pin_1 | GPIO_Pin_2);				//设置PA1和PA2引脚为高电平
+}
+
+/**
+  * 函    数：LED1开启
+  * 参    数：无
+  * 返 回 值：无
+  */
+void LED1_ON(void)
+{
+	GPIO_ResetBits(GPIOA, GPIO_Pin_1);		//设置PA1引脚为低电平
+}
+
+/**
+  * 函    数：LED1关闭
+  * 参    数：无
+  * 返 回 值：无
+  */
+void LED1_OFF(void)
+{
+	GPIO_SetBits(GPIOA, GPIO_Pin_1);		//设置PA1引脚为高电平
+}
+
+/**
+  * 函    数：LED1状态翻转
+  * 参    数：无
+  * 返 回 值：无
+  */
+void LED1_Turn(void)
+{
+	if (GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_1) == 0)		//获取输出寄存器的状态，如果当前引脚输出低电平
+	{
+		GPIO_SetBits(GPIOA, GPIO_Pin_1);					//则设置PA1引脚为高电平
+	}
+	else													//否则，即当前引脚输出高电平
+	{
+		GPIO_ResetBits(GPIOA, GPIO_Pin_1);					//则设置PA1引脚为低电平
+	}
+}
+
+/**
+  * 函    数：LED2开启
+  * 参    数：无
+  * 返 回 值：无
+  */
+void LED2_ON(void)
+{
+	GPIO_ResetBits(GPIOA, GPIO_Pin_2);		//设置PA2引脚为低电平
+}
+
+/**
+  * 函    数：LED2关闭
+  * 参    数：无
+  * 返 回 值：无
+  */
+void LED2_OFF(void)
+{
+	GPIO_SetBits(GPIOA, GPIO_Pin_2);		//设置PA2引脚为高电平
+}
+
+/**
+  * 函    数：LED2状态翻转
+  * 参    数：无
+  * 返 回 值：无
+  */
+void LED2_Turn(void)
+{
+	if (GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_2) == 0)		//获取输出寄存器的状态，如果当前引脚输出低电平
+	{                                                  
+		GPIO_SetBits(GPIOA, GPIO_Pin_2);               		//则设置PA2引脚为高电平
+	}                                                  
+	else                                               		//否则，即当前引脚输出高电平
+	{                                                  
+		GPIO_ResetBits(GPIOA, GPIO_Pin_2);             		//则设置PA2引脚为低电平
+	}
+}
+
+```
+
+key.h
+
+```c
+#ifndef __KEY_H
+#define __KEY_H
+
+void Key_Init(void);
+uint8_t Key_GetNum(void);
+
+#endif
+
+```
+
+key.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+
+/**
+  * 函    数：按键初始化
+  * 参    数：无
+  * 返 回 值：无
+  */
+void Key_Init(void)
+{
+	/*开启时钟*/
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);		//开启GPIOB的时钟
+	
+	/*GPIO初始化*/
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_11;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);						//将PB1和PB11引脚初始化为上拉输入
+}
+
+/**
+  * 函    数：按键获取键码
+  * 参    数：无
+  * 返 回 值：按下按键的键码值，返回0则代表没有按键按下
+  * 注意事项：此函数是阻塞式操作，当按键按住不放时，函数会卡住，直到按键松手
+  */
+uint8_t Key_GetNum(void)
+{
+	uint8_t KeyNum = 0;		//定义变量，默认键码值为0
+	
+	if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_1) == 0)			//读PB1输入寄存器的状态，如果为0，则代表按键1按下
+	{
+		Delay_ms(20);											//延时消抖
+		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_1) == 0);	//等待按键松手
+		Delay_ms(20);											//延时消抖
+		KeyNum = 1;												//置键码为1
+	}
+	
+	if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_11) == 0)			//读PB11输入寄存器的状态，如果为0，则代表按键2按下
+	{
+		Delay_ms(20);											//延时消抖
+		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_11) == 0);	//等待按键松手
+		Delay_ms(20);											//延时消抖
+		KeyNum = 2;												//置键码为2
+	}
+	
+	return KeyNum;			//返回键码值，如果没有按键按下，所有if都不成立，则键码为默认值0
+}
+
+```
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "delay.h"
+#include "LED.h"
+#include "KEY.h"
+
+uint8_t KeyNum;
+
+int main(void)
+{
+	LED_Init();
+	Key_Init();
+	
+	while(1)
+	{
+		KeyNum = Key_GetNum();
+		if(KeyNum == 1)
+		{
+			LED1_Turn();
+		}
+		if(KeyNum == 2)
+		{
+			LED2_Turn();
+		}
+	}
+}
+
+
+```
+
+### 03\. [光敏传感器](https://so.csdn.net/so/search?q=%E5%85%89%E6%95%8F%E4%BC%A0%E6%84%9F%E5%99%A8&spm=1001.2101.3001.7020)控制Buzzer接线图
+
+![在这里插入图片描述](pic_win/8dd82316444e7d3c228a8320d1857393.png)
+
+### 04\. 有源[蜂鸣器](https://so.csdn.net/so/search?q=%E8%9C%82%E9%B8%A3%E5%99%A8&spm=1001.2101.3001.7020)原理图
+
+[电路图](https://so.csdn.net/so/search?q=%E7%94%B5%E8%B7%AF%E5%9B%BE&spm=1001.2101.3001.7020)：  
+![在这里插入图片描述](pic_win/8646ae10aea9ac0b5ffeb32158c229fa.png)
+
+实物图：
+
+![在这里插入图片描述](pic_win/63fd2a58437cb0d763ccca1e64e2a2ba.png)
+
+### 05\. 光敏传感器控制Buzzer示例
+
+遮住光敏电阻，亮一个灯，输出高电平；光敏电阻接受灯光，亮两个灯，输出低电平；
+
+buzzer.h
+
+```c
+#ifndef __BUZZER_H
+#define __BUZZER_H
+
+void BUZZER_Init(void);
+void BUZZER_ON(void);
+void BUZZER_OFF(void);
+void BUZZER_Turn(void);
+
+#endif
+
+```
+
+buzzere.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+
+void BUZZER_Init(void)
+{
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);	
+	
+	GPIO_SetBits(GPIOB,GPIO_Pin_12);//低电平触发，设置为高电平，默认不点亮
+}
+
+void BUZZER_ON(void)
+{
+	GPIO_ResetBits(GPIOB,GPIO_Pin_12);
+}
+
+void BUZZER_OFF(void)
+{
+	GPIO_SetBits(GPIOB,GPIO_Pin_12);
+}
+void BUZZER_Turn(void)
+{
+	if(GPIO_ReadOutputDataBit(GPIOB,GPIO_Pin_12) == 0)//如果当前A1脚为0
+	{
+		GPIO_SetBits(GPIOB,GPIO_Pin_12);//设置A1为1
+	}
+	else//如果当前A1脚为1
+	{
+		GPIO_ResetBits(GPIOB,GPIO_Pin_12);//设置A1为0
+	}
+}
+
+```
+
+lightsensor.h
+
+```c
+#ifndef __LIGHT_SENSOR_H
+#define __LIGHT_SENSOR_H
+
+void LightSensor_Init(void);
+uint8_t LightSensor_Get(void);
+
+#endif
+```
+
+lightsensor.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+void LightSensor_Init(void)
+{
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	
+	GPIO_InitTypeDef GPIO_S;
+	GPIO_S.GPIO_Mode = GPIO_Mode_IPU;//上拉输入，**输入高为高，输入低为低，无输入拉高**
+	GPIO_S.GPIO_Pin = GPIO_Pin_13;
+	GPIO_S.GPIO_Speed = GPIO_Speed_50MHz;
+	
+	GPIO_Init(GPIOB, &GPIO_S);
+}
+
+uint8_t LightSensor_Get(void)
+{
+	return GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_13);
+}
+
+
+```
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "delay.h"
+#include "Buzzer.h"
+#include "LightSensor.h"
+int main(void)
+{
+	BUZZER_Init();
+	LightSensor_Init();
+	while(1)
+	{
+		if(LightSensor_Get() == 1)//暗
+		{
+			BUZZER_ON();
+		}
+		else
+		{
+			BUZZER_OFF();
+		}		
 	}
 }
 
