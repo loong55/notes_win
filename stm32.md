@@ -68,28 +68,7 @@
 
 ## 1-2 STM32简介
 
-### 00\. 目录
-
-#### 文章目录
-
--   -   [00\. 目录](https://blog.csdn.net/u010249597/article/details/134762381#00__0)
-    -   [01\. STM32简介](https://blog.csdn.net/u010249597/article/details/134762381#01_STM32_3)
-    -   -   [1.1 STM32是什么](https://blog.csdn.net/u010249597/article/details/134762381#11_STM32_11)
-        -   [1.2 STM32应用领域](https://blog.csdn.net/u010249597/article/details/134762381#12_STM32_37)
-        -   [1.3 STM32命名规则](https://blog.csdn.net/u010249597/article/details/134762381#13_STM32_52)
-        -   [1.4 STM32选型](https://blog.csdn.net/u010249597/article/details/134762381#14_STM32_59)
-    -   [02\. ARM简介](https://blog.csdn.net/u010249597/article/details/134762381#02_ARM_72)
-    -   -   [2.1 ARM是什么](https://blog.csdn.net/u010249597/article/details/134762381#21_ARM_78)
-        -   [2.2 ARM系列](https://blog.csdn.net/u010249597/article/details/134762381#22_ARM_86)
-    -   [03\. STM32开发板](https://blog.csdn.net/u010249597/article/details/134762381#03_STM32_98)
-    -   -   [3.1 MCU简介](https://blog.csdn.net/u010249597/article/details/134762381#31_MCU_100)
-        -   [3.2 STM32开发板](https://blog.csdn.net/u010249597/article/details/134762381#32_STM32_117)
-        -   [3.3 STM32硬件资源](https://blog.csdn.net/u010249597/article/details/134762381#33_STM32_126)
-    -   [04\. STM32系统架构](https://blog.csdn.net/u010249597/article/details/134762381#04_STM32_133)
-    -   [05\. STM32引脚定义](https://blog.csdn.net/u010249597/article/details/134762381#05_STM32_155)
-    -   [06\. STM32启动配置](https://blog.csdn.net/u010249597/article/details/134762381#06_STM32_183)
-    -   [07\. STM32最小系统电路](https://blog.csdn.net/u010249597/article/details/134762381#07_STM32_196)
-    -   [08\. 附录](https://blog.csdn.net/u010249597/article/details/134762381#08__203)
+-   -   https://blog.csdn.net/u010249597/article/details/134762381#08__203)
 
 ### 01\. STM32简介
 
@@ -202,7 +181,8 @@ STM32的应用领域包括但不限于：
 
 ![在这里插入图片描述](pic_win/7d456b2b46bbaa867bb3d4dff9c34580.png)
 
-**STM32F103C8T6引脚定义**  
+###### STM32F103C8T6引脚定义  
+
 ![在这里插入图片描述](pic_win/48eb4b92f411d5839d9f6b00e1b6c755.png)
 
 1.  I = 输入，O = 输出，S = 电源， HiZ = 高阻
@@ -989,28 +969,6 @@ int main(void)
 
 ## 3-4GPIO输入
 
-**目录**
-
-[按键简介](https://blog.csdn.net/m0_61712829/article/details/132413539#t0)
-
- [传感器模块简介](https://blog.csdn.net/m0_61712829/article/details/132413539#t1)
-
-[按键和传感器硬件电路](https://blog.csdn.net/m0_61712829/article/details/132413539#t2)
-
-[C语言数据类型](https://blog.csdn.net/m0_61712829/article/details/132413539#t3) 
-
-[C语言宏定义](https://blog.csdn.net/m0_61712829/article/details/132413539#t4)
-
-[C语言typedef](https://blog.csdn.net/m0_61712829/article/details/132413539#t5)
-
-[C语言结构体](https://blog.csdn.net/m0_61712829/article/details/132413539#t6)
-
-[C语言枚举](https://blog.csdn.net/m0_61712829/article/details/132413539#t7)
-
-[其它](https://blog.csdn.net/m0_61712829/article/details/132413539#t8)
-
-[0\. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发\_stm32江协大 csdn-CSDN博客文章浏览阅读3.4k次，点赞47次，收藏143次。江协科技/江科大-STM32标准库开发-各章节详细笔记-传送门至各个章节笔记。基本上课程讲的每句都详细记录，方便回顾。\_stm32江协大 csdn![](pic_win/be19846480ab44ce477585fc567aeaa0.png)https://blog.csdn.net/m0\_61712829/article/details/132434192?spm=1001.2014.3001.5501](https://blog.csdn.net/m0_61712829/article/details/132434192?spm=1001.2014.3001.5501 "0. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发_stm32江协大 csdn-CSDN博客")GPIO输入模式硬件以及c语言下面知识点是库函数反复出现的东西，了解后会对库函数的执行逻辑更加清晰明了。另外还有c语言的指针，在后面文章会单独进行阐述。
-
 ___
 
 ### 按键简介
@@ -1618,4 +1576,926 @@ int main(void)
 }
 
 
+```
+
+## 4-1OLED调试工具
+
+TM32调试方式
+
+串口调试：通过[串口通信](https://so.csdn.net/so/search?q=%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1&spm=1001.2101.3001.7020)，将调试信息发送到电脑端，电脑使用串口助手显示调试信息
+
+显示屏调试：直接将显示屏连接到单片机，将调试信息打印在显示屏上
+
+Keil调试模式：借助Keil软件的调试模式，可使用单步运行、设置断点、查看寄存器及变量等功能
+
+### 02\. OLED简介
+
+OLED，即有机发光二极管（ Organic Light Emitting Diode ）。 OLED 由于同时具备自发光，不需背光源、对比度高、厚度薄、视角广、反应速度快、可用于挠曲性面板、使用温度范围广、构造及制程较简单等优异之特性，被认为是下一代的平面显示器新兴应用技术。
+
+LCD 都需要背光，而 OLED 不需要，因为它是自发光的。这样同样的显示 OLED 效果要来得好一些。以目前的技术，OLED 的尺寸还难以大型化，但是分辨率确可以做到很高。在此我们使用的是0.96寸OLED显示屏，该屏有以下特点：
+
+1）0.96 寸 OLED 有黄蓝，白，蓝三种颜色可选；其中黄蓝是屏上 1/4 部分为黄光，下 3/4 为蓝；而且是固定区域显示固定颜色，颜色和显示区域均不能修改；白光则为纯白，也就是黑底白字；蓝色则为纯蓝，也就是黑底蓝字。
+
+2）分辨率为 128\*64
+
+3）多种接口方式；OLED 裸屏总共种接口包括：6800、8080 两种并行接口方式、3 线或 4 线的串行 SPI 接口方式、 IIC 接口方式（只需要 2 根线就可以控制 OLED 了！），这五种接口是通过屏上的 BS0~BS2 来配置的。
+
+4）本屏开发了两种接口的 Demo 板，接口分别为七针的 SPI/IIC 兼容模块，四针的IIC 模块。两种模块都很方便使用；希望大家根据实际需求来选择不同的模块。
+
+![在这里插入图片描述](pic_win/7f2af8fb899eb0b5c6be67685820767e.png)
+
+### 03\. 0.96寸OLED模块
+
+**SPI模块**：
+
+1.  GND 电源地
+    
+2.  VCC 电源正（3～5.5V）
+    
+3.  D0 OLED 的 D0 脚，在 SPI 和 IIC 通信中为时钟管脚
+    
+4.  D1 OLED 的 D1 脚，在 SPI 和 IIC 通信中为数据管脚
+    
+5.  RES OLED 的 RES#脚，用来复位（低电平复位）
+    
+6.  DC OLED 的 D/C#E 脚，数据和命令控制管脚
+    
+7.  CS OLED 的 CS#脚，也就是片选管脚
+    
+
+![在这里插入图片描述](pic_win/7c46132d4bee5fea40e726979d1522a2.png)
+
+**IIC接口模块**
+
+1.  GND 电源地
+    
+2.  VCC 电源正（3～5.5V）
+    
+3.  SCL OLED 的 D0 脚，在 IIC 通信中为时钟管脚
+    
+4.  SDA OLED 的 D1 脚，在 IIC 通信中为数据管脚
+    
+
+![在这里插入图片描述](pic_win/4a62dfe340a6d4d2f43a0cc35cfaab2c.png)
+
+### 04\. 0.96寸OLED驱动IC
+
+本屏所用的驱动 IC 为 SSD1306；其具有内部升压功能；所以在设计的时候不需要再专一设计升压电路；当然了本屏也可以选用外部升压，具体的请详查数据手册。SSD1306 的每页包含了128 个字节，总共 8 页，这样刚好是 128\*64 的点阵大小。这点与 1.3 寸 OLED 驱动 IC SSD1106稍有不同，SSD1106 每页是 132 个字节，也是 8 页。所以在用 0.96 寸 OLED 移植 1.3 寸 OLED 程序的时候需要将 0.96 寸的显示地址向右偏移 2，这样显示就正常了；否则在用 1.3 寸的时候 1.3寸屏右边会有 4 个像素点宽度显示不正常或是全白，这点大家注意一下。其它的 SSD1306 和SSD1106 区别不大。
+
+### 05\. 0.96寸OLED原理图
+
+**SPI版本**
+
+![在这里插入图片描述](pic_win/81d896d4534fbfc8e75ef7979192b868.png)
+
+**IIC版本**
+
+![在这里插入图片描述](pic_win/93e9bcff245949c4550e1324e72089b0.png)
+
+### 06\. 硬件电路
+
+![在这里插入图片描述](pic_win/3606fbeb7e0c17e67d03327ed4466bea.png)
+
+### 07\. OLED驱动函数
+
+![在这里插入图片描述](pic_win/88d593c055591455a3911761e8c6fd25.png)
+
+相关函数和作用
+
+![在这里插入图片描述](pic_win/eec34ecf7e85d5bd35ccad6aacd99da4.png)
+
+## 4-2OLED显示屏
+
+**目录**
+
+[示例程序（OLED驱动函数）](https://blog.csdn.net/m0_61712829/article/details/132427220#t0)
+
+ [keil的调试模式](https://blog.csdn.net/m0_61712829/article/details/132427220#t1)
+
+[0\. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发\_stm32江协大 csdn-CSDN博客文章浏览阅读3.4k次，点赞47次，收藏143次。江协科技/江科大-STM32标准库开发-各章节详细笔记-传送门至各个章节笔记。基本上课程讲的每句都详细记录，方便回顾。\_stm32江协大 csdn![icon-default.png?t=O83A](pic_win/icon-default.png)https://blog.csdn.net/m0\_61712829/article/details/132434192?spm=1001.2014.3001.5501](https://blog.csdn.net/m0_61712829/article/details/132434192?spm=1001.2014.3001.5501 "0. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发_stm32江协大 csdn-CSDN博客") 知识点get：
+
+1.STM32的引脚上电后，如果不初始化，默认是浮空输入模式，在这个模式下，引脚不会输出电平，所以不会有什么影响；做实践项目时，最好还是给[OLED](https://so.csdn.net/so/search?q=OLED&spm=1001.2101.3001.7020)用电源供电，不用GPIO口供电
+
+2.字符需要单引号括起来。字符串用双引号括起来
+
+3.c语言不能直接写二进制的数，只能用十六进制来代替。
+
+___
+
+### [示例程序](https://so.csdn.net/so/search?q=%E7%A4%BA%E4%BE%8B%E7%A8%8B%E5%BA%8F&spm=1001.2101.3001.7020)（OLED驱动函数）![](pic_win/fa629790304a5babb5b9fa38bd5610eb.jpeg)
+
+### 
+
+程序如下：
+
+main.c
+
+```cobol
+#include "stm32f10x.h" // Device header
+#include "Delay.h"
+#include "OLED.h"
+
+int main(void)
+
+{
+    OLED_Init(); //初始化OLED
+    OLED_ShowChar(1,1,'A'); //第一行第一列显示字符A
+    OLED_ShowString(1,3,"hellow word!");//第一行第三列开始显示字符串hello word！
+    OLED_ShowNum(2,1,12345,5); //显示无符号十进制数字，第二行第一列开始，长度为5
+    OLED_ShowSignedNum(2,7,-66,2); //显示有符号（带正负号）十进制数，长度为2
+    OLED_ShowHexNum(3,1,0xAA55,4); //显示十六进制数，长度为4
+    OLED_ShowBinNum(4,1,0xAA55,16); // 显示二进制数，c语音不能直接写二进制数，只能用16进制数替换，16位
+    //OLED_Clear(); //清屏；若只想清除部分字符，可以用OLED_ShowString在想清除的地方显示空格即可
+
+    while(1)
+
+    {
+
+    }
+
+}
+```
+
+OLED.c
+
+```cobol
+
+```
+
+OLED.h
+
+```cpp
+
+```
+
+OLED.Font.h
+
+```cpp
+
+```
+
+###  keil的调试模式
+
+这个方法可以精确追踪我们的程序是如何运行的，如果你不清楚程序是如何一步一步运行的，那在这个调试模式里单步运行探索一下，相信你对程序的运行逻辑会有更深的理解。
+
+工程选型，Debug里可以选择是哪个方式进行仿真，左边为仿真器进行仿真进行电脑模拟，右边为在硬件上进行仿真
+
+![](pic_win/637a268801f9752ff5791a1aa524ab10.png)
+
+ 基于硬件仿真，需要提前编译一下，确保无误。
+
+点击此处进入调试模式
+
+![](pic_win/905a3b3401075ec425ae32f487a4faa1.png)
+
+上面窗口为c语言翻译成的汇编程序，左边窗口是寄存器组和状态标志位等信息（单片机硬件底层很重要的东西）
+
+![](pic_win/4b22274e00234bb62308292aaed3ceb6.png)
+
+ ![](pic_win/0a87858a7ec4650cd2d53b69c22eb0d9.png) 复位
+
+![](pic_win/b2ea3f2d36a076f48b89d636d4caa629.png)全速运行
+
+![](pic_win/abd9545756f4bff32e94f1c5d71807e9.png)停止全速运行
+
+![](pic_win/5f17e13f9249872eeaf068748b0f1f3c.png)单步运行
+
+![](pic_win/98e7cb928d667f2c8cf042117b035d67.png)跳过当前行单步运行
+
+![](pic_win/57063824497da430443cab7092e372d6.png)跳出当前函数单步运行
+
+![](pic_win/2a4083dcde1a7fed50273cb24b638cee.png)跳到光标指定行单步运行
+
+ ![](pic_win/7af9b0af94452dd17f15313e2245da5f.png)黄色箭头是下一步将要执行的代码
+
+ ![](pic_win/f5bf4ac2bab75b1ae45de7af54d65351.png)红色点为断电，程序会到断电停下
+
+ ![](pic_win/6ad5cab1dece64eb7648a9180a04abb1.png)命令窗口，点击可打开或关闭命令窗口
+
+ ![](pic_win/7403c7180b1060c3298b66310dcd7e82.png)反汇编窗口，点击可打开或关闭
+
+ ![](pic_win/bf55366919ed3285b45d7bb0cca533c7.png)符号窗口，在这里可实时查看程序中所有的变量值
+
+ ![](pic_win/ca4dba50eac3a55871e65a08bb7038d8.png)在符号窗口中，右键可查看具体某个值的变化
+
+![](pic_win/3aba70dac9eb2e84a96454eb185a1868.png) 串口显示
+
+![](pic_win/d10c72309e0abef4b74220926cbc5529.png)逻辑分析仪
+
+![](pic_win/0a42a5eb1b4a8a3f6a6387e3095a5ea5.png) 外设菜单栏，系统资源查看，这里可看到所有的外设寄存器
+
+![](pic_win/68f6f52926066943c33b4d5c5fe217c5.png)比如选择GPIOA，右边显示GPIOA外设的所有寄存器
+
+![](pic_win/1ecc8201cc22d7fc9a12400e2a45f32f.png)这个ODR0就是PA0的输出数据寄存器，会实时显示输出寄存器的变化
+
+___
+
+所以当遇到一个比较难得程序，比如不知道程序是如何执行的、想要看一大堆变量却不方便显示、想看一下寄存器是不是配置正确等都可以考虑使用一下这个keil自带的调试模式。
+
+不能在调试模式下修改程序的，修改程序，需要退出调试模式，再编译，再进入调试模式。
+
+调试模式下，还有很多的工具都是非常强大的，大家可以自己去了解一下。
+
+
+
+## 5-1EXIT外部中断
+
+**目录**
+
+[中断系统](https://blog.csdn.net/m0_61712829/article/details/132433502#t0)
+
+[中断执行流程](https://blog.csdn.net/m0_61712829/article/details/132433502#t1)
+
+[STM32中断](https://blog.csdn.net/m0_61712829/article/details/132433502#t2)
+
+[NVIC基本结构](https://blog.csdn.net/m0_61712829/article/details/132433502#t3)
+
+[NVIC优先级分组](https://blog.csdn.net/m0_61712829/article/details/132433502#t4)
+
+[EXTI简介](https://blog.csdn.net/m0_61712829/article/details/132433502#t5)
+
+[EXTI基本结构](https://blog.csdn.net/m0_61712829/article/details/132433502#t6)
+
+[AFIO复用IO口内部电路](https://blog.csdn.net/m0_61712829/article/details/132433502#t7)
+
+[EXTI内部电路框图](https://blog.csdn.net/m0_61712829/article/details/132433502#t8) 
+
+[EXTI外部中断的特性和使用场景](https://blog.csdn.net/m0_61712829/article/details/132433502#t9)
+
+[手册](https://blog.csdn.net/m0_61712829/article/details/132433502#t10)
+
+[补充](https://blog.csdn.net/m0_61712829/article/details/132433502#t11)
+
+[0\. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发\_stm32江协大 csdn-CSDN博客文章浏览阅读3.4k次，点赞47次，收藏143次。江协科技/江科大-STM32标准库开发-各章节详细笔记-传送门至各个章节笔记。基本上课程讲的每句都详细记录，方便回顾。\_stm32江协大 csdn![](pic_win/be19846480ab44ce477585fc567aeaa0.png)https://blog.csdn.net/m0\_61712829/article/details/132434192?spm=1001.2014.3001.5501](https://blog.csdn.net/m0_61712829/article/details/132434192?spm=1001.2014.3001.5501 "0. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发_stm32江协大 csdn-CSDN博客")
+
+中断系统是管理和执行中断的逻辑结构，[外部中断](https://so.csdn.net/so/search?q=%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD&spm=1001.2101.3001.7020)是众多能产生中断的外设之一，所以本节我们就借助外部中断来学习一下中断系统。在以后学习其它外设的时候，也是会经常和中断打交道的。
+
+___
+
+### 中断系统
+
+中断：在主程序运行过程中，出现了特定的中断**触发条件（中断源**。比如对于外部中断来说，可以是引脚发生了电平跳变；对于定时器来说，可以是定时的时间到了；对于串口通信来说，可以是接收到了数据），使得CPU暂停当前正在运行的程序，转而去处理中断程序，处理完成后又返回原来被暂停的位置继续运行。（就好比晚上睡觉前定了个闹钟，时间到了提醒你，不管时间到不到你可以安心睡觉）。
+
+中断优先级：当有多个中断源同时申请中断时，CPU会根据中断源的**轻重缓急**进行裁决，优先响应更加**紧急**的中断源。（这个中断优先级是我们根据程序设计的需求，自己设置的）。
+
+中断嵌套：（**中断程序再次中断，二次中断现象**）当一个中断程序正在运行时，又有**新的更高优先级**的中断源申请中断，CPU再次暂停当前中断程序，转而去处理新的中断程序，处理完成后依次进行返回。（也是为了照顾非常**紧急**的中断）。
+
+### 中断执行流程
+
+中断程序的执行流程如下，当它执行到某个地方时，外设的中断条件满足了，那这时，无论主程序是在干什么事情（比如OLED显示程序才执行一半，Delay函数还在等待等）中断来了，主程序都得立即暂停，程序由硬件电路自动跳转到中断程序中，当中断程序执行完之后，程序再返回被暂停的地方继续运行（这个暂停的地方，叫做**断点**）。为了程序能在中断返回后继续原来的工作，在中断执行前，会对程序的现场进行保护，中断执行后，会再返回现场，这样保证主程序被中断了，回来之后也能继续执行。
+
+![](pic_win/33ed23476d8921ccd7bd304c7eb48004.png)
+
+中断嵌套的执行流程如下。当一个中断正在执行时，又有新的优先级更高的中断来，那个旧中断会被打断，执行新的中断，新的中断结束，再继续执行原来的中断，原来的中断结束，再继续主程序，这就是中断嵌套的执行流程。
+
+![](pic_win/8d19262faeb0d1b7377e629a405e6fa9.png)
+
+c语言中，中断的执行流程如下。上面是主函数，while（1）死循环里就是主程序，正常情况下，程序就是在主程序中不断循环执行，当中断条件满足时，主程序就会暂停，然后自动跳转到中断程序里运行，中断程序执行完之后，再返回主程序执行。一般中断程序都是在一个子函数里，这个函数不需要我们调用，当中断来临时，**由硬件自动调用这个函数**，这就是在c语言中，中断的执行流程。
+
+![](pic_win/85dbfe44c3a4b6a2f1dd110dcea56316.png)
+
+___
+
+### STM32中断
+
+多个可屏蔽中断通道（中断源），包含EXTI（外部中断）、TIM、ADC（模数转换器）、USART（串口）、SPI、I2C、RTC（实时时钟）等多个外设。（几乎所有模块都能申请中断）
+
+使用[NVIC](https://so.csdn.net/so/search?q=NVIC&spm=1001.2101.3001.7020)统一管理中断，每个中断通道都拥有16个可编程的优先等级，可对优先级进行分组，进一步设置抢占优先级和响应优先级。
+
+NVIC就是STM32中用来管理中断、分配优先级的，NVIC的中断优先级共有16个等级。
+
+EXTIx是外部中断对应的中断资源。
+
+下图为stm32的中断资源，上面灰色的是内核中断（我们一般不用，了解即可），下面不是灰色的部分就是stm32外设的中断了，外设电路检测到有什么异常或事件，需要提示一下CPU的时候，它就可以申请中断，让程序调到对应的中断函数里运行一次，用来处理这个异常或事件。图中最右边是中断的地址，因为程序中的中断函数，它的地址是由编译器来分配的，是不固定的，但是我们的中断跳转，由于硬件的限制，只能跳到固定的地址执行程序，所以为了硬件能够跳转到一个不固定的中断函数里，这里就需要在内存中定义一个地址的列表，这个列表的地址是固定的，中断发生后，就跳到这个固定位置，然后在这个固定位置，由编译器，再加上一个跳转到中断函数的代码，这样中断跳转就可以跳转到任意位置了，这个中断地址的列表，就叫**中断向量表**，相当于中断跳转的一个跳板，不过**我们用c编程，是不需要管这个中断向量表的**，因为编译器都帮我们做好了。![](pic_win/4d1bdcc70c13feb87efbb31efe9a8ec8.png)
+
+![](pic_win/7a4334198b65c6c512982fd69d19e07c.png)
+
+___
+
+### NVIC基本结构
+
+NVIC（**嵌套中断向量控制器**），在stm32中，它是用来统一分配中断优先级和管理中断的，**NVIC是一个内核外设**，是CPU的小助手（如果把中断全接到cpu上，会很麻烦，毕竟CPU主要是用来运算的），NVIC有很多输入口，下图中线上划了个斜杠上面写了n（这个意思是：**一个外设可能会同时占用多个中断通道，所以这里有n条线**），然后NVIC只有一个输出口，NVIC根据每个中断的优先级分配中断的先后顺序，之后通过右边这一输出口就告诉CPU该处理哪个中断，对于中断先后顺序分配的任务，CPU不需要知道
+
+举个例子：比如**CPU**是医生，如果医院只有一个医生时，当看病人很多时，医生就得先安排一下先看谁后看谁，如果有紧急的病人，那还得让紧急的病人最先来，这个安排先后顺序的任务很繁琐会影响医生看病的效率，所以医院就安排了一个叫号系统（**NVIC**），来病人了统一取号并且根据病人的等级，分配一个优先级，然后叫号系统看一下现在在排队的病人，优先叫号紧急的病人，最后叫号系统给医生输出的就是一个一个排好队的病人，医生就可以专心看病了。（**EXTI、TIM、ADC等就是病人**）
+
+![](pic_win/ec299dee0bb00920d20b340d8e0b2b19.png)
+
+___
+
+### NVIC优先级分组
+
+为了处理不同形式的优先级，STM32的NVIC可以对优先级进行分组，分为抢占优先级和响应优先级。
+
+**抢占优先级和响应优先级的区别，例子理解**：还想一下病人叫号的例子，对于紧急的病人，其实有两种形式的优先。一种是，上一个病人1在看病，外面排队了很多病人，当病人1看完后，外面排队中的紧急病人最先进去看病即使这个紧急病人是最后来的，这种**在排队中的插队的就叫响应优先级**，响应优先级高的可以插队提前看病。另一种是，上一个病人1在看病，外面排队中的病人2比病人1更加紧急，病人2可以不等病人1看完直接冲到医生的屋里，让病人1先靠边站，先给病人2看病，病人2看完病接着病人1看病，然后外面排队的病人再进来，这种形式的优先级就是中断嵌套，**这种决定是不是可以中断嵌套的优先级，就叫抢占优先级**，抢占优先级高的，可以进行中断嵌套。
+
+为了将优先级区分为抢占优先级和响应优先级，就需要对这16个优先级优先级进行分组，NVIC的中断优先级由优先级寄存器的4位（0~15，4位二进制，对应16个优先级）决定，这4位可以进行切分，分为高n位的抢占优先级和低4-n位的响应优先级
+
+优先级的**数值越小，优先级越高**，0就是最高优先级
+
+**抢占优先级高的可以中断嵌套，响应优先级高的可以优先排队**，抢占优先级和响应优先级均相同的按中断号排队（中断号是中断表的左边数字，数值小的优先响应），所以stm32的中断不存在先来后到的排队方式，在任何时候都是优先级高的先响应。
+
+下表，因为优先级总共是4位，所以就有（0,4）、（1.3）、（2，2）、（3,1）、（4、0）这五种分组方式，分组0，就是0位的抢占等级，取值为0，4位的响应等级，取值为0~15，分组1234雷同。这个分组方式是我们在程序中自己进行选择的，选好分组方式后，就要注意抢占优先级和响应优先级的取值范围了，不要超出这个表里规定的取值范围。
+
+<table><tbody><tr><td><p>分组方式</p></td><td><p>抢占优先级</p></td><td><p>响应优先级</p></td></tr><tr><td><p>分组0</p></td><td><p>0位，取值为0</p></td><td><p>4位，取值为0~15</p></td></tr><tr><td><p>分组1</p></td><td><p>1位，取值为0~1</p></td><td><p>3位，取值为0~7</p></td></tr><tr><td><p>分组2</p></td><td><p>2位，取值为0~3</p></td><td><p>2位，取值为0~3</p></td></tr><tr><td><p>分组3</p></td><td><p>3位，取值为0~7</p></td><td><p>1位，取值为0~1</p></td></tr><tr><td><p>分组4</p></td><td><p>4位，取值为0~15</p></td><td><p>0位，取值为0</p></td></tr></tbody></table>
+
+### EXTI简介
+
+EXTI（Extern Interrupt）外部中断
+
+EXTI可以监测指定GPIO口的电平信号，当其指定的GPIO口产生电平变化时，EXTI将立即向NVIC发出中断申请，经过NVIC裁决后即可中断CPU主程序，使CPU执行EXTI对应的中断程序。（简单说：**引脚电平变化，申请中断**）
+
+支持的触发方式（引脚电平的变化类型）：上升沿（电平从低电平变到高电平的瞬间触发中断）/下降沿（电平从高电平变到低电平的瞬间触发中断）/双边沿（上升沿和下降沿都可以触发中断）/软件触发（程序执行代码就能触发中断）
+
+支持的GPIO口（外部中断引脚）：所有GPIO口都能触发中断，但相**同的Pin不能同时触发中断**（比如PA0和PB0不能同时使用，智能选一个作为中断引脚；所以如果有多个中断引脚要选择不同的pin引脚，比如PA0和PA1、PB3就可以）
+
+通道数：总共有20个中断线路。16个GPIO\_Pin（对应GPIO\_pin0到15，是外部中断的主要功能），外加PVD输出、RTC闹钟、USB唤醒、以太网唤醒（这4个中断线路，是因为外部中断有个功能是从低功耗模式的停止模式下唤醒STM32那对于PVD电源电压检测，当从电源从电池过压恢复时就需要PVD借助一下外部中断的退出停止模式；对于RTC闹钟来说，有时候为了省电，RTC定一个闹钟之后，STM32回进入停止模式，等到闹钟响的时候再唤醒，这叶需要借助外部中断，剩余USB唤醒、以太网唤醒也是类似的作用）
+
+触发响应方式：**中断响应**（**引脚电平触发中断，申请中断，让CPU执行中断函数**）/**事件响应**（**不会触发中断，而是触发别的外设操作**，属于外设之间的联合工作。外部中断的信号不会通向CPU而是通向其它外设，用来触发其它外设的操作，比如触发ADC转换、触发DMA等）
+
+___
+
+### EXTI基本结构
+
+外部中断的整体结构图如下：
+
+首先，最左边是**GPIO口的外设**，每个GPIO外设有16个引脚，所以进来16根线；如果每个引脚占用一个通道，那EXTI的16个通道是不够用的，所以在这里会有一个AFIO中断引脚选择的电路模块，这个**AFIO就是一个数据选择器**（可以将图中前面的3个GPIO外设的16个引脚中的其中一个连接到后面的EXTI通道（16个GPIO通道），**所以对于PA0\\PB0\\PC0这些，通过AFIO选择之后只有其中一个能接到EXTI的通道0上**），然后通过AFIO选择后的16个通道，就能接到了EXTI边沿检测及控制电路上，同时下面这4个蹭网的外设（PVD\\PTC\\USB\\ETH）也是并列接进来的，这些加起来就**组成了EXTI的20个输入信号**，然后经过EXTI电路之后，**分为了两种输出，也就是中断响应和事件响应**（上面接到了NVIC用来触发中断，下面有20条输出线路到了其它外设，也就是事件响应）
+
+注意点：EXTI9\_5是外部中断的5,6,7,8,9分到了一个通道里，EXTI15\_10也是一样；也就是说外部中断的9到5会触发同一个中断函数，15到10也会触发同一个中断函数；在编程的时候，我们在这两个中断函数里，需要再根据标志位区分到底是哪个中断进来的。（本来20路输入，应该有20路中断的输出，可能20个输出太多了比较占用NVIC的通道资源，所以就把其中的外部中断9~5，15~10，给分到了一个通道）
+
+![](pic_win/031795cc2a2afcd8c3219f7a9ea0d04a.png)
+
+___
+
+### AFIO复用IO口内部电路
+
+内部电路就是一系列的数据选择器，如下图的最上面输入是PA0\\PB0\\PC0等尾号都是0，然后通过数据选择器最终选择一个，连接到EXTI0上，上面写的文字是说配置这个寄存器的哪一个位就可以决定选择哪一个输入，图中后面部分内容都雷同。
+
+AFIO主要用于引脚复用功能的选择和重定义（也就是数据选择器的作用）。
+
+在STM32中，AFIO主要完成两个任务：复用功能引脚重映射（就是最开始提到的**引脚定义表**，当想把**默认复用功能换到重定义功能时，就是用AFIO来完成的**，这也是AFIO的一大主要功能）、中断引脚选择。
+
+![](pic_win/e6c12b4f8e0e6d0a727eea991665b626.png)
+
+___
+
+### EXTI内部电路框图 
+
+EXTI的右边就是20根输入线，然后输入线首先进入边沿检测电路，在上面的上升沿寄存器和下降沿寄存器可以选择是上升沿触发还是下降沿触发或者两个都触发，接着硬件触发信号和软件中断寄存器的值就进入到这个或门的输入端（也就是任意一个为1，或门就可以输出1），然后触发信号通过这个或门后就兵分两路，上一路是触发中断的，下一路是触发事件的：触发中断首先会置一个挂起寄存器（挂起寄存器相当于一个中断标志位，可以读取这个寄存器判断是哪个通道触发的中断，如果挂起寄存器置1，它就会继续向左走和中断屏蔽寄存器共同进入一个与门（**与门实际上就是开关控制**作用，中断屏蔽寄存器给1那另一个输入就是输出，也就是允许中断；中断屏蔽寄存器给0，那另一个输入无论是什么，输出都是0，相当于屏蔽了这个中断），然后是NVIC中断控制器）。接着就是下一路的选择是触发事件，首先也是一个事件屏蔽寄存器进行开关控制，最后通过一个吗，脉冲发生器到其它外设（脉冲发生器就是给一个电平脉冲，用来触发其它外设的动作）
+
+补充：框图最上面两个就是外设接口和APB总线，我们可以通过总线访问这些寄存器。
+
+![](pic_win/bf4d867e3ff53f95a8cedacc930d8d4f.png)
+
+___
+
+### EXTI外部中断的特性和使用场景
+
+1.什么样的设备需要用到外部中断，使用外部中断有什么好处呢？大概总结了使用外部中断模块的特性：就是对于stm32来说，想要获取的信号是**外部驱动的很快的突发信号。**
+
+2.外部中断的使用场景。比如，旋转编码器的输出信号，可能很久都不会拧它，这时不需要stm32做任何事情，但是我一拧它，就会有很多脉冲波形需要stm32接收，这个信号是突发的，stm32不知道什么时候会来，同时它是外部驱动的，stm32只能被动读取，最后这个信号非常快，stm32稍微晚一点来读取就会错过很多波形，所以对于这种情况来说，就可以考虑使用stm32的外部中断，有脉冲过来，stm32立即进入中断函数处理，没有脉冲的时候stm32就专心做其他事情；另外还有比如，红外遥控接收头的输出，接收到要遥控数据之后，它会输出一端波形，这个波形转瞬即逝，并且不会等你，所以就需要使用外部中断来读取；最后还有按键，虽然它的动作是外部驱动的突发事件但我并不推荐使用外部中断来读取按键，因为外部中断不好处理按键抖动和松手检测，对于按键来说，它的输出波形也不是转瞬即逝的，所以要求不高的话可以在主程序中循环读取，也可以考虑一下定时器中断读取的方式（这样即可以后台读取按键值、不会阻塞主程序也可以很好的处理按键抖动和松手检测的问题）
+
+___
+
+### 手册
+
+大概看一下每个外设在手册的介绍
+
+NVIC是内核外设，在这个内核cortex-m3编程手册中查看，这个cortex-m3编程手册就是内核和内核外设的详细介绍，想研究一下内核的运转，可以看一下这个手册
+
+![](pic_win/02ba6002538296f849307bcd82651ed5.png)
+
+ ![](pic_win/8b1ea89e568e6c61239018aaed3118fb.png)
+
+ NVIC的一些寄存器
+
+![](pic_win/46da83d0a5001d4f6481327875772348.png)
+
+这个中断优先级寄存器就是用来设置每个中断的优先级的，用库函数直接给结构体赋值就行了，要知道库函数要最终落实到寄存器上来的
+
+![](pic_win/8d5a5a347ea52cbd3efd5fd7d9972eae.png)
+
+ 中断分组配置寄存器被分配到了这个SCB里面
+
+![](pic_win/0905d0340ef9bbe733f097847e2d183a.png)
+
+![](pic_win/d4b653cecb012e957a2e2613ee03ef84.png) 这三位就是用来配置中断分组的
+
+ 中断和外部中断的介绍在参考手册中![](pic_win/8e6ffbe1bf6bdd41ff33016654368e9f.png)
+
+ AFIO介绍
+
+![](pic_win/c3ce5d933c2aef6ebf18594a8a340632.png)
+
+___
+
+### 补充
+
+![](pic_win/6174cabbe15ba012fd16458b94c0f9dd.png)**或门（无直边）**。它可以有多个输入，但只能有一个输出。执行的是或的逻辑，在输入端（曲边），只要有一个高电平1，输出的高电平就为1；只有全部输入低电平0，输出才为0。（尖头为输出）。（**或1为1，全0则0**）
+
+![](pic_win/6fff34a09472b64f7271d2133373519e.png)**与门（直边）**。它可以有多个输入，但只能有一个输出。执行的是与的逻辑，在输入端（直边），只要有一个是低电平0，输出就是0；只有全部输入1，输出才为1。（**与0为0，全1则1**）
+
+![](pic_win/534af52c3736109128b9d1c9a17b5fda.png)**非门（三角号加个圈）**。它只有一个输入，一个输出；输入1就输出0，输入0就输出1，执行的是非得逻辑（**圈为输出，取反**）
+
+![](pic_win/a2c7fda9931a3de26fabff71465362e9.png)数据选择器（一个梯形）。有多个输入，一个输出，在侧面有选择控制端，根据控制端的数据，从输入选择一个接到输出。
+
+ ![](pic_win/838d79ed384609196dcb40f11c9c58fa.png)表示20根线，代表20个通道
+
+## 5-2EXTI中断示例程序
+
+### 常用API
+
+gpio.h
+
+```c
+//引脚重映射（重映射方式，重映射新状态）
+void GPIO_PinRemapConfig(uint32_t GPIO_Remap, FunctionalState NewState);
+//配置AFIO数据选择寄存器，配置引脚中断优先级
+void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource);
+
+/*
+void GPIO_DeInit(GPIO_TypeDef* GPIOx);	//重置GPIO
+void GPIO_PinLockConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);//锁定GPIO配置，防止意外更改
+void GPIO_EventOutputConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource);//配置AFIO事件输出功能
+void GPIO_EventOutputCmd(FunctionalState NewState);//配置AFIO事件输出功能
+void GPIO_ETH_MediaInterfaceConfig(uint32_t GPIO_ETH_MediaInterface);  //以太网有关
+*/
+```
+
+exti.h
+
+```c
+void EXTI_DeInit(void);//清除配置
+void EXTI_Init(EXTI_InitTypeDef* EXTI_InitStruct);//根据结构体，初始EXTI外设
+void EXTI_StructInit(EXTI_InitTypeDef* EXTI_InitStruct);//给结构体赋一个默认值
+void EXTI_GenerateSWInterrupt(uint32_t EXTI_Line);//软件触发外部中断，EXTI_Line为指定中断线
+
+//产生中断时，状态寄存器某些标志位会置1
+//主程序中，查看标志位
+FlagStatus EXTI_GetFlagStatus(uint32_t EXTI_Line);//获取指定标志位是否被置1
+void EXTI_ClearFlag(uint32_t EXTI_Line);//清除置1标志位
+//中断函数中，查看标志位
+ITStatus EXTI_GetITStatus(uint32_t EXTI_Line);//在中断函数中，查看标志位
+void EXTI_ClearITPendingBit(uint32_t EXTI_Line);//在中断函数中，清除中断挂起标志位
+```
+
+misc.h -->NVIC
+
+```c
+void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup);//中断分组 （中断分组方式）
+void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);//根据结构体，初始化NVIC
+//void NVIC_SetVectorTable(uint32_t NVIC_VectTab, uint32_t Offset);//设置中断向量表
+//void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState);//系统低功耗配置
+```
+
+中断函数命名固定，在Start/startup_stm32f10x_md.s中寻找，外部中断15~10：EXTI15_10_IRQHandler
+
+```c
+void EXTI15_10_IRQHandler(void)	//中断函数默认写法
+{
+
+}
+```
+
+
+
+### [旋转编码器](https://so.csdn.net/so/search?q=%E6%97%8B%E8%BD%AC%E7%BC%96%E7%A0%81%E5%99%A8&spm=1001.2101.3001.7020)简介
+
+旋转编码器：用来测量位置、速度或旋转方向的装置，当其旋转轴旋转时，其输出端可以输出与旋转速度和方向对应的方波信号，读取方波信号的频率和相位信息即可得知旋转轴的速度和方向
+
+类型：机械触点式/霍尔传感器式/光栅式
+
+1.下面的是一种最简单的编码器样式，这里使用的也是对射式[红外传感器](https://so.csdn.net/so/search?q=%E7%BA%A2%E5%A4%96%E4%BC%A0%E6%84%9F%E5%99%A8&spm=1001.2101.3001.7020)来测速的，为了测速还需配合一个光栅编码盘（银色圆圈），当这个编码盘转动时，红外传感器的红外光就会出现遮挡、透过、遮挡、透过这样的现象，对应模块输出的电平就是高低电平交替的方波，方波的个数代表了转过的角度，方波的频率表示转速，我们就可以用外部中断来捕获这个方波的边沿，以此来判断位置和速度，不过这个模块只有一路输出，正转反转输出波形没法区分，所以这种测试方法只能测位置和速度，不能测量旋转方向，为了进一步测量方向，我们就可以用后面的几种编码器。
+
+![](https://i-blog.csdnimg.cn/blog_migrate/d156db65b4dacc09554850c94df7ac19.png)                  ![](https://i-blog.csdnimg.cn/blog_migrate/96719215331c4abaf44da294293baab4.png)
+
+2.如下是我们接下来将要用过的旋转编码器，左边是外观，右边是内部拆解的结构；可以看到内部是用金属触电进行通断的，所以它是一种机械触电式编码器，左右是两部分开关触电；中间银色圆形金素片为一个按键，这个旋转编码器的轴是可以按下去的，**这种编码器一般是用来进行调节的**，比如音响调节音量，因为它是触电接触的形式，所以不适合电机这种高速旋转的地方，另外三种都是**非接触的形式，可以用于电机测速（电机测速在电机驱动的应用中还是很常见的）**
+
+![](https://i-blog.csdnimg.cn/blog_migrate/9e2d388dbb541a5be33e8a18be5ae86f.png)            ![](https://i-blog.csdnimg.cn/blog_migrate/2833c57aaf8585c22a48ed9d01052ec7.png) 
+
+下面为详细讲解旋转编码器的硬件部分：
+
+![](https://i-blog.csdnimg.cn/blog_migrate/bd1f771939cdd974016308caeb55ad50.png)金属触电
+
+![](https://i-blog.csdnimg.cn/blog_migrate/9322c7957396b2fea42a98c736a5c437.png)内侧的两根细的触电都是和中间的引脚c连接的，外侧触电一个连接A，一个连接B。
+
+ ![](https://i-blog.csdnimg.cn/blog_migrate/2aa2068e5bffa36b64021270fe542f67.png)圆形金属片（按键）的两根线，就在上面引出来了；按键的轴按下，上面两根线短路，松手，上面两根线断开，就是个普通的按键
+
+ ![](https://i-blog.csdnimg.cn/blog_migrate/d808ecab3a8e9056426ba3304bf74a9b.png)这个旋转编码器的轴是可以按下去的；轴的外侧是白色的编码盘，它也是一系列光栅一样的东西，只不过这是金属触电，在旋转时，依次接通和断开两边的触电；这个金属盘的位置是经过设计的，它能让两侧触电的通断产生一个90度的相位差，最终配合一下外部电路，这个编码器的两个输出就会输出如下这样的正交波形**，带正交波形输出的编码器是可以用来测方向的**（这就是单相输出和两相正交输出的区别），当然还有的编码器不是输出正交波形，而是一个引脚输出方波信号代表转速，另一个输出高低电平代表旋转方向，这种不是正交输出的编码器也是可以测方向的。 
+
+当正转时，A相引脚输出一个方波波形，B相引脚输出一个和它相位相差90的波形（正交波形），如下。
+
+![](https://i-blog.csdnimg.cn/blog_migrate/76bca78656b026b433c8e50cca8a5672.png)
+
+ 当反向旋转时，A相引脚还是方波信号，B相引脚会提前90度，如下。
+
+ ![](https://i-blog.csdnimg.cn/blog_migrate/766fbf934752979c6ac377029029c380.png)
+
+___
+
+  3.霍尔传感器形式编码器，这种是直接附在电机后面的编码器，中间是一个圆形磁铁，边上有两个位置错开的活儿传感器，当磁铁旋转时，通过霍尔传感器就可以输出正交的方波信号，如下。
+
+![](https://i-blog.csdnimg.cn/blog_migrate/91c7b4f557cae22d98eba5f769f03c1f.png)
+
+4.这是独立的编码器元件，它的输入轴转动时，输出就会波形，这个也是可以测速和测方向的，具体用法再看相应的手册。如下。 
+
+![](https://i-blog.csdnimg.cn/blog_migrate/e16b33940a542de6d9b99c94a3aff4fb.png)
+
+___
+
+### 旋转编码器的硬件电路
+
+模块的电路图如下，图中正方形区域就是旋转编码器，上面按键的两根线这个模块没有使用，是悬空的
+
+![](https://i-blog.csdnimg.cn/blog_migrate/7ab8aed60abb68f37d5b7259a7dd1ab9.png)
+
+下面为模块电路细节介绍：
+
+![](https://i-blog.csdnimg.cn/blog_migrate/461d3b24b2b23198489d338cb728b58d.png)这里是编码器内部的两个触电，旋转轴旋转时，这两个触电以相位相差90度的方式交替导通，因为这只是个开关信号，所以要配合外围电路才能输出高低电平
+
+![](https://i-blog.csdnimg.cn/blog_migrate/35a1771f2b90f2fdd4222396243c6270.png)左边接了一个10k的上拉电阻，默认没旋转的情况下，这个点被上拉为高电平，再通过R3这个电阻输出到A端口的就也是高电平，当旋转时，内部触电导通，那C端口处就直接被拉低到GND，再通过R3输出，A端口就是低电平了，之后这个R3是一个输出限流电阻（是为了防止模块引脚电流过大的）；C1是输出滤波电容，可以防止一些输出信号抖动。剩下的右边电路和左边是雷同的。
+
+使用这个模块时的接线如下，下面的A相输出和B相输出接到STM32的两个引脚上（主要引脚的尾数不能一样），中间的C引脚就是GND，我们暂时不用
+
+ ![](https://i-blog.csdnimg.cn/blog_migrate/abe4b6e723bb0895391ec3b09e1c1435.png)
+
+### 
+
+___
+
+### 接线图
+
+对射式红外传感器
+
+![](https://i-blog.csdnimg.cn/blog_migrate/173c75e414f3a036396f342619bab32a.jpeg)
+
+旋转编码器
+
+![](https://i-blog.csdnimg.cn/blog_migrate/3f81ba9a0f3fbc0d3472344da6badb93.jpeg)
+
+___
+
+### 程序-对射式红外传感器（+[代码注释](https://so.csdn.net/so/search?q=%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A&spm=1001.2101.3001.7020)）
+
+当我们的挡光片或者编码盘在这个对射式红外传感器中间经过时，这个DO就会输出电平跳变的信号，然后这个电平跳变的信号触发STM32 PB14号口的中断，我们在中断函数里，执行变量++的程序，然后主循环里用OLED显示这个变量，这样第一个程序就完成了。
+
+main.c
+
+```cpp
+#include "stm32f10x.h"
+
+#include "Delay.h"
+
+#include "OLED.h"
+
+#include "countsensor.h"
+
+int main(void)
+
+{
+
+countsensor_init();
+
+OLED_Init();
+
+OLED_ShowString(1,1,"Count:");
+
+while(1)
+
+{
+
+OLED_ShowNum(1,7,countsersor_get(),5);
+
+}
+
+}
+```
+
+countsensor.c
+
+```cobol
+#include "stm32f10x.h" // Device header
+
+uint16_t countsensor_count; //这个数字来统计中断触发的次数
+
+//初始化函数，将模块要用的资源配置好
+
+void countsensor_init(void)
+
+{
+
+//第一步，时钟配置
+
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE); //开启RCC时钟
+
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE); //开启AFIO时钟
+
+//EXTI和NVIC两个外设的时钟是一直开的 ，NVIC内核外设都是不需要开启时钟
+
+//第二步，配置GPIO
+
+//首先定义结构体
+
+GPIO_InitTypeDef GPIO_initstruct; //结构体名字GPIO_initstruct
+
+//将结构体成员引出来
+
+//对于EXTI来说，模式为浮空输入|上拉输入|下拉输入；不知该写什么模式，可以看参考手册中的外设GPIO配置
+
+GPIO_initstruct.GPIO_Mode = GPIO_Mode_IPU;
+
+GPIO_initstruct.GPIO_Pin = GPIO_Pin_14;
+
+GPIO_initstruct.GPIO_Speed = GPIO_Speed_50MHz;
+
+//最后初始化GPIO
+
+GPIO_Init(GPIOB,&GPIO_initstruct); //传地址
+
+//第三步，配置AFIO外设中断引脚选择
+
+//AFIO的库函数是和GPIO在一个文件里，可以查看Library文件中的gpio.h查看函数
+
+GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource14);//代表连接PB14号口的第14个中断线路
+
+//第四步，配置EXTI,这样PB14的电平信号就能够通过EXTI通向下一级的NVIC了
+
+EXTI_InitTypeDef EXTI_InitStructure;//结构体类型名EXTI_InitTypeDef，变量名EXTI_InitStructure
+
+EXTI_InitStructure.EXTI_Line = EXTI_Line14;
+
+EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+
+EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;//因为上面是GPIO_Mode_IPU设置为高电平，所以触发中断是下降
+
+EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+
+EXTI_Init(&EXTI_InitStructure);
+
+//第五步，配置NVIC，NVIC是内核外设，所以它的库函数在misc.h
+
+NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //分组方式，整个芯片只能用一种。如放在模块中进行分组，要确保每个模块分组都选的是同一个；或者将这个代码放在主函数的最开始
+
+NVIC_InitTypeDef NVIC_InitStructure;
+
+NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
+
+NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;//因为我们这个程序只有一个，所以中断优先级的配置也是非常随意的
+
+NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+
+NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+
+NVIC_Init(&NVIC_InitStructure);
+
+}
+
+uint16_t countsersor_get(void)
+
+{
+
+return countsensor_count;
+
+}
+
+//中断函数，都是无参无返回值的，名字固定在startup文件向量表中
+
+//中断函数不需声明，它是自动执行的
+
+void EXTI15_10_IRQHandler(void)
+
+{
+
+/*一般都是先进行一个中断标志位的判断，确保是我们想要的中断源触发的函数，因为这个函数EXTI10到
+
+EXTI15都能进来，所以要先判断一下是不是我们想要的EXTI14进来的*/
+
+if(EXTI_GetFlagStatus(EXTI_Line14) == SET)
+
+{
+
+countsensor_count++;
+
+//每次中断函数结束后，都应该清除一下中断标志位
+
+EXTI_ClearITPendingBit(EXTI_Line14);
+
+}
+
+}
+
+//写完模块之后最好编译一下，要不然代码提示可能显示不出我们新写的函数
+```
+
+countsensor.h
+
+```cpp
+#ifndef __COUNTSENSOR_H
+
+#define __COUNTSENSOR_H
+
+void countsensor_init(void);
+
+uint16_t countsersor_get(void);
+
+#endif
+```
+
+### 程序-旋转编码器计次（+代码注释）
+
+main.c
+
+```cpp
+#include "stm32f10x.h"
+
+#include "Delay.h"
+
+#include "OLED.h"
+
+#include "encoder.h"
+
+int16_t num;
+
+int main(void)
+
+{
+
+OLED_Init();
+
+encoder_init();
+
+OLED_ShowString(1,1,"num:");
+
+while(1)
+
+{
+
+num += encoder_get();
+
+OLED_ShowSignedNum(1,5,num,5);
+
+}
+
+}
+```
+
+encoder.c
+
+```cobol
+#include "stm32f10x.h" // Device header
+
+int16_t encoder_count;
+
+void encoder_init(void)
+
+{
+
+//第一步，时钟配置
+
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE); //开启RCC时钟
+
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE); //开启AFIO时钟
+
+//EXTI和NVIC两个外设的时钟是一直开的 ，NVIC内核外设都是不需要开启时钟
+
+//第二步，配置GPIO
+
+//首先定义结构体
+
+GPIO_InitTypeDef GPIO_initstruct; //结构体名字GPIO_initstruct
+
+//将结构体成员引出来
+
+//对于EXTI来说，模式为浮空输入|上拉输入|下拉输入；不知该写什么模式，可以看参考手册中的外设GPIO配置
+
+GPIO_initstruct.GPIO_Mode = GPIO_Mode_IPU;
+
+GPIO_initstruct.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
+
+GPIO_initstruct.GPIO_Speed = GPIO_Speed_50MHz;
+
+//最后初始化GPIO
+
+GPIO_Init(GPIOB,&GPIO_initstruct); //传地址
+
+//第三步，配置AFIO外设中断引脚选择
+
+//AFIO的库函数是和GPIO在一个文件里，可以查看Library文件中的gpio.h查看函数
+
+GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource0);
+
+GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource1);
+
+//第四步，配置EXTI,这样PB14的电平信号就能够通过EXTI通向下一级的NVIC了
+
+EXTI_InitTypeDef EXTI_InitStructure;//结构体类型名EXTI_InitTypeDef，变量名EXTI_InitStructure
+
+EXTI_InitStructure.EXTI_Line = EXTI_Line0 | EXTI_Line1;
+
+EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+
+EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;//因为上面是GPIO_Mode_IPU设置为高电平，所以触发中断是下降
+
+EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+
+EXTI_Init(&EXTI_InitStructure);
+
+//第五步，配置NVIC，NVIC是内核外设，所以它的库函数在misc.h
+
+NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //分组方式，整个芯片只能用一种。如放在模块中进行分组，要确保每个模块分组都选的是同一个；或者将这个代码放在主函数的最开始
+
+NVIC_InitTypeDef NVIC_InitStructure;
+
+NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+
+NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+
+NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+
+NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+
+NVIC_Init(&NVIC_InitStructure);
+
+NVIC_InitStructure.NVIC_IRQChannel = EXTI1_IRQn;
+
+NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+
+NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+
+NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+
+NVIC_Init(&NVIC_InitStructure);
+
+}
+
+int16_t encoder_get(void)
+
+{
+
+int16_t temp;
+
+temp = encoder_count;
+
+encoder_count = 0;
+
+return temp;
+
+}
+
+void EXTI0_IRQHandler(void)
+
+{
+
+if(EXTI_GetITStatus(EXTI_Line0) == SET)
+
+{
+
+if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_1) == 0)
+
+{
+
+encoder_count--;
+
+}
+
+EXTI_ClearITPendingBit(EXTI_Line0);
+
+}
+
+}
+
+void EXTI1_IRQHandler(void)
+
+{
+
+if(EXTI_GetITStatus(EXTI_Line1) == SET)
+
+{
+
+if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_0) == 0)
+
+{
+
+encoder_count++;
+
+}
+
+EXTI_ClearITPendingBit(EXTI_Line1);
+
+}
+
+}
+```
+
+encoder.h
+
+```cpp
+#ifndef __ENCODER_H
+
+#define __ENCODER_H
+
+void encoder_init(void);
+
+int16_t encoder_get(void);
+
+#endif
 ```
