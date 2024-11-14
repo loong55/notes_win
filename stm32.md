@@ -66,9 +66,7 @@
 
 ![在这里插入图片描述](pic_win/d97734cd7ed675fe1d9d8ca136c95d12.png)
 
-## 1-2 STM32简介
-
--   -   https://blog.csdn.net/u010249597/article/details/134762381#08__203)
+### 1-2 STM32简介
 
 ### 01\. STM32简介
 
@@ -210,18 +208,6 @@ STM32的应用领域包括但不限于：
 
 ## 2-1 软件安装
 
-### 00\. 目录
-
-#### 文章目录
-
--   -   [00\. 目录](https://blog.csdn.net/u010249597/article/details/134765079#00__0)
-    -   [01\. MDK安装](https://blog.csdn.net/u010249597/article/details/134765079#01_MDK_3)
-    -   [02\. Keil5注册](https://blog.csdn.net/u010249597/article/details/134765079#02_Keil5_83)
-    -   [03\. 支持包安装](https://blog.csdn.net/u010249597/article/details/134765079#03___119)
-    -   [04\. ST-LINK驱动安装](https://blog.csdn.net/u010249597/article/details/134765079#04_STLINK_137)
-    -   [05\. USB转串口驱动](https://blog.csdn.net/u010249597/article/details/134765079#05_USB_179)
-    -   [06\. 附录](https://blog.csdn.net/u010249597/article/details/134765079#06__201)
-
 ### 01\. MDK安装
 
 MDK 源自德国的 KEIL 公司，是 RealView MDK 的简称。在全球 MDK 被超过 10 万的[嵌入式开发](https://so.csdn.net/so/search?q=%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91&spm=1001.2101.3001.7020)工程师使用。目前最新版本为：
@@ -325,11 +311,7 @@ MDK6，该版本使用 uVision5 IDE 集成开发环境，是目前针对 ARM 处
 
 ![在这里插入图片描述](pic_win/4bfc23825d5f02956e97584c06568968.png)
 
-### 06\. 附录
-
-参考: [【STM32】江科大STM32学习笔记汇总](https://blog.csdn.net/u010249597/article/details/134762513)
-
-## 2-2  创建工程
+### 2-2  创建工程
 
 ### **新建工程**
 
@@ -436,7 +418,7 @@ keil5工程中添加以上文件
 
 ![image-20241002012249548](pic_win/image-20241002012249548.png)
 
-## 2-3 工程编译与下载
+### 2-3 工程编译与下载
 
 main.c
 
@@ -651,11 +633,11 @@ p-mos不起作用，输入1时，n-mos关闭，io电平不由单片机控制，�
 
 ![在这里插入图片描述](pic_win/23e5cbafdd27657e58e8ee1ef0c2032a.png)
 
-### 07\. 附录
 
-参考: [【STM32】江科大STM32学习笔记汇总](https://blog.csdn.net/u010249597/article/details/134762513)
 
-## 3-2GPIO相关API
+### 
+
+### 3-2GPIO相关API
 
 #### 3个时钟外设
 
@@ -830,7 +812,9 @@ GPIO_Init(GPIOA, GPIO_InitStructure);
 Delay_ms(500);
 ```
 
-## 3-3点灯
+### 
+
+### 3-3点灯
 
 ### 01\. GPIO之LED[电路图](https://so.csdn.net/so/search?q=%E7%94%B5%E8%B7%AF%E5%9B%BE&spm=1001.2101.3001.7020)
 
@@ -1095,19 +1079,14 @@ pStructName->z = 1.23;
 
 ```cobol
 struct c；
-
 //定义了一个结构体类型，名字叫c，这是不完整的，还需加一个附加声明{打包的变量}，如下
 
 struct {char x; int y; float z} c；
-
 //定义一个结构体变量，名字叫c，其中包含char型的x，int型的y和float型的z三个子项
 
 c.x = 'a';
-
 c.y = 66;
-
 c.z = 1.23;
-
 //结构体的引用，需写结构体名字c，然后用运算符取索引，索引是结构体子项的名字，如结构体名称.结构体子项
 ```
 
@@ -1117,45 +1096,28 @@ c.z = 1.23;
 
 ```cpp
 struct {char x; int y; float z} c；
-
 struct {char x; int y; float z} d；
-
 typedef struct {char x; int y; float z} struct_t;
-
 typedef struct {
-
 char x;
-
 int y;
-
 float z
-
 } struct_t;
 
 struct {
-
 char x;
-
 int y;
-
 float z
-
 }
 
 typedef struct {
-
 char x;
-
 int y;
-
 float z
-
 } struct_t;
 
 struct_t c；
-
 struct_t d；
-
 c.x = 'a';
 ```
 
@@ -1199,11 +1161,9 @@ EnumName = TRUE ； // EnumName = 1
 
 ```cobol
 int b[5]；
-
 //是定义了一个5个int型数据的数组，名字叫b
 
 b[0] = 11;
-
 //数组的引用是数组名b，加上方括号取索引；数组的第0个元素等于11
 
 b[1] = 66;
@@ -1211,7 +1171,7 @@ b[1] = 66;
 
 ![](pic_win/1c4c6366f8a29fda3a03585fd641b68d.png)
 
-## 3-5按键输入
+### 3-5按键输入
 
 ### 01\. 按键控制LED接线图
 
@@ -1578,7 +1538,7 @@ int main(void)
 
 ```
 
-## 4-1OLED调试工具
+## 4-1OLED显示屏
 
 TM32调试方式
 
@@ -1664,7 +1624,7 @@ LCD 都需要背光，而 OLED 不需要，因为它是自发光的。这样同�
 
 ![在这里插入图片描述](pic_win/eec34ecf7e85d5bd35ccad6aacd99da4.png)
 
-## 4-2OLED显示屏
+### 4-2OLED显示屏
 
 **目录**
 
@@ -1799,34 +1759,6 @@ ___
 
 
 ## 5-1EXIT外部中断
-
-**目录**
-
-[中断系统](https://blog.csdn.net/m0_61712829/article/details/132433502#t0)
-
-[中断执行流程](https://blog.csdn.net/m0_61712829/article/details/132433502#t1)
-
-[STM32中断](https://blog.csdn.net/m0_61712829/article/details/132433502#t2)
-
-[NVIC基本结构](https://blog.csdn.net/m0_61712829/article/details/132433502#t3)
-
-[NVIC优先级分组](https://blog.csdn.net/m0_61712829/article/details/132433502#t4)
-
-[EXTI简介](https://blog.csdn.net/m0_61712829/article/details/132433502#t5)
-
-[EXTI基本结构](https://blog.csdn.net/m0_61712829/article/details/132433502#t6)
-
-[AFIO复用IO口内部电路](https://blog.csdn.net/m0_61712829/article/details/132433502#t7)
-
-[EXTI内部电路框图](https://blog.csdn.net/m0_61712829/article/details/132433502#t8) 
-
-[EXTI外部中断的特性和使用场景](https://blog.csdn.net/m0_61712829/article/details/132433502#t9)
-
-[手册](https://blog.csdn.net/m0_61712829/article/details/132433502#t10)
-
-[补充](https://blog.csdn.net/m0_61712829/article/details/132433502#t11)
-
-[0\. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发\_stm32江协大 csdn-CSDN博客文章浏览阅读3.4k次，点赞47次，收藏143次。江协科技/江科大-STM32标准库开发-各章节详细笔记-传送门至各个章节笔记。基本上课程讲的每句都详细记录，方便回顾。\_stm32江协大 csdn![](pic_win/be19846480ab44ce477585fc567aeaa0.png)https://blog.csdn.net/m0\_61712829/article/details/132434192?spm=1001.2014.3001.5501](https://blog.csdn.net/m0_61712829/article/details/132434192?spm=1001.2014.3001.5501 "0. 江协科技/江科大-STM32入门教程-各章节详细笔记-查阅传送门-STM32标准库开发_stm32江协大 csdn-CSDN博客")
 
 中断系统是管理和执行中断的逻辑结构，[外部中断](https://so.csdn.net/so/search?q=%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD&spm=1001.2101.3001.7020)是众多能产生中断的外设之一，所以本节我们就借助外部中断来学习一下中断系统。在以后学习其它外设的时候，也是会经常和中断打交道的。
 
@@ -2000,7 +1932,7 @@ ___
 
  ![](pic_win/838d79ed384609196dcb40f11c9c58fa.png)表示20根线，代表20个通道
 
-## 5-2EXTI中断示例程序
+### **5-2EXTI中断示例程序**
 
 ### 常用API
 
@@ -2030,10 +1962,10 @@ void EXTI_StructInit(EXTI_InitTypeDef* EXTI_InitStruct);//给结构体赋一个�
 void EXTI_GenerateSWInterrupt(uint32_t EXTI_Line);//软件触发外部中断，EXTI_Line为指定中断线
 
 //产生中断时，状态寄存器某些标志位会置1
-//主程序中，查看标志位
+//主程序中，查看清除标志位
 FlagStatus EXTI_GetFlagStatus(uint32_t EXTI_Line);//获取指定标志位是否被置1
 void EXTI_ClearFlag(uint32_t EXTI_Line);//清除置1标志位
-//中断函数中，查看标志位
+//中断函数中，查看清除标志位
 ITStatus EXTI_GetITStatus(uint32_t EXTI_Line);//在中断函数中，查看标志位
 void EXTI_ClearITPendingBit(uint32_t EXTI_Line);//在中断函数中，清除中断挂起标志位
 ```
@@ -2092,7 +2024,7 @@ void EXTI15_10_IRQHandler(void)	//中断函数默认写法
 
 ___
 
-  3.霍尔传感器形式编码器，这种是直接附在电机后面的编码器，中间是一个圆形磁铁，边上有两个位置错开的活儿传感器，当磁铁旋转时，通过霍尔传感器就可以输出正交的方波信号，如下。
+  3.霍尔传感器形式编码器，这种是直接附在电机后面的编码器，中间是一个圆形磁铁，边上有两个位置错开的霍尔传感器，当磁铁旋转时，通过霍尔传感器就可以输出正交的方波信号，如下。
 
 ![](https://i-blog.csdnimg.cn/blog_migrate/91c7b4f557cae22d98eba5f769f03c1f.png)
 
@@ -2118,10 +2050,6 @@ ___
 
  ![](https://i-blog.csdnimg.cn/blog_migrate/abe4b6e723bb0895391ec3b09e1c1435.png)
 
-### 
-
-___
-
 ### 接线图
 
 对射式红外传感器
@@ -2134,368 +2062,4289 @@ ___
 
 ___
 
-### 程序-对射式红外传感器（+[代码注释](https://so.csdn.net/so/search?q=%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A&spm=1001.2101.3001.7020)）
+### 程序-对射式红外传感器
 
 当我们的挡光片或者编码盘在这个对射式红外传感器中间经过时，这个DO就会输出电平跳变的信号，然后这个电平跳变的信号触发STM32 PB14号口的中断，我们在中断函数里，执行变量++的程序，然后主循环里用OLED显示这个变量，这样第一个程序就完成了。
 
 main.c
 
 ```cpp
-#include "stm32f10x.h"
-
-#include "Delay.h"
-
+#include "stm32f10x.h"                  // Device header
+#include "delay.h"
 #include "OLED.h"
-
-#include "countsensor.h"
+#include "CountSensor.h"
 
 int main(void)
-
 {
+	OLED_Init();
+	CountSensor_Init();
+	OLED_ShowString(1,1,"Count:");//行  开始列  字符串
 
-countsensor_init();
-
-OLED_Init();
-
-OLED_ShowString(1,1,"Count:");
-
-while(1)
-
-{
-
-OLED_ShowNum(1,7,countsersor_get(),5);
-
-}
-
+	while(1)
+	{
+		OLED_ShowNum(1,7,CountSensor_Get(),5);
+	}
 }
 ```
 
 countsensor.c
 
 ```cobol
-#include "stm32f10x.h" // Device header
+#include "stm32f10x.h"                  // Device header
 
-uint16_t countsensor_count; //这个数字来统计中断触发的次数
+uint16_t CountSensor_Count = 0;
 
-//初始化函数，将模块要用的资源配置好
-
-void countsensor_init(void)
-
+void CountSensor_Init(void)
 {
-
-//第一步，时钟配置
-
-RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE); //开启RCC时钟
-
-RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE); //开启AFIO时钟
-
-//EXTI和NVIC两个外设的时钟是一直开的 ，NVIC内核外设都是不需要开启时钟
-
-//第二步，配置GPIO
-
-//首先定义结构体
-
-GPIO_InitTypeDef GPIO_initstruct; //结构体名字GPIO_initstruct
-
-//将结构体成员引出来
-
-//对于EXTI来说，模式为浮空输入|上拉输入|下拉输入；不知该写什么模式，可以看参考手册中的外设GPIO配置
-
-GPIO_initstruct.GPIO_Mode = GPIO_Mode_IPU;
-
-GPIO_initstruct.GPIO_Pin = GPIO_Pin_14;
-
-GPIO_initstruct.GPIO_Speed = GPIO_Speed_50MHz;
-
-//最后初始化GPIO
-
-GPIO_Init(GPIOB,&GPIO_initstruct); //传地址
-
-//第三步，配置AFIO外设中断引脚选择
-
-//AFIO的库函数是和GPIO在一个文件里，可以查看Library文件中的gpio.h查看函数
-
-GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource14);//代表连接PB14号口的第14个中断线路
-
-//第四步，配置EXTI,这样PB14的电平信号就能够通过EXTI通向下一级的NVIC了
-
-EXTI_InitTypeDef EXTI_InitStructure;//结构体类型名EXTI_InitTypeDef，变量名EXTI_InitStructure
-
-EXTI_InitStructure.EXTI_Line = EXTI_Line14;
-
-EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-
-EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;//因为上面是GPIO_Mode_IPU设置为高电平，所以触发中断是下降
-
-EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-
-EXTI_Init(&EXTI_InitStructure);
-
-//第五步，配置NVIC，NVIC是内核外设，所以它的库函数在misc.h
-
-NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //分组方式，整个芯片只能用一种。如放在模块中进行分组，要确保每个模块分组都选的是同一个；或者将这个代码放在主函数的最开始
-
-NVIC_InitTypeDef NVIC_InitStructure;
-
-NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
-
-NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;//因为我们这个程序只有一个，所以中断优先级的配置也是非常随意的
-
-NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
-
-NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-
-NVIC_Init(&NVIC_InitStructure);
-
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);//EXIT和NVIC不用配置时钟
+	
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//上拉输入
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource14);//配置AFIO，中断引脚选择B14
+	
+	EXTI_InitTypeDef EXTI_InitStructure;
+	EXTI_InitStructure.EXTI_Line = EXTI_Line14;//B14引脚映射EXTI_Line14线路
+	EXTI_InitStructure.EXTI_LineCmd = ENABLE;//开启线路
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;//中断模式
+	//EXTI_InitStructure.EXTI_Trigger= EXTI_Trigger_Falling; //下降沿触发
+	//EXTI_InitStructure.EXTI_Trigger= EXTI_Trigger_Rising; //上升沿触发
+	EXTI_InitStructure.EXTI_Trigger= EXTI_Trigger_Rising_Falling; //上升沿下降沿都触发
+	EXTI_Init(&EXTI_InitStructure);
+	
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//中断分组(两位抢占、两位响应)
+	NVIC_InitTypeDef NVIC_InitStructure;
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;//抢占优先级
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;//响应优先级
+	NVIC_Init(&NVIC_InitStructure);//NVIC初始化
 }
 
-uint16_t countsersor_get(void)
 
+uint16_t CountSensor_Get(void)
 {
-
-return countsensor_count;
-
+	return CountSensor_Count;
 }
 
-//中断函数，都是无参无返回值的，名字固定在startup文件向量表中
-
-//中断函数不需声明，它是自动执行的
-
-void EXTI15_10_IRQHandler(void)
-
+void EXTI15_10_IRQHandler(void)//中断函数不需要声明，自动调用
 {
-
-/*一般都是先进行一个中断标志位的判断，确保是我们想要的中断源触发的函数，因为这个函数EXTI10到
-
-EXTI15都能进来，所以要先判断一下是不是我们想要的EXTI14进来的*/
-
-if(EXTI_GetFlagStatus(EXTI_Line14) == SET)
-
-{
-
-countsensor_count++;
-
-//每次中断函数结束后，都应该清除一下中断标志位
-
-EXTI_ClearITPendingBit(EXTI_Line14);
-
+	//如果中断标志位置1，则申请中断
+	if (EXTI_GetFlagStatus(EXTI_Line14) == SET)//中断标志位判断，查看是否输入数据
+	{
+		CountSensor_Count++;
+		EXTI_ClearITPendingBit(EXTI_Line14);//清除中断标志位，防止一种申请中断卡死
+	}
 }
-
-}
-
-//写完模块之后最好编译一下，要不然代码提示可能显示不出我们新写的函数
 ```
 
 countsensor.h
 
 ```cpp
 #ifndef __COUNTSENSOR_H
+#define __COUNTSENSOT_H
 
-#define __COUNTSENSOR_H
+void CountSensor_Init(void);
+uint16_t CountSensor_Get(void);
 
-void countsensor_init(void);
+#endif 
+```
 
-uint16_t countsersor_get(void);
+### 程序-旋转编码器计次
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "delay.h"
+#include "OLED.h"
+#include "Encoder.h"
+
+int16_t Num;
+
+int main(void)
+{
+	OLED_Init();
+	Encode_Init();
+	OLED_ShowString(1,1,"Count:");//行  开始列  字符串
+
+	while(1)
+	{
+		Num += Encoder_Get();
+		OLED_ShowSignedNum(1,7,Num,5);
+	}
+}
+```
+
+CountSensor.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+int16_t Encoder_Count = 0;//带符号计数数据
+
+void Encode_Init(void)
+{
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);//EXIT和NVIC不用配置时钟
+	
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//上拉输入
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource0);//配置AFIO，中断引脚选择B0
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource1);//配置AFIO，中断引脚选择B1
+
+	EXTI_InitTypeDef EXTI_InitStructure;
+	EXTI_InitStructure.EXTI_Line = EXTI_Line0 | EXTI_Line1;//B0、1引脚映射EXTI_Line0、1线路
+	EXTI_InitStructure.EXTI_LineCmd = ENABLE;//开启线路
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;//中断模式
+	EXTI_InitStructure.EXTI_Trigger= EXTI_Trigger_Falling; //下降沿触发
+	//EXTI_InitStructure.EXTI_Trigger= EXTI_Trigger_Rising; //上升沿触发
+	//EXTI_InitStructure.EXTI_Trigger= EXTI_Trigger_Rising_Falling; //上升沿下降沿都触发
+	EXTI_Init(&EXTI_InitStructure);
+	
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//中断分组(两位抢占、两位响应)
+	
+	NVIC_InitTypeDef NVIC_InitStructure;	
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;//抢占优先级
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;//响应优先级
+	NVIC_Init(&NVIC_InitStructure);//NVIC初始化
+	
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI1_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;//抢占优先级
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;//响应优先级，相对于1后响应
+	NVIC_Init(&NVIC_InitStructure);//NVIC初始化
+}
+
+int16_t Encoder_Get(void)
+{
+	int16_t Temp;
+	Temp = Encoder_Count;
+	Encoder_Count =0;
+	return Temp;
+}
+
+void EXTI0_IRQHandler(void)	//默认中断函数名，在start/startup_stm32....里面寻找
+{
+	if(EXTI_GetFlagStatus(EXTI_Line0) == SET)//编码器A口出现下降沿，进入中断
+	{
+		if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_1) == 0)
+		{
+			Encoder_Count ++;//当编码器b口--B_pin1出现下降沿时，表示正转，计数+1
+		}
+		EXTI_ClearITPendingBit(EXTI_Line0);
+	}
+}
+
+
+void EXTI1_IRQHandler(void)	//默认中断函数
+{
+	if(EXTI_GetFlagStatus(EXTI_Line1) == SET)//编码器B口出现下降沿，进入中断
+	{
+		if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_0) == 0)
+		{
+			Encoder_Count --;//当编码器A口--B_pin0出现下降沿时，表示反转，计数-1
+		}
+		EXTI_ClearITPendingBit(EXTI_Line1);
+	}
+}
+```
+
+CountSensor.h
+
+```c
+#ifndef __ENCODER_H
+#define __ENCODER_H
+
+void Encode_Init(void);
+int16_t Encoder_Get(void);
 
 #endif
 ```
 
-### 程序-旋转编码器计次（+代码注释）
+中断函数注意事项：
 
-main.c
+不要在中断里面用延时函数，会出现严重阻塞
 
-```cpp
-#include "stm32f10x.h"
+在主函数和中断中，不要调用相同硬件，可能会出现数据割裂
+
+## 6-1定时中断
+
+定时器共四个部分，分为八个小节笔记。本小节为第一部分第一节。
+
+在第一部分，是定时器的基本定时的功能：定时中断功能、内外时钟源选择
+
+在第二部分，是定时器的输出比较功能，最常见的用途是产生PWM波形，用于驱动电机等设备
+
+在第三部分，是定时器的输入捕获功能和主从触发模式，来实现测量方波频率
+
+在第四部分，是定时器的编码器接口，能够更加方便读取正交编码器的输出波形，编码电机测速
+
+___
+
+### TIM简介
+
+TIM（Timer）定时器，定时触发中断
+
+**定时器本质上就是一个计数器**   
+
+定时器可以对输入的时钟进行计数（在stm32中定时器的基准时钟一般是主频72MHz，如果对72MHz记72个数，那就是1MHz也就是1us的时间（72MHz就是1秒记72M个数，可以理解为对72个数计数1M次（1x10^6），记72个数的频率就是1MHz，用时1us）），如果记72000个数，那就是1KHz也就是1ms的时间，并在计数值达到设定值时触发中断
+
+stm32的定时器拥有**16位（2的16次方是65536）**的**计数器**（计数器就是用来执行计数定时的寄存器，每来一个时钟，计数器加1）、**预分频器**（可以对计数器的时钟进行分频，让计数更加灵活）、**自动重装寄存器**（是计数的目标值，计多少个时钟申请中断）的时基单元，在72MHz计数时钟下可以实现最大59.65s的定时。
+
+预分频值（PSC）、自动重装载值（ARR）。
+
+**定时器的计数频率 = 时钟频率 / （PSC + 1）**
+
+**最大定时时间 = （ARR + 1）/ 定时器的计数频率**
+
+**即，最大定时时间 = (ARR + 1) \* (PSC + 1) / 时钟频率**
+
+不仅具备基本的定时中断功能，而且还包含内外时钟源选择、输入捕获、输出比较、编码器接口、主从触发模式等多种功能
+
+根据复杂度和应用场景分为了高级定时器、通用定时器、基本定时器三种类型
+
+___
+
+### 定时器类型
+
+<table><tbody><tr><td><p>类型</p></td><td><p>编号</p></td><td><p><strong>总线</strong></p></td><td><p>功能</p></td></tr><tr><td><p>高级定时器</p></td><td><p>TIM1、TIM8</p></td><td><p>APB2</p></td><td><p>拥有通用定时器全部功能，并额外具有重复计数器、死区生成、</p><p>互补输出、刹车输入等功能</p></td></tr><tr><td><p>通用定时器</p></td><td><p>TIM2、TIM3、TIM4、TIM5</p></td><td><p>APB1</p></td><td><p>拥有基本定时器全部功能，并额外具有内外时钟源选择、输入捕获、</p><p>输出比较、编码器接口、主从触发模式等功能</p></td></tr><tr><td><p>基本定时器</p></td><td><p>TIM6、TIM7</p></td><td><p>APB1</p></td><td><p>拥有定时中断、主模式触发DAC的功能</p></td></tr></tbody></table>
+
+除了TIM1-8，在库函数中还出现了TIM9、10、11等（这些一般都用不到）
+
+高级定时器额外具有的重复计数器、死区生成、互补输出、刹车输入等，这些功能主要是为了三相无刷电机的驱动设计的
+
+STM32F103C8T6定时器资源：TIM1、TIM2、TIM3、TIM4；不同的型号，定时器的数量是不同的
+
+___
+
+### 基本定时器
+
+理解时基单元的工作流程（定时器产生中断的全部流程）、主模式触发DAC的功能，如下内容：
+
+#### 1.基本定时器时基单元
+
+<img src="pic_win/87ab9ddce3bbe9abd02b4c9659327523.png" style="zoom:200%;" />
+
+下面这三个构成了最基本的计数计时电路，所以这一块电路就叫做时基单元
+
+时基单元：预分配器（PSC）、自动重装载寄存器（ARR）、计数器（CNT）
+
+![](pic_win/070770954a92e3aecacc84bd878d6b86.png)
+
+#### **2.时基单元的工作流程** 
+
+内部时钟的来源是RCC\_TIMxCLK，频率值是系统的主频72MHz，所以通向时基单元的计数基准频率就是72MHz
+
+进入时基单元首先是**预分频器（PSC）**，它可以对72MHz的计数时钟进行预分频（比如，预分频器写0就是不分频输出72MHz，写1是进行二分频输出36MHz，写2是三分频输出24MHz  ..，所以**预分频的值和实际的分频系数相差1**，即，**实际分频系数=预分频器的值+1**），预分频器是16位的，最大值可以写65535，也就是最大65536分频。
+
+然后是**计数器**，**对预分频后的计数时钟进行计数**，计数时钟每来一个上升沿，计数器的值加1，这个计数器的值也是16位的，值可以从0一直加到65535，如果再加的话，计数器就会回到0重新开始。所以计数器的值在计时过程中会不断地自增运行，当自增运行到目标值时，产生中断，那就完成了定时的任务，所以还需一个存储目标值的寄存器，那就是自动重装载寄存器了
+
+**自动重装寄存器**也是16位的，**它存的是我们写入的计数目标**，在运行的过程中，计数值不断自增，自动重装载是固定的目标，当计数值等于自动重装值时，也就是计时时间到了，那它就会产生一个中断信号，并且清零计数器，计数器自动开始下一次的计数计时。像这种计数值等于自动重装值产生的中断，叫做“**更新中断**”，这个更新中断之后就会通向NVIC，我们再配置好NVIC的定时器通道，那定时器的更新中断就能够得到CPU的响应。
+
+**总结定时器产生中断的全部流程**：从基准时钟到预分频器再到计数器，计数器计数自增，同时不断地与自动重装寄存器进行比较，值相等时，即计时时间到，这时就会产生一个更新中断和更新事件，CPU响应更新中断，就完成了我们定时中断的任务了。
+
+> 下图红圈，是一个向上的折线箭头，就代表这里会产生中断信号，像这种计数值等于自动重装值产生的中断，叫做“**更新中断**”。
+>
+> ![](pic_win/3f24364068d7f132f101759dc9a85825.png)
+>
+> 下图红圈，是一个向下的折线箭头，代表的是产生一个事件，这里对应的事件就叫做“**更新事件**”，更新事件不会触发中断，但可以触发内部其它电路的工作。
+>
+> ![](pic_win/5b4e2d22c4ce3d1f09f944b46628e8e7.png)
+
+以上就是定时中断和时基单元的工作流程。
+
+#### 3.**主模式触发DAC的功能**
+
+下面，简单介绍一下（后续讲），**主模式触发DAC的功能**，stm32定时器的一大特色就是主从触发模式（主从触发模式能让内部的硬件在不受程序的控制下实现自动运行），如果能把主从触发模式掌握好，那在某些情景下将会极大地减轻CPU的负担。
+
+主模式触发DAC的作用就是，在我们使用DAC的时候，可能会用DAC输出一段波形，那就需要每隔一段时间来触发一次DAC，让它输出下一个电压点。如果用正常的思路来实现的话，就是先设置一个定时器产生中断，每隔一段时间在中断程序中调用代码手动触发一次DAC转换，然后DAC输出，这样会使主程序处于频繁被中断的状态，这会影响主程序的运行和其他中断的响应，**所以定时器就设计了一个主模式**，使用这个主模式可以把定时器的更新事件映射到**触发输出TRGO**（Trigger Out）的位置，然后TRGO直接接到DAC的触发转换引脚上，这样，定时器的更新就不需要再通过中断来触发DAC转换了，**仅需要把更新事件通过主模式映射到TRGO，然后TRGO就会直接区触发DAC**，整个过程不需要软件的参与，实现了硬件自动化，这就是主模式的作用，当然除了主模式外，还有更多硬件自动化的设计（后续讲）
+
+![](pic_win/980f1fb65aeb080c42fcab0bc00e8076.png)
+
+ 以上，就是基本定时器的内容
+
+___
+
+### 通用定时器
+
+#### 1.通用定时器与基本定时器异同
+
+ 首先，中间最核心的部分，还是时基单元，如下，这部分结构和工作流程和基本定时器是一样的，不过对于通用定时器而言，计数器的计数模式就不止向上计数一种了（向上自增），**通用定时器和高级定时器支持向上计数模式、向下计数模式和中央对齐模式**。（基本定时器仅支持向上计数模式）。最常用的还是向上计数模式。
+
+\* 向下计数模式就是从重装值开始，向下自减，减到0之后，回到重装值同时申请中断，然后继续下一轮，依次循环
+
+\* 中央对齐模式就是从0开始，先向上自增，计到重装值，申请中断，然后再向下自减，减到0，再申请中断，然后继续下一轮，依次循环
+
+<img src="pic_win/image-20241030152919782.png" alt="image-20241030152919782" style="zoom:200%;" />
+
+####  2.内外时钟源选择功能
+
+ \* 如下，是内外时钟源选择和主从触发模式的结构。
+
+![](pic_win/fa30ed6709d64b6ebdafa989394e7481.png)
+
+\* 内外时钟源选择：对于基本定时器，定时只能选择内部时钟，也就是系统频率72MHz；对于通用定时器，时钟源可以选择内部时钟或者外部时钟
+
+外部时钟的选择有如下四种：
+
+\* **第一个外部时钟就是来自TIMx\_ETR引脚上的外部时钟**，可以在TIM2的ETR引脚也就是PA0上接一个外部方波时钟，然后配置一下内部的极性选择、边沿检测和预分频器电路，再配置一下输入滤波电路，这两块电路可以对外部时钟进行一定的整形（因为是外部时钟，所以难免会有毛刺，这些电路就可以对输入的波形进行滤波），同时也可以选择一下极性和预分频器，最后滤波后的信号，兵分两路，上面一路ETRF进入触发控制器，紧跟着就可以选择作为时基单元的时钟了，在stm32中，这一路也叫做‘外部时钟模式2’（如图中红线）；另一路与其他信号通过一个数据选择器输出TRGI（Trigger In，触发输入），当这个TRGI当作外部时钟来使用时，这一路就称为 外部时钟模式1（如图中黄线所示）。后者从名字上看，它主要是作为触发输入来使用的，这个触发输入可以触发定时器的从模式。关于从模式的内容之后再涉及，本节主要考量把这个触发输入当作外部时钟来考虑的情况。
+
+![](pic_win/09fc212ebe921c516f5477914fbd3fd2.png)
+
+TIMx\_ETR引脚的位置可以参考引脚定义表中关于默认复用功能和重定义功能的定义，如下图所示。可以看到TIM2的CH1和ETR都复用在了引脚PA0上。其他定时器的引脚也可以在表中找到。
+
+![](pic_win/bb15b467bde99865dfcdc51f6bed8af5.png)
+
+**\* 第二个外部时钟可以是来自其他定时器的信号ITR** 
+
+![](pic_win/0337533f25acf7dda7cc2fab93e99433.png)
+
+主模式的输出TRGO可以通向其他定时器，实际上通向的就是ITR引脚，通过这一路就可以实现定时器级联的功能。如上如黄线所示，ITR0到ITR3分别来自其他4个定时器的TRGO输出，具体的连接方式如下表所示，这就是ITR和定时器的连接关系。实现定时器级联功能例如，可以先初始化TIM3，然后使用主模式把它的更新事件映射到TRGO上，接着再初始化TIM2，选择ITR2对应的就是TIM3的TRGO，然后后面再选择时钟为外部时钟模式1，这样TIM3的更新事件就可以驱动TIM2的时基单元，也就是实现了定时器的级联
+
+![](pic_win/1182aea95e99b2138d0497bdefa6729f.png)
+
+ \* **第三个外部时钟可来自TIMx\_CH1的TI1\_ED**，CH1引脚的边沿，即从CH1引脚连接的输入捕获模块获得时钟，ED意为Edge，意为通过这一路的时钟，上升沿和下降沿均有效。
+
+\* **第四个外部时钟可来自TIMx\_CH1的TI1FP1和来自TIMx\_CH2的TI2FP2**
+
+>   总结一下，外部时钟模式1的输入可以是ETR引脚、其他定时器、CH1引脚的边沿、CH1引脚和CH2引脚；外部时钟模式2的输入只能是ETR引脚。
+>
+>  如果要使用外部时钟，首选ETR引脚外部时钟模式2的输入，这一路最简单最直接
+
+ 以上就是有关时钟输入的部分
+
+#### 3\. 编码器接口功能
+
+图中的编码器接口，它可以读取正交编码器的输出模型，后续的课程也会讲到。
+
+![](pic_win/e419052f7ec74adb2b83971882496d4c.png)
+
+#### 4.主从触发模式功能
+
+图中的TRGO与基本定时器类似，它可以将定时器内部的一些事件映射到其他电路，从而完成其他电路的功能。 
+
+![](pic_win/d40484f3f62a44f522076829090eee56.png)
+
+#### 5.输出比较功能
+
+通用定时器结构图的右下角即为定时器的输出比较功能的结构，如下图所示。有四个输出通道，分别对应CH1到CH4的引脚，可以用来**输出PWM波形，驱动电机。**  
+![](pic_win/53ff6f05ea481a60e064593adb0ec3f5.png)
+
+#### 6.输入捕获电路
+
+ 通用定时器的左下角即为输入捕获电路的结构图，它同输出比较功能一样有四个通道，对应CH1到CH4。可以用于测量输入方波的频率。因为输入捕获和输出比较不能同时使用，故中间的捕获/比较寄存器是输入捕获和输出比较电路共用的，CH1到CH4的引脚也是共用的。
+
+![](pic_win/f089134daece61c0ff518f16d1252e38.png)
+
+___
+
+### 高级定时器
+
+**高级定时器拥有通用定时器全部功能，并额外具有重复计数器、死区生成、互补输出、刹车输入等功能**。高级定时器结构框图如下图所示：
+
+<img src="pic_win/image-20241030153006770.png" alt="image-20241030153006770" style="zoom:200%;" />
+
+ ![](pic_win/5f1fe6ea6c303675ddbbf180bd5d3bd7.png)
+
+ 高级定时器的大部分结构和通用定时器相同，只在部分作了功能拓展。相比于通用定时器，拓展了框图右边红圈的内容。
+
+<img src="pic_win/13290449ce864e844e21e3615680b569.png" style="zoom:200%;" />
+
+#### 1.重复次数计数器
+
+
+ 在申请中断的的信号输出处，增加了一个重复次数计数器，它的作用是：可以实现每隔几个计数周期，才发生一次更新事件和中断。原来的结构是每个计数周期完成后就都会发生更新，现在这个计数器实现每隔几个周期再更新一次，相当于对输出的更新信号又作了一次分频。（对于高级定时器，我们之前计算的最大定时时间59秒多，在这里就还需要再乘一个65536，也就是提升了很多的定时时间）
+
+<img src="pic_win/13ee4e7f88f620f7664c20ccf5f4cca4.png" style="zoom:150%;" />
+
+ 下面部分，是高级定时器对输出比较模块的升级了，暂时了解即可
+
+#### 2.死区生成电路与三相无刷电机
+
+
+  图中的DTG和DTG寄存器组成死区生成电路，右侧的引脚TIMx\_CH1/CH2/CH3由原来的每路一个变成了两个互补的输出引脚（TIMx\_CH1/CH2/CH3和TIMx\_CH1N/CH2N/CH3N），**可以输出一对互补的PWM波**。**这些电路是为了驱动三相无刷电机设计的**。在四轴飞行器、电动车后轮、电钻中都可以发现三相无刷电机。三相无刷电机的驱动电路需要三个桥臂，每个桥臂需要2个大功率开关管来控制，总共需要6个大功率开关管控制。所以输出的PWM引脚的前三路就变为了互补的输出引脚，而第四路TIMx\_CH4没有变化。三相电机只需要三路。  
+  为了防止互补输出的PWM驱动桥臂时，在开关切换的瞬间，由于器件的不理想，造成短暂的直通现象，**故添加了死区生成电路**。在开关切换的瞬间，产生一定时长的死区，让桥臂的上下管全部关断，防止出现直通现象。
+
+#### 3.刹车输入
+
+
+  **刹车输入的主要作用是给电机驱动提供安全保障。**如果外部引脚BKIN（Break In）产生了刹车信号，或者内部时钟失效，产生了故障，控制电路就会自动切断电机的输出，防止意外的发生。  
+
+
+___
+
+### 定时中断基本结构
+
+定时中断的基本结构如下图所示：
+
+<img src="pic_win/e643ea5a1fe516f320b22539019d4da4.png" style="zoom:200%;" />
+
+​     在定时器中最核心的部分是**时基单元**。图中的“**运行控制**”就是控制寄存器的一些位，用来启动或停止计数器，配置向上向下计数方式等，操作这些寄存器就能**控制时基单元的运行了**。时基单元左边关于时钟源选择的部分，在上文都有详细的叙述，这里不再赘述。  
+
+  计时时间到后，产生的中断信号会先在状态寄存器中置一个中断标志位，这个标志位会通过**中断输出控制**，到NVIC申请中断。这个中断输出控制存在的原因是：定时器模块有很多地方都要申请中断，如果需要该中断，就允许输出；如果不需要这个中断，就禁止输出。简单来说，**中断输出控制就是中断输出的允许位**。
+
+___
+
+### 时基单元运行时序举例
+
+_STM32中，关于时序运行的内容很多，具体请见手册的详细讨论，这里仅举一些时基单元的例子作简要分析。_
+
+#### 1.缓冲（影子）寄存器
+
+结构图中如下红圈中，带黑色阴影的寄存器，都是有影子寄存器这样的缓冲机制，包括预分频器，自动重装载寄存器和捕获比较寄存器；这个缓冲寄存器是用还是不用，是可以自己设置的。
+
+STM32在设计之初，为了保证能适用于多种多样的情况，故**对时序运行过程中突然手动更改寄存器对时序的影响作了严谨的设计**。这里引入缓冲（影子）寄存器，**主要目的就是同步**，即可以让寄存器设定的某些目标值的变化和更新事件同时发生，防止在运行途中更改造成错误。在定时器结构图中，有些寄存器的画法采用了方框下加阴影的方式，就说明该寄存器不是只有一个寄存器，而是有两个寄存器来形成缓冲机制。实际上，**真正使时序电路状态发生更改的都是影子寄存器**。
+
+<img src="pic_win/2e575ba2c11546199167801394b1ec7d.png" style="zoom:200%;" />
+
+#### 2.预分频器时序分析
+
+​    下图描述了当预分频器的分频系数从1变为2时，计数器的时序图。第一行是CK\_PSC是预分频器的输入时钟，这个时钟在不断运行；下面的CNT\_EN是计数器使能，高电平计数器正常运行，低电平计数器停止，再下面是CK\_CNT是计数器时钟既是预分频器的时钟输出也是计数器的时钟输入。开始时，计数器未使能，计数器时钟不运行；**然后使能后，前半段**，当计数器使能信号CNT\_EN变为高电平后的下一个CK\_PSC的高电平，定时器时钟CK\_CNT接收CK\_PSC。且**此时预分频器的分频系数为1**，PSC = 0，预分频器完成一分频，计数器时钟等于预分频前的时钟，即，**CK\_PSC = CK\_CNT；后半段，预分频系数变为2，计数器时钟变为预分频前时钟的一半。**  
+
+  在计数器时钟的驱动下，下面的**计数器寄存器也跟随时钟的上升沿不断自增**；当计数器寄存器的值依次递增达到0xFC后立即跳变为0x00，说明重装载寄存器ARR设计的**目标计数值就是0xFC**，此时电路产生一个更新事件脉冲信号UEV，并产生中断信号，计数值清0。这就是一个计数周期的工作流程。
+
+​    然后是最下面的三行时序，描述的是预分频寄存器的一种缓冲机制，也就是这个预分频寄存器实际上是有两个：一个是**倒数第三行的预分频控制寄存器，供读写用并不直接决定分频系数**；另一个是**倒数第二行的预分频缓冲寄存器（影子寄存器）**，**才是真正起作用的寄存器**，  
+
+  在更新事件信号之前在TIMx\_PSC中写入新数值，将预分频器的分频系数从1改为2，但是由于缓冲寄存器的存在，CK\_CNT不会立即变为CK\_PSC / 2，而是**在下一次更新中断产生的同时**，由**预分频缓冲器（影子寄存器）修改分频系数为2**，PSC = 1。  
+  由预分频计数器时序可以看到，预分频的分频功能实际上也是通过计数器来实现的。当分频系数**变为2后**，预分频计数器**按0、1、0、1依次计数**，每当预分频计数器**回到0时**，预分频器输出信号，**CN\_CNT输出一个脉冲**。
+
+![](pic_win/cdfee62ee2769901b7896ddec58c434c.png)
+
+>  **计数器计数频率：CK\_CNT = CK\_PSC / (PSC + 1)**
+
+#### 3.计数器时序分析
+
+1.计数器工作时序图如下。
+
+![](pic_win/1e428274b127f66d2caca42d426daf0a.png)
+
+​    内部分频因子为2，就是分频系数为2。第一行是内部时钟72MHz，第二行是时钟使能，高电平启动，第三行是计数器时钟，因为分频系数为2，所以这个频率是上面CK\_INT除2，然后计数器在这个时钟每个上升沿自增，当增到0036时发生溢出，之后再来一个上升沿，计数器清零，产生一个更新事件脉冲，另外还会置一个更新中断标志位UIF，标志位UIF只要置1就会去申请中断，然后中断响应后，需要在中断程序中手动清零，**以上就是计数器的工作流程**。
+
+> **计数器溢出频率：CK\_CNT\_OV = CK\_CNT / (ARR + 1) =** CK\_PSC / (PSC + 1) / (ARR + 1)
+>
+> **计数器溢出时间：1/计数器溢出频率**
+
+2\. 计数器无预装时序图（缓冲机制失效 APRE = 0）
+
+计数器无预装时序就是没有缓冲寄存器的情况。
+
+在计数器正在进行自增计数，突然更改了自动加载寄存器，就是自动重装载寄存器由FF改成了36，即计数值的目标值就由FF变成了36，所以计数器寄存器计到36之后，就直接更新，开始下一轮计数。
+
+![](pic_win/d1f920f9bd07337c328232d63094be3c.png)
+
+3.计数器有预装时序（缓冲机制有效 APRE = 1）
+
+计数器有预装时序就是有缓冲寄存器的情况。
+
+通过设置ARPE位，就可以选择是否使用预装功能。
+
+在有预装的情况下，在计数中途，若突然将自动加载寄存器计数目标由F5改成了36，下面影子寄存器才是真正起作用的，它还是F5，所以现在计数的目标还是计到F5，产生更新事件，同时，要更改的36才被传递到影子寄存器，**在下一个计数周期这个更改的36才有效（类似10086，本月更改，下月生效）**，所以引入影子寄存器的目的实际上是为了同步，就是让值的变化和更新事件同步发生，防止在运行途中更改造成错误。
+
+在上面这个例子中，**若不用影子寄存器的话**，更改TIMx\_ARR寄存器的值有一种不严谨情况：当**F5改到36立即生效**，但此时计数器已经到了F1，已经超过36了，F1只能增加，但它的**目标值却是36比F1小**，此时计数器寄存器的值只能递增，故该**寄存器会一直递增到最大值0xFFFF**之后回到0x0000，再依次递增，**再加到36，才能产生更新**。这里就可以看出，如果不使用缓冲机制，可能会给电路时序的工作造成一些问题。
+
+![](pic_win/b150647fd875ea686a35880ad94bf1ee.png)
+
+####  4.RCC时钟树简介
+
+ RCC时钟树：**在STM32中用来产生和配置时钟**，**并且把配置好的各个外设都发射到各个外设的系统**。 时钟是所有外设运行的基础，所以时钟是最先配置的东西。在程序执行时，在执行主程序之前还会执行一个SystemInit函数，这个函数的作用就是配置RCC时钟树。
+
+​    RCC时钟树可以分为左右两部分：时钟产生电路（左）和时钟分配电路（右）。中间的SYSCLK就是系统时钟72MHz。
+
+![](pic_win/f50d89a044f441a41f21695f3b6eb903.png)  
+  RCC时钟树可以分为左右两部分：时钟产生电路（左）和时钟分配电路（右）。
+
+> 1.时钟产生电路  
+>   在时钟产生电路，有四个振荡源，分别是内部的8MHz**高速**RC振荡器、外部的4-16MHz**高速**晶振振荡器（也就是晶振，一般都外接8MHz）、外部的32.768kHz低速晶振振荡器（一般给RTC提供时钟）、内部的40kHz低速RC振荡器（给看门狗WDG提供时钟）。上面的连个该高速晶振是用来提供系统时钟的，AHB\\APB2\\APB1的时钟都是来源于这两个高速晶振。内部和外部都有一个8MHz的晶振，只不过外部的石英振荡器比内部的RC振荡器更加稳定，**所以一般都用外部晶振。如果系统非常简单，且不需要过于精确的时钟**，**就可以使用内部的RC振荡器**，这样可以省下外部的晶振电路。  
+>   在SystemInit函数中是这样来配置时钟的：首先会启动内部的8MHz高速RC振荡器产生时钟，选择该时钟为系统时钟，暂时以8MHz的内部时钟运行；然后再启动外部时钟，配置外部时钟信号流经如下图所示的电路：
+>
+> 外部晶振信号进入PLLMUL锁相环进行倍频，8MHz倍频9倍，得到72MHz，待锁相环输出稳定后，选择锁相环输出为系统时钟。这样就把系统时钟从8MHz切换为了72MHz，以上就是配置的过程。  
+> ![](pic_win/d39e12d5dec40ba1f6bc1882f78078d9.png)
+>
+>   **这样分析可以解决一个问题**：如果外部晶振出问题，可能会出现**程序时钟慢大概10倍的现象**。如果外部时钟的硬件电路有问题（晶振短路或连接错误等），系统的时钟就无法切换到72MHz，会保持内部的8MHz运行。8M相比于72M大概就慢了10倍。  
+>   图中的CSS称为时钟安全系统，它同样负责切换时钟。CSS可以检测时钟的运行状态，一旦外部时钟失效，它就会自动把外部时钟切换为内部时钟，从而保证程序可以正常运行，不会卡死造成事故。另外在高级定时器的刹车输入功能中，一旦CSS检测到外部时钟失效，通过或门就会立刻反应到输出控制器，让输出控制的电机立刻停止，防止意外。（即切断输出控制引脚，切断电机输出，防止发生意外。）
+>
+> ___
+>
+> 2.时钟分配电路  
+>   首先系统时钟72MHz进入AHB总线，在AHB总线上有一个预分频器，在SystemInit函数配置的默认分频系数为1，所以AHB总线的时钟自然是72MHz。  
+>   之后信号进入APB1总线，APB1上同样有预分频器，这里SystemInit默认配置的分频系数为2，输出为36MHz，所以APB1总线的时钟为36MHz。通用定时器和基本定时器是接在APB1上的，但是APB1（APB2同理）连接定时器还有如图所示的以下结构：
+>
+> ![](pic_win/3a077dcd6989028cc98a5cee016e7ecb.png)
+>
+>  通用定时器和基本定时器通过图中APB1下方的支路与APB1连接。由于APB1的预分频系数默认为2，则输出到定时器的时钟频率×2。APB2的预分频器的分频系数默认配置为1，其他流程与APB1同理。**所以基本定时器，通用定时器，高级定时器的内部基准时钟都是72MHz**，这样设计为我们使用定时器带来了方便，不用考虑不同定时器时钟不同的问题了（前提是不乱修改SystemInit函数中的默认配置）。  
+>
+>   在时钟输出端口，都有一个与门进行时钟输出控制。控制端外部时钟使能就是程序中 RCC\_APB2/1 PeriphClockCmd 函数作用的地方。打开时钟就是写1进行按位与。
+>
+> 注意：（实际）预分频系数=预分频器的值+1
+
+### 参考手册
+
+继续深入学习，可查阅参考手册
+
+![](pic_win/4e02d8aafdcc4d2049e6fb7fbf1092ef.png)
+
+### 
+
+### **6-2定时器中断实例程序**
+
+>  知识点get：
+>
+>  滤波器工作原理：可以滤掉信号的抖动干扰。在一个固定的时钟频率f下进行采样，如果连续N个采样点都为相同的电平，那就代表输入信号稳定了，就把这个采样值输出出去；如果这N个采样值不全都相同，那就说明信号有抖动，这时就保持上一次的输出，或者直接输出低电平也行，这样就能保证输出信号在一定程度上的滤波；这里的采样频率f和采样点数N都是滤波器的参数，频率越低，采样点数越多，滤波效果越好，不过相应的信号延迟就越大；采样频率f由内部时钟直接而来，也可以是由内部时钟加一个时钟分频而来，这个分频多少是由参数ClockDivision决定的，这个参数其实跟时基单元关系并不大，它的可选值可以选择1分频（也就是不分频），2分频和4分频。
+
+___
+
+### 定时中断和时钟源选择相关[库函数](https://so.csdn.net/so/search?q=%E5%BA%93%E5%87%BD%E6%95%B0&spm=1001.2101.3001.7020)使用
+
+定时器相关的库函数非常多，本节仅对将要使用的库函数和 **亿些使用细节** 进行说明（_即使这样也还是很多_）。
+
+定时中断基本结构如下，**便于理解下面的库函数及程序流程**。
+
+<img src="pic_win/d618e7d5b3c2f4fab800637b7dc34004.png" style="zoom:200%;" />
+
+ 定时器[初始化](https://so.csdn.net/so/search?q=%E5%88%9D%E5%A7%8B%E5%8C%96&spm=1001.2101.3001.7020)步骤如下，对应定时中断结构图
+
+第一步，RCC开启时钟，定时器的基准时钟和整个外设的工作时钟就都打开了  
+第二步，选择时基单元的时钟源，对于定时中断就选择内部时钟源  
+第三步，配置时基单元，包括预分频器、自动重装载器、计数模式等，参数用结构体配置  
+第四步，配置输出中断控制，允许更新中断输出到NVIC  
+第五步，配置NVIC，在NVIC中打开[定时器中断](https://so.csdn.net/so/search?q=%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%AD%E6%96%AD&spm=1001.2101.3001.7020)通道并分配一个优先级  
+第六步，运行控制，使能计数器，当定时器使能后，计数器就开始计数了，当计数器更新时，触发中断  
+最后再写一个中断函数，中断函数每隔一段时间就能自动执行一次
+
+___
+
+#### 1.定时器TIM的库函数
+
+tim.h
+
+-   **基本配置、时基单元、中断输出控制、NVIC、运行控制函数**
+
+```c
+// 恢复定时器缺省配置
+void TIM_DeInit(TIM_TypeDef* TIMx);
+
+// 时基单元初始化(选择时钟，时钟初始化结构体)
+void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseInitStruct);
+
+// 把时基单元初始化函数所用的结构体变量赋一个默认值
+void TIM_TimeBaseStructInit(TIM_TimeBaseInitTypeDef* TIM_TimeBaseInitStruct);
+
+// 使能计数器（对应定时中断结构图中的“运行控制”功能） ，（定时器，使能或失能）
+void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState);
+
+// 使能中断输出信号（对应定时中断结构图中的“中断输出控制”功能），（定时器，配置哪个中断输出，使能或失能）
+void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState);
+```
+
+-   **时钟源选择函数**
+
+```c
+//选择内部时钟
+//TIMx: 指向TIM定时器组的指针，例如TIM1, TIM2等。
+void TIM_InternalClockConfig(TIM_TypeDef* TIMx);
+
+//选择ITRx其它定时器时钟（时钟模式，）
+//TIMx: 指向TIM定时器组的指针，例如TIM1, TIM2等。
+//TIM_InputTriggerSource: 选择输入触发源，可以是TIM_TS_ITR0至TIM_TS_ITR3之一，代表不同的内部触发输入。
+void TIM_ITRxExternalClockConfig(TIM_TypeDef* TIMx, uint16_t TIM_InputTriggerSource);
+
+//选择TIx捕获通道时钟，对于外部引脚的波形一般都会有极性选择和滤波器
+//TIMx: 指向TIM定时器组的指针，例如TIM1, TIM2等。
+//TIM_TIxExternalCLKSource: 选择TIx作为外部时钟源，可以是TIM_TIxExternalCLK1或TIM_TIxExternalCLK2等。
+//TIM_ICPolarity: 输入捕获极性，可以是TIM_ICPolarity_Rising或TIM_ICPolarity_Falling。
+//ICFilter: 输入捕获滤波器值，范围从0到0xF。
+void TIM_TIxExternalClockConfig(TIM_TypeDef* TIMx, uint16_t TIM_TIxExternalCLKSource,
+uint16_t TIM_ICPolarity, uint16_t ICFilter);
+
+//选择ETR通过外部时钟模式1输入的时钟
+//TIMx: 指向TIM定时器组的指针，例如TIM1, TIM2等。
+//TIM_ExtTRGPrescaler: 外部触发预分频器，可以是TIM_ExtTRGPSC_OFF, TIM_ExtTRGPSC_DIV2等。
+//TIM_ExtTRGPolarity: 外部触发极性，可以是TIM_ExtTRGPolarity_Inverted或TIM_ExtTRGPolarity_NonInverted。
+//ExtTRGFilter: 外部触发滤波器值，范围从0到0xF。
+void TIM_ETRClockMode1Config(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler, uint16_t TIM_ExtTRGPolarity,
+uint16_t ExtTRGFilter);
+
+//选择ETR通过外部时钟模式2输入的时钟，如果不需触发输入功能本函数可与上面函数互换
+//TIMx: 指向TIM定时器组的指针，例如TIM1, TIM2等。
+//TIM_ExtTRGPrescaler: 外部触发预分频器，可以是TIM_ExtTRGPSC_OFF, TIM_ExtTRGPSC_DIV2等。
+//TIM_ExtTRGPolarity: 外部触发极性，可以是TIM_ExtTRGPolarity_Inverted或TIM_ExtTRGPolarity_NonInverted。
+//ExtTRGFilter: 外部触发滤波器值，范围从0到0xF。
+void TIM_ETRClockMode2Config(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler,
+uint16_t TIM_ExtTRGPolarity, uint16_t ExtTRGFilter);
+
+//单独用来配置ETR引脚的预分频器、极性、滤波器这些参数
+//TIMx: 指向TIM定时器组的指针，例如TIM1, TIM2等。
+//TIM_ExtTRGPrescaler: 外部触发预分频器，可以是TIM_ExtTRGPSC_OFF, TIM_ExtTRGPSC_DIV2等。
+//TIM_ExtTRGPolarity: 外部触发极性，可以是TIM_ExtTRGPolarity_Inverted或TIM_ExtTRGPolarity_NonInverted。
+//ExtTRGFilter: 外部触发滤波器值，范围从0到0xF。
+void TIM_ETRConfig(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler, uint16_t TIM_ExtTRGPolarity,
+uint16_t ExtTRGFilter);
+
+```
+
+#### 2.参数（PSC、ARR等）更改函数（_在程序运行过程中修改_）
+
+以下，单独的函数可以**方便地更改PSC\\ARR等参数**
+
+```c
+// 预分频值设置，TIM_PSCReloadMode为是否应用输入缓冲功能配置
+void TIM_PrescalerConfig(TIM_TypeDef* TIMx, uint16_t Prescaler, uint16_t TIM_PSCReloadMode);
+
+// 改变计数器的计数模式
+void TIM_CounterModeConfig(TIM_TypeDef* TIMx, uint16_t TIM_CounterMode);
+
+// 自动重装寄存器预装功能配置（计数器有无预装功能）
+void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState);
+
+// 手动给计数器写入一个值
+void TIM_SetCounter(TIM_TypeDef* TIMx, uint16_t Counter);
+
+// 手动给自动重装寄存器写入一个值
+void TIM_SetAutoreload(TIM_TypeDef* TIMx, uint16_t Autoreload);
+
+// 获取当前计数器的值
+uint16_t TIM_GetCounter(TIM_TypeDef* TIMx);
+
+// 获取当前的预分频器的值
+uint16_t TIM_GetPrescaler(TIM_TypeDef* TIMx);
+
+// 获取定时中断的标志位和清除标志位，使用方法与EXTI相同
+FlagStatus TIM_GetFlagStatus(TIM_TypeDef* TIMx, uint16_t TIM_FLAG);
+
+
+void TIM_ClearFlag(TIM_TypeDef* TIMx, uint16_t TIM_FLAG);
+ITStatus TIM_GetITStatus(TIM_TypeDef* TIMx, uint16_t TIM_IT);
+void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT);
+```
+
+#### 3.使用定时器库函数的一些细节
+
+**\* 选择内部时钟函数**：定时器上电后默认选择内部时钟，如果要选择内部时钟，这一句可以省略。
+
+> TIM\_InternalClockConfig(TIM\_TypeDef\* TIMx);
+
+\* **时基单元初始化函数`TIN_TimeBaseInit`**：在配置结构体变量时，会遇到以下几个细节问题
+
+> 1.TIM\_TimeBaseInitStructure.TIM\_ClockDivision （采样）时钟分频频率选择  
+>   在定时器的外部信号输入引脚一般都有一个滤波器来消除信号的抖动干扰，它的工作原理是：在一个固定的时钟频率f下进行采样，如果连续N个采样点都是相同的电平，就代表输入信号稳定了，就将采样值输出到下一级电路；如果N个采样点不全都相同，就说明信号有抖动，这时保持上一次的输出，或直接输出低电平。 这样就能保证输出信号在一定程度上的滤波。这里的采样频率f 和采样点数N，f和N是滤波器的参数，频率越低，采样点数越多，滤波效果就越好，不过相应的信号延迟就越大。  
+>   采样频率f的来源可以是内部时钟直接提供，也可以是内部时钟加一个时钟分频而来。 分频是多少，就由参数TIM\_ClockDivision决定。可见 TIM\_ClockDivision与时基单元的关系并不大，它的可选值可以选择1分频，2分频和4分频。
+>
+>
+> 2.TIM\_TimeBaseInitStructure.TIM\_CounterMode  计数器模式
+>
+> TIM\_CounterMode\_Up  （向上计数）
+>
+> TIM\_CounterMode\_CenterAligned1  （中央对齐计数）
+>
+> 3.TIM\_TimeBaseInitStructure.TIM\_Period     周期，ARR自动重装器的值
+>
+> 4.TIM\_TimeBaseInitStructure.TIM\_Prescaler  PSC预分频器的值
+>
+> 以上2-3-4参数就是时基单元里面每个关键寄存器的参数，在配置结构体变量时，并没有能直接操作计数器CNT的参数。如果需要，可以采用SetCounter和GetCounter两个函数来操作计数器。
+>
+> 5.TIM\_TimeBaseInitStructure.TIM\_RepetitionCounter 重复计数寄存器，通过这个参数可以设置重复计数寄存器。但是通用定时器中没有这一个寄存器，故可以直接设置为0。
+>
+> 6.定时时间的计算
+>
+> 决定定时时间的参数，是TIM\_Period和TIM\_Prescaler  
+>   参考公式：
+>
+> 计数器溢出频率：CK\_CNT\_OV = CK\_CNT / (ARR + 1)
+>
+>     CK_CNT_OV = CK_CNT / (ARR + 1) = CK_PSC / (PSC + 1) / (ARR + 1)
+>
+> \* 定时1s也就是定时频率为1Hz，定时频率=72M/ (PSC + 1) / (ARR + 1) = 1s =1Hz，那就可以PSC给7200，ARR给10000（1MHz等于10^6Hz）,然后两个参数再减1。
+>
+> \* 注意PSC（TIM\_Prescaler）和ARR（TIM\_Period）的取值都要在0~65535之间。
+>
+> \* PSC和ARR的取值不是唯一的。可以预分频给少点，自动重装给多点，这样就是以一个比较高的频率计比较多的数；也可以预分配给多点，自动重装给少点，这样就是以一个比较低的频率计比较少的数；两种方法都可以达到目标的定时时间。
+>
+> \* 在这里预分频是对72M进行7200分频，得到的就是10k的计数频率，在10k的频率下，计10000个数，就是1s的时间。
+>
+>
+> 7.在TIM\_TimeBaseInit函数的最后，会立刻生成一个更新事件，来重新装载预分频器和重复计数器的值。预分频器有缓冲寄存器，我们写入的PSC和ARR只有在更新事件时才会起作用。但是更新事件和更新中断是同时发生的，更新中断会置更新中断标志位，手动生成一个更新事件，就相当于在初始化时立刻进入更新函数执行一次，在开启中断之前手动清除一次更新中断标志位，就可以避免刚初始化完成就进入中断函数的问题。
+
+**\* 使能中断函数`TIM_ITConfig`**
+
+> **`TIM_ITConfig(TIM2,TIM_IT_Update,ENABLE); //开启更新中断到NVIC的通道`**
+
+\* **启动定时器** 
+
+> **TIM\_Cmd(TIM2,ENABLE);//当产生更新时，就会触发中断**
+
+**\* 外部时钟配置函数`TIM_ETRClockMode2Config`**
+
+> **`1.TIM_ExtTRGPrescaler外部时钟预分频器：可以选择外部时钟分频关闭（1分频）、2分频、4分频、8分频。`**
+>
+>
+> **`2.TIM_ExtTRGPolarity 外部触发的极性：TIM_ExtTRGPolarity_Inverted为反向极性，即低电平和下降沿有效；TIM_ExtTRGPolarity_NonInverted为不反向，即高电平和上升沿有效。`**
+>
+>
+> **`3.ExtTRGFilter 外部输入滤波器：工作原理与内部时钟的滤波器相似，它的值可以是0x00到0x0F之间的一个值，其决定了采样的f和N，具体的对应关系在手册中有对应表：`**
+>
+> ![](pic_win/e8d0a3e0aebeb0eecc9ce25293475ec1.png)
+>
+> 4.GPIO配置：因为是使用外部接口输入时钟，故在使用该函数之前还需要配置GPIO端口。对于定时器，手册中给的推荐配置是浮空输入。但是浮空输入会导致引脚的输入电平极易受干扰，所以输入信号的功率不小时一般选择上拉或下拉输入。当外部的输入信号功率很小，内部的上拉/下拉电阻（较大）可能会影响到这个输入信号，这时就需要用浮空输入，防止影响外部输入的电平。![](pic_win/f81b65f3795afcad8a02a0d3f3e2a2be.png)
+
+___
+
+### 定时器定时中断实例
+
+本次实验要完成的现象是：定义一个 uint16\_t 的 Num 变量，使其每秒+1。器件连接图和程序源码如下所示：
+
+![](pic_win/c0c27d3f39eb537a09ed68aa2f2130b7.jpeg)
+
+-   `Timer.c`
+
+```c
+#include "stm32f10x.h"                  // Device header
+/*
+定时器初始化
+对应定时中断结构图
+第一步，RCC开启时钟，定时器的基准时钟和整个外设的工作时钟就都打开了
+第二步，选择时基单元的时钟源，对于定时中断就选择内部时钟源
+第三步，配置时基单元，包括预分频器、自动重装载器、计数模式等，参数用结构体配置
+第四步，配置输出中断控制，允许更新中断输出到NVIC
+第五步，配置NVIC，在NVIC中打开定时器中断通道并分配一个优先级
+第六步，运行控制，使能计数器，当定时器使能后，计数器就开始计数了，当计数器更新时，触发中断
+最后再写一个中断函数，中断函数每隔一段时间就能自动执行一次
+*/
+void Timer_Init(void)
+{
+	/*开启时钟*/
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);//TIM2是APB1外设
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);//外部时钟输入的gpio引脚ETR(PA0)配置
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//上拉输入
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;//PA0
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA,&GPIO_InitStructure);
+	
+	/*配置时钟源*/
+	TIM_ETRClockMode2Config(TIM2,TIM_ExtTRGPSC_OFF,TIM_ExtTRGPolarity_NonInverted,0x00);//使用外部部时钟，TIM2普通时钟
+	
+	//配置时基单元
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;//初始化时基单元结构体
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;//时钟分频（用于设置滤波频率）
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;//计数器模式：向上计数
+	//频率=72x10^6/((ARR-1)(RSC-1))
+	TIM_TimeBaseInitStructure.TIM_Period = 10 - 1;//周期，ARR自动重装器的值
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 1 - 1;//RSC，预分频器的值
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;//重复计数器的值（高级定时器才有）
+	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);
+	
+	/*在TIM_TimeBaseInit函数的最后，会立刻生成一个更新事件，来重新装载预分频器和重复计数器的值
+    预分频器有缓冲寄存器，我们写入的PSC和ARR只有在更新事件时才会起作用
+    为了让写入的值立刻起作用，故在函数的最后手动生成了一个更新事件
+    但是更新事件和更新中断是同时发生的，更新中断会置更新中断标志位，
+    手动生成一个更新事件，就相当于在初始化时立刻进入更新函数执行一次
+    在开启中断之前手动清除一次更新中断标志位，就可以避免刚初始化完成就进入中断函数的问题*/
+	TIM_ClearFlag(TIM2,TIM_FLAG_Update);//避免刚初始化完就进入中断的问题，手动清除标志位
+	//使能更新中断
+	TIM_ITConfig(TIM2,TIM_IT_Update,ENABLE);
+	
+	//NVIC配置中断优先级
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);	
+	NVIC_InitTypeDef NVIC_InitStructure;
+	NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;//抢占优先级
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority=1;//响应优先级
+	NVIC_Init(&NVIC_InitStructure);
+	
+	//启动定时器
+	TIM_Cmd(TIM2,ENABLE);
+}
+
+uint16_t Timer_GetCounter(void)
+{
+	return TIM_GetCounter(TIM2);//计数器
+}
+
+//定时器中断函数
+/*
+void TIM2_IRQHandler(void)
+{
+	if(TIM_GetITStatus(TIM2,TIM_IT_Update) == SET)
+	{
+		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);
+	}
+}
+*/
+
+
+```
+
+-   `main.c`
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "delay.h"
+#include "OLED.h"
+#include "Timer.h"
+
+uint16_t Num;
+int main(void)
+{
+	OLED_Init();
+	Timer_Init();
+	OLED_ShowString(1,1,"Num:");//行  开始列  字符串
+	OLED_ShowString(2,1,"CNT:");//行  开始列  字符串	
+	while(1)
+	{
+		OLED_ShowNum(1,5,Num,5);
+		OLED_ShowNum(2,5,Timer_GetCounter(),5);		
+		//OLED_ShowNum(2,5,TIM_GetCounter(TIM2),5);//自动重装值
+	}
+}
+
+void TIM2_IRQHandler(void)
+{
+	if(TIM_GetITStatus(TIM2,TIM_IT_Update) == SET)
+	{
+		Num++;
+		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);
+	}
+}
+
+```
+
+___
+
+### 定时器外部时钟选择
+
+\* 可以在引脚定义图里找TIMx的ETR引脚是哪个
+
+\* 在上一个定时中断实例程序基础上进行更改；基本任务仍然是定时中断，时钟部分就不使用内部时钟了
+
+本次实验要完成的现象是：用光敏传感器手动模拟一个外部时钟，定义一个 uint16\_t 的 Num 变量，当外部时钟触发10次（预分频之后的脉冲）后Num + 1。器件连接图和程序源码如下所示：
+
+![](pic_win/4944af051bd6e79a19b0a1dada0e0a1d.jpeg)
+
+-   `Timer.c`
+
+```c
+#include "stm32f10x.h" // Device header
+
+/*定时器初始化
+对应定时中断结构图
+第一步，RCC开启时钟，定时器的基准时钟和整个外设的工作时钟就都打开了
+第二步，选择时基单元的时钟源，对于定时中断就选择内部时钟源
+第三步，配置时基单元，包括预分频器、自动重装载器、计数模式等，参数用结构体配置
+第四步，配置输出中断控制，允许更新中断输出到NVIC
+第五步，配置NVIC，在NVIC中打开定时器中断通道并分配一个优先级
+第六步，运行控制，使能计数器，当定时器使能后，计数器就开始计数了，当计数器更新时，触发中断
+最后再写一个中断函数，中断函数每隔一段时间就能自动执行一次*/
+
+void Timer_Init(void) //定时中断初始化代码
+
+{
+
+//初始化tim2，也就是通用定时器
+
+//使用APB1的开启时钟函数，TIM2是APB1总线的外设
+
+RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+
+//外部模式2需要用到gpio,进行GPIOA的时钟配置
+
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+
+GPIO_InitTypeDef GPIO_InitStructure;
+
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+
+GPIO_Init(GPIOA,&GPIO_InitStructure);
+
+//通过ETR引脚的外部时钟模式2配置
+
+TIM_ETRClockMode2Config(TIM2,TIM_ExtTRGPSC_OFF,TIM_ExtTRGPolarity_NonInverted,0x00);
+
+//配置时基单元
+
+TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+
+TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1; //指定时钟分频
+
+TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式
+
+/*定时1s也就是定时频率为1Hz，定时频率=72M/ (PSC + 1) / (ARR + 1) = 1s =1Hz，
+
+那就可以PSC给7200，ARR给10000（1MHz等于10^6Hz），然后两个参数再减1
+
+在这里预分频是对72M进行7200分频，得到的就是10k的计数频率，
+
+在10k的频率下，计10000个数，就是1s的时间*/
+
+TIM_TimeBaseInitStructure.TIM_Period = 10 - 1; //ARR
+
+TIM_TimeBaseInitStructure.TIM_Prescaler = 1 - 1; //PSC
+
+TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0; //重复计数器的值
+
+TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);
+
+/*在TIM_TimeBaseInit函数的最后，会立刻生成一个更新事件，来重新装载预分频器和重复计数器的值
+
+预分频器有缓冲寄存器，我们写入的PSC和ARR只有在更新事件时才会起作用
+
+为了让写入的值立刻起作用，故在函数的最后手动生成了一个更新事件
+
+但是更新事件和更新中断是同时发生的，更新中断会置更新中断标志位，手动生成一个更新事件，就相当于在初始化时立刻进入更新函数执行一次
+
+在开启中断之前手动清除一次更新中断标志位，就可以避免刚初始化完成就进入中断函数的问题*/
+
+TIM_ClearFlag(TIM2,TIM_FLAG_Update);
+
+//使能中断
+
+TIM_ITConfig(TIM2,TIM_IT_Update,ENABLE); //开启更新中断到NVIC的通道
+
+//NVIC中断
+
+NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//NVIC优先级分组
+
+NVIC_InitTypeDef NVIC_InitTyStructure;
+
+NVIC_InitTyStructure.NVIC_IRQChannel = TIM2_IRQn;
+
+NVIC_InitTyStructure.NVIC_IRQChannelCmd = ENABLE;
+
+NVIC_InitTyStructure.NVIC_IRQChannelPreemptionPriority = 2;//抢占优先级
+
+NVIC_InitTyStructure.NVIC_IRQChannelSubPriority = 1;//响应优先级
+
+NVIC_Init(&NVIC_InitTyStructure);
+
+//启动定时器
+
+TIM_Cmd(TIM2,ENABLE);//当产生更新时，就会触发中断
+
+}
+
+//函数封装
+
+uint16_t Timer_getcounter(void)
+
+{
+
+return TIM_GetCounter(TIM2);
+
+}
+
+/*
+
+中断函数模版
+
+void TIM2_IRQHandler(void) //当定时器产生更新中断时，这个函数就会自动被执行
+
+{
+
+//检查中断标志位
+
+if(TIM_GetITStatus(TIM2,TIM_IT_Update) == SET)
+
+{
+
+//执行相应的用户代码
+
+Num ++;
+
+TIM_ClearITPendingBit(TIM2,TIM_IT_Update);//清除标志位
+
+}
+
+}
+
+*/
+```
+
+-   `main.c`
+
+```c
+#include "stm32f10x.h" // Device header
 
 #include "Delay.h"
 
 #include "OLED.h"
 
-#include "encoder.h"
+#include "Timer.h"
 
-int16_t num;
+uint16_t Num;
 
 int main(void)
 
 {
 
-OLED_Init();
+OLED_Init(); //初始化OLED
 
-encoder_init();
+Timer_Init(); //初始化定时器
 
-OLED_ShowString(1,1,"num:");
+OLED_ShowString(1,1,"Num:");
+
+OLED_ShowString(2,1,"CNT:");
 
 while(1)
 
 {
 
-num += encoder_get();
+OLED_ShowNum(1,5,Num,5);
 
-OLED_ShowSignedNum(1,5,num,5);
+OLED_ShowNum(2,5,TIM_GetCounter(TIM2),5);//CNT计数器值的变化情况（变化范围是ARR从0一直到自动重装值（10000-1））
+
+}
+
+}
+
+//定时器2中断函数放在使用中断的main.c文件中；在startup文件中
+
+void TIM2_IRQHandler(void) //当定时器产生更新中断时，这个函数就会自动被执行
+
+{
+
+//检查中断标志位
+
+if(TIM_GetITStatus(TIM2,TIM_IT_Update) == SET)
+
+{
+
+//执行相应的用户代码
+
+Num ++;//定时器每秒自动加一个Num全局变量
+
+TIM_ClearITPendingBit(TIM2,TIM_IT_Update);//清除标志位
 
 }
 
 }
 ```
 
-encoder.c
+## 6-3定时器输出比较
 
-```cobol
+### 输出比较功能简介
+
+**\* 输出比较概述**  
+  输出比较，英文全称Output Compare，简称OC。它最主要的功能是 可以通过比较计数器CNT和捕获/比较寄存器（Capture/Compare Register）CCR值的关系，来输出电平进行置1、置0的翻转操作，用于输出一定频率和占空比的PWM波形。  
+  每个高级定时器和通用定时器都拥有4个输出比较的通道，可以同时输出4路[PWM波](https://so.csdn.net/so/search?q=PWM%E6%B3%A2&spm=1001.2101.3001.7020)形，且高级定时器的前3个通道额外拥有死区生成电路和互补输出的功能（用于驱动三相无刷电机）。4个输出比较通道都有独立的CCR寄存器，但是它们共用同一个CNT计数器。
+
+![](pic_win/22599d8f097156ecb073fec3302ec6c6.png)
+
+### PWM简介
+
+**\* PWM概述**
+
+ PWM（Pulse Width Modulation），即脉冲宽度调制，PWM波形是一个数字输出信号，是由高低电平组成的，是一种对模拟电平信号进行数字编码的方法。在具有惯性的系统中，可以通过对一系列脉冲的宽度进行调制，来等效地获得所需要的模拟参量，常应用于电机控速等领域。也就是说，使用PWM波形，是用来等效地实现一个模拟信号的输出。（例如，led呼吸灯，电机调速，如下解释）
+
+​    以LED为例：GPIO的输出信号只能是数字信号，如果想通过数字信号输出模拟量，可以通过以下的方法实现：让LED不断点亮、熄灭、点亮、熄灭，当点亮、熄灭的频率足够大时，由于LED的余晖和人眼的视觉暂留效应，LED就会呈现出一个中等亮度。当调控点亮和熄灭的时间比例时就能让LED呈现出不同的亮度级别。  
+
+  对于电机调速也类似：在高频率下不断让电机交替通断，由于电机断电后不会立刻停止，而是由于惯性转动后停下，电机的速度就能维持在一个中等速度。  
+  PWM的秘诀是：天下武功，唯快不破！ 需要注意的是：只有在具有惯性的系统中，才能用PWM对模拟信号进行编码。
+
+​    从下图可以看出，高低电平跳变的数字信号可以被等效地表示为中间虚线所表示的模拟量。当上面电平时间长一点，下面电平短一点的时候，等效地模拟量就偏向于上面；当下面电平时间长一点，上面电平时间短一点的时候，等效地模拟量就偏向于下面。也就是说，占空比越大，等效的模拟量就越趋近于数字量的高电平；占空比越小，等效的模拟量就越趋近于数字量的低电平，且这个等效关系一般而言是线性一一对应的。
+
+![](pic_win/1942683ba141dc8cf5f25d619ab12748.png)
+
+         使用PWM波形，就可以在数字系统等效输出模拟量，就能实现LED控制亮度、电机控速等功能了。
+
+**\* PWM参数**
+
+        首先，明白Ts就是下图这里，Ts代表一个高低电平变换周期的时间
+
+![](pic_win/6d4d639d4fe118dbd60d51400d11e24e.png)
+
+在使用PWM对模拟量进行编码时，以下三个参数尤其重要：
+
+频率 ：f = 1 / Ts（周期的倒数就是频率）；变换越快=频率越大（PWM的频率越快，它等效模拟的信号就越平稳，不过同时性能开销就越大；一般来说PWM的频率在几kHz到几十kHz之间。）
+
+占空比：q=Ton/Ts( Ton是高电平的时间，Ts是一个周期的时间。q就是高电平时间相对于整个周期时间的比例）；占空比决定了PWM等效出的模拟电压的大小。一般用百分比表示。
+
+分辨率：占空比的变化步距；分辨率就是占空比变化的精细程度。即，占空比最小能以百分之多少的精度变化，它的值可以是1%、0.1%。分辨率的大小要看实际项目的需求定。如果既要高频率，又要高分辨率，就需要硬件电路要有足够的性能。要求不高的情况下，1%的分辨率就足够使用了。
+
+___
+
+### 输出比较通道（通用定时器）
+
+
+  通用定时器的输出比较部分电路如下图所示：
+
+![](pic_win/5c0fe05f8452a6ad801f8b80216ad532.png)
+
+​    上图对应的是通用定时器电路里的下图红框部分电路，左边是CNT和CCR比较的结果，右边是输出比较电路，最后通过TIM\_CH1输出到GPIO引脚上，然后下面还有三个同样的单元，分别输出到CH2、CH3、CH4。
+
+![](pic_win/86889c761ed963eaf204833268e7c049.png)
+
+  如上图125所示，图的左边是CNT计数器和CCR1第一路的捕获/比较寄存器，它俩进行比较，当CNT = CCR1或者CNT > CCR1时，输出模式控制器就会收到一个信号，输出模式控制器就会改变它输出的OC1REF的高低电平。REF是Reference的缩写，意为参考信号。上面有个ETRF输入（是定时器的一个小功能，一般不用，不需要了解）  
+  接下来OC1REF信号兵分两路：一路以将REF信号映射到主模式控制器的TRGO上，去触发其他外设的功能；不过REF的主要去向还是下面这一路，通往一个极性选择电路，通过控制TIMx\_CCER寄存器的值（0或1），可以选择是否将REF信号翻转（写0信号就会往上走，就是信号电平不翻转，进来哈样出去还是哈样；写1信号就会往下走，就是信号通过一个非门取反，输出的信号就是输入信号高低电平反转的信号，这就是极性选择，就是选择是不是要把高低电平反转一下），之后通往输出使能电路，可以控制是否输出，最后通往OC1引脚，即TIMx\_CH1通道的引脚（在引脚定义表中即可找到具体的GPIO口）。
+
+补充：
+
+![](pic_win/d325256c34568c93588da0721a8e4538.png)极性选择电路
+
+![](pic_win/1033e949925a891df926f991037fb613.png)非门取反
+
+___
+
+### 输出模式控制器的执行逻辑（工作流程）
+
+![](pic_win/2376c5a1c40ad6bbf493183ca17f7ecf.png)
+
+        什么时候给REF高电平，什么时候给REF低电平？  
+  输出比较拥有8种工作模式 ，其对应了输出模式控制器种的执行逻辑，这个模式控制器的输入是CNT和CCR的大小关系，输出是REF的高低电平，里面可以选择8种模式来更灵活地控制REF输出，8种输出模式可以通过TIM\_CCMR1k寄存器进行配置，需要哪个模式就可以选哪个模式。输出模式控制器的执行逻辑如下表所示：
+
+![](pic_win/64a5b0a89cf484c9312fc1cada6dee1b.png)
+
+-        冻结：CNT = CCR时维持原状态，实际上此时REF与CNT和CCR都无关，即CNT和CCR无效，REF保持为上一个状态。在输出PWM波形时，如果要暂停波形输出，且对暂停时的高低电平没有要求，就可以设置为这个模式。
+-       匹配时置无效/有效电平：CNT = CCR时REF置无效/有效电平。这两个模式不适合输出连续变化的波形。如果想定时输出一个“一次性”的信号，则可以考虑这两个模式。有效电平和无效电平是高级定时器中的表述，与关断、刹车等功能配合表述的，这里表述的比较严谨。在这里为了理解方便，可以直接认为有效电平就是高电平，无效电平就是低电平。
+-       匹配时电平翻转：CNT = CCR时REF电平翻转。这个模式可以方便地输出一个频率可调，占空比稳定为50%的PWM波形。比如：你设置CCR为0，那CNT每次更新清0时，就会产生一次CNT=CCR的事件，这就会导致输出电平翻转一次，每更新两次，输出为一个周期并且高电平和低电平的时间是始终相等的，也就是占空比始终为50%，当你改变定时器更新频率时，输出波形的频率也会随之改变。改变计数器的更新频率时，输出波形的频率 = 更新频率 / 2（因为更新两次输出才为一个周期，这就是匹配时电平翻转的用途）
+-      强制为无效/有效电平：与冻结模式类似。如果想暂停波形输出，并且在暂停期间保持低电平或者高电平，可以考虑这两个模式。
+-      PWM模式1/2：可以用于输出频率和占空比都可调的PWM波形。是我们主要使用的模式。一般我们都只使用PWM模式1向上计数。向上/向下计数之间也只有大小关系、极性不用，基本思想都是一样的。PWM模式1/2的向上计数区别就是输出的高低电平反过来了， PWM模式2就是PWM模式1取反得到的。改变PWM模式1/2，只是改变了REF电平的极性而已。（REF输出之后还有一个极性的配置（极性选择电路），所以使用PWM模式1的正极性和PWM模式2的反极性最终的输出是一样的，输出模式中可以设置极性，最终输出前也可以设置极性）
+
+___
+
+### 输出PWM波形及参数计算
+
+
+  以PWM模式1、向上计数模式为例，PWM波形产生原理（输出PWM的基本结构）如下图所示：
+
+<img src="pic_win/a0a64607f5402e062cc57499d4c4d7d0.png" style="zoom:200%;" />
+
+  在上图中，首先左上角是时间单元和运行控制部分，再左边是时钟源选择（省略上一小节内容），在这里我们不需要使用更新事件的中断申请（输出PWM暂时还不需要中断）这就是时基单元的部分。配置好了时基单元，这里的CNT就可以开始不断地自增运行了。然后，下面粉红区域就是输出比较单元了，总共有四路，输出比较单元的最开始是CCR捕获/比较寄存器，CCR是我们自己设定的，CNT不断自增运行，同时它俩还在不断进行比较；CCR捕获/比较寄存器后面是输出模式控制器，在这里以PWM模式1为例，是PWM模式1的执行逻辑，那它是怎么输出PWM波形的，解释如下，右上角图中，蓝色线是CNT的值，黄色线是ARR的值，蓝色线从0开始自增，一直增到ARR也就是99，之后清0继续自增，在这个过程中红色线是CCR，比如设置CCR为30，执行输出模式控制器里的逻辑，下面的绿色线就是输出，可以看到CNT<CCR时置高电平，之后CNT>=CCR就变为低电平，当CNT溢出清0后，CNT又小于CCR所以置高电平...这样一直持续下去，REF的电平就会不断变化，并且它的占空比是受CCR的值的调控的，如果CCR的值设置的高一些，输出的占空比就会变大，CCR设置的低一点，输出的占空比就会变小，以上就是PWM的工作流程。（这里REF就是一个频率可调，占空比也可调的PWM波形），最终再经过极性选择，输出使能，最终通向GPIO口，这样就能完成PWM波形的输出了。需要注意的是： 设置的CCR值越接近ARR，输出的PWM波形的占空比就越大。
+
+> ![](pic_win/4d841a60e7e399200464e100b601eb2d.png)
+>
+>  PWM的一个周期如上图中的下面绿色区段的红线区间，可以看出它始终对应着计数器的一个溢出更新周期，所以PWM的频率就等于计数器的更新频率
+>
+>  当CNT = CCR时电路已经置为低电平，故REF为高电平的时间为CNT从0变到29（30个数）的时间。
+>
+>  CCR的值应设置在0到ARR+1的范围里，CCR=ARR+1时占空比是100%，ARR越大，CCR的范围就越大，对应的分辨率就越大
+>
+> 参数计算公式如下所示：
+>
+> -   PWM频率：即计数器的更新频率 Freq = CK\_PSC / (PSC + 1) / (ARR + 1)
+> -   PWM占空比：Duty = CCR / (ARR + 1)
+> -   PWM分辨率：即占空比变化的步距 Reso = 1 / (ARR + 1)，以上定义的分辨率是占空比最小的变化步距。ARR越大，CCR的变化范围就越大，分辨率就越高。（占空比变化的越细腻越好）
+
+___
+
+### 输出比较通道（高级定时器）
+
+        这个电路仅作了解即可，不需掌握。
+
+![](pic_win/ea60cfb0da5ad0aca7237a8650a71874.png)
+
+### 舵机和直流电机
+
+####   
+ 舵机
+
+![](pic_win/61e874d980f3282a47a8be8250101b3a.png)![](pic_win/0543a58f0f5543a9920ee93525fef499.png)
+
+舵机是小型直流伺服电机的一种，是一种根据输入PWM信号占空比来控制舵机输出轴的角度的装置。它有三根输入线，其中两根是电源线，一根是PWM信号输入线。白色输出轴会固定在一个指定的角度不动，固定的位置是由信号线的PWM信号来决定的，这就是舵机的工作方式。
+
+上边右图中可以看出，舵机其实并不是一种单独的电机，可以发现它是由一个直流电机、一个减速齿轮组、一个电位器（电压编码器）和一个控制板 4部分组成的整体。舵机不是一种单独的电机，它的内部是由直流电机驱动的。内部的控制电路板是一个电机的控制系统，整个舵机内部形成了一个闭环的控制系统。
+
+PWM信号输入到控制板，给控制板一个指定的目标角度，然后这个电位器检测输出轴的当前角度，如果大于目标角度，电机就会反转，如果小于目标角度，电机就会正转，最终使输出轴固定在指定的角度，这就是舵机的内部工作流程（简而言之：输入一个PWM波形，输出轴固定在一个角度）。
+
+>   “伺服”—词源于希腊语“奴隶”的意思，英文为Servo。人们想把某一个结构或系统当作一个得心应手的驯服工具，服从控制信号的要求而动作。伺服的主要任务是按照控制命令的要求，对输出信号和输出功率进行放大、变换与调控等处理，使驱动装置输出的力矩、速度和位置控制得非常灵活方便。由于它的“伺服”性能，因此而得名——伺服系统。它的优势在于：可以非常灵活地控制输出装置的力矩、速度和位置等物理参量。  
+>   交流伺服电机和直流伺服电机的共同点是：利用传感器（编码器）对转子的位置、转速、力矩、转向进行检测，斌且将得到的信号经由伺服驱动器反馈给[伺服控制器](https://so.csdn.net/so/search?q=%E4%BC%BA%E6%9C%8D%E6%8E%A7%E5%88%B6%E5%99%A8&spm=1001.2101.3001.7020)，从而达到调节转子位置、转速、力矩、转向的目的； 二者的不同点在于，一般而言，交流伺服电机相较于直流伺服电机对转子有更高的控制精度。
+
+![](pic_win/a61cc0b8c3e7c055f3c28f661efb3def.png)
+
+       输入信号脉冲宽度，周期是20ms，也就是一个上升沿到下一个上升沿之间的时间是20ms。
+
+  舵机对输入的PWM信号的要求如下：周期为20ms（对应50Hz），高电平宽度为0.5 ~ 2.5ms（就是占空比是这个范围，对应的输出角度如上图）。这时一个180° 的舵机，输出轴的角度是-90° 到+90° 或者你规定是0° 到180°，输入信号脉冲宽度与舵机输出轴转角的对应关系都是线性一一对应的，给个PWM，输出轴就会固定在一个角度。实际应用中，比如机器人、机械臂可以用舵机来控制关节，遥控车、遥控船可以用舵机来控制方向。这里的PWM波形实际上是作为一个通信协议来使用的，与用PWM波形等效出一个模拟输出的关系不大，将PWM当成一个通信协议也是一个比较常见的应用，因为很多控制器都有PWM输出的功能，而且PWM只需要一根信号线就行了，这也是一种应用形式。
+
+![](pic_win/2947ff90e69c9abe91c68a37095176a4.png)
+
+![](pic_win/5d370a4be632e74e33b5fe86375f4d62.png)
+
+​    接下来，看一下舵机的硬件电路，上图第一个是引脚定义图，在舵机上有三根线，分别是黑（电源负极GND）、红（电源正极+5V）、黄（PWM信号线）。上图第二个图中，在实际应用中，GND就接GND，电源+5V是电机的驱动电源（一般电机都是大功率设备，驱动电源也必须是大功率的输出设备，对于套件中，可以直接从STLINK的5v输出脚引一根线使用USB的5V供电），信号线PWM就直接接到STM32引脚上就行了，PWM只是一个通信线，是不需要大功率的。
+
+####   
+ 直流电机及驱动
+
+![](pic_win/9f7efadeaf368dd0f270829cd0548638.png)
+
+  可以用PWM来控制电机的速度。直流电机是一个单独的电机，里面是没有驱动电路的，所以我们就要外挂一个驱动电路来控制。直流电机是一种能将电能转换为机械能的装置，有两个电极。有两个电极，当电极正接时，电机正转，当电极反接时，电机反转。上图所示的电机是130直流电机。直流电机属于大功率器件，GPIO口无法直接驱动，需要配合电机驱动电路来操作。本课程使用TB6612电机驱动芯片来驱动电机。
+
+![](pic_win/34dfec0aeb671cfa712f0b82319de3e6.png)![](pic_win/a70fa0e2ac3264954160c49bc704e39d.png)  
+  TB6612是一款双路H桥型的直流电机驱动芯片，其中有两个驱动电路，可以独立地驱动两个直流电机并且控制其转速和方向。如上左图，是电机驱动板，芯片是TB6612，外围电路只需三个滤波电容就行了。如上右图是H桥电路的基本结构，是由两路推挽电路组成的，比如左边上管导通，下管断开，那左边输出就是接在VM的电机电源正极；下管导通，上管断开，那就是接在PGND的电源负极；如果有两路推挽电路，中间接一个电机，左上和右下导通，电流就是从左流向右，右上和左下导通，电流的方向就反过来从右边流向左边，H桥可以控制电流流过的方向，所以它能控制电机的正反转。
+
+>         电机驱动电路同样也是一个研究课题，市面上也有很多的电机驱动可供选择，常见的电机驱动芯片有TB6612、DRV8833、L9110、L298N等，另外还有用分立元件MOS管搭建的驱动电路，它可以实现更大的驱动功率。当然也可以自己用MOS管设计电路。
+
+  TB6612电机驱动模块的连接电路图和引脚定义图如下所示：
+
+![](pic_win/0a5d608825ae3be58ef727aecb1e37c1.png)
+
+        如上图
+
+-   VM就是电机电源的正极，和舵机的电源要求是一样的，要接一个可以输出大电流的电源，电压和电机的额定电压保持一致，比如时5v的电机就接5v电压
+-   VCC是逻辑电平输入端，一般和控制器的电源保持一致。比如使用STM32，是3.3v的器件，就接3.3v
+-   AO1\\AO2\\BO1\\BO2是两路电机的输出，可以分别接两个电机。AO1和AO2就是A路的两个输出，它的控制端是上面的三个PWMA、AIN1和AIN2，这三个引脚控制下面的A路电机，对应关系如上图的灰色填充，其中PWMA引脚要接PWM信号输出断PA0，AIN1和AIN2引脚可以任意接两个普通的GPIO口，这三个引脚给一个低功率的控制信号，驱动电路就会从VM汲取电流来输出到电机，这样就能完成低功率的控制信号控制大功率设备的目的。右边的BO1及BO2这一路也是和A路的功能和操作方法是完全一样的。
+-   STBY引脚意为Stand By，为待机控制引脚。如果接GND，芯片就不工作，处于待机状态。如果接到逻辑高电平VCC（3.3V）芯片就正常工作。如果不需要待机模式的话可以直接接VCC3.3v，如果需要控制可以接入任意一个GPIO口，给高低电平就可以进行控制。
+
+![](pic_win/614e21d1e955c13ed923d92d72ef95a8.png)
+
+        PWMA、AIN1和AIN2三个引脚控制电机正反转和速度：如上图下面的表，
+
+-   STBY低电平就待机，高电平就正常工作。
+-   如果IN1和IN2全接高电平，两个输出O1和O2都为低电平，这样两个输出就没有电压差，电机是不会转的（制动），全高或全低，电机都不会转
+-   如果IN1和IN2全接低电平，两个输出O1和O2直接关闭，电机也是不会转的
+-   如果IN1给低电平、IN2接高电平，如果PWM给高电平，那输出就是一低一高，有输出电压差，电机可以转，这时候定义的是反转；如果PWM给低电平，那输出两个低电平，电机还是不转（制动），这就是反转的逻辑（IN1给低IN2给高，PWM高反转低不转）。如果PWM是一个不断翻转的电平信号，那电机就是快速的反转、停止、反转、停止，如果PWM频率足够快，电机就可以连续稳定的反转，并且速度取决于PWM信号的占空比，这就是反转的工作流程。在这里的PWM就是使用PWM来等效一个模拟量的功能。
+-   正转和上面差不多。IN1给高IN2给低，PWM高正转低不转。如果PWM频率足够快，电机就是连续稳定地正转了，并且速度取决于PWM信号的占空比。
+
+___
+
+### 参考手册
+
+![](pic_win/a8b3725b2d678d2b50aa04aeaeb1491b.png)
+
+![](pic_win/7faf21d2a56b3b4fd62bb7f54dc99f7f.png)
+
+![](pic_win/438d60f51e30bbd1658839a57ece1fef.png)
+
+![](pic_win/2cbe5b217190ef05af63a7ba5794ad79.png)
+
+![](pic_win/376ee22a1b2f8ce4e4c0f6e06947c026.png)
+
+### 
+
+### **6-4输出比较实例PWM**
+
+### 输出比较相关库函数
+
+1.OC初始化（掌握），tim.h
+
+```c
+// 配置输出比较模块，输出比较单元有四个，对应也有四个函数
+// 第二个参数是结构体，就是输出比较的一些参数
+void TIM_OC1Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct);
+void TIM_OC2Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct);
+void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct);
+void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct);
+ 
+// 给输出比较结构体赋一个默认值（防止结构体的值不确定导致一些奇怪的问题）
+void TIM_OCStructInit(TIM_OCInitTypeDef* TIM_OCInitStruct);
+```
+
+2.OC参数更改（`TIM_SetComparex`函数最重要，其他的了解即可）
+
+```c
+// 单独更改CCR寄存器值的函数
+// 在运行时，更改占空比，就需要用到这四个函数
+void TIM_SetCompare1(TIM_TypeDef* TIMx, uint16_t Compare1);
+void TIM_SetCompare2(TIM_TypeDef* TIMx, uint16_t Compare2);
+void TIM_SetCompare3(TIM_TypeDef* TIMx, uint16_t Compare3);
+void TIM_SetCompare4(TIM_TypeDef* TIMx, uint16_t Compare4);
+```
+
+```c
+// 使用高级定时器输出PWM波形时使能主输出，否则PWM波形不能正常输出
+void TIM_CtrlPWMOutputs(TIM_TypeDef* TIMx, FunctionalState NewState);
+ 
+// 单独设置输出比较的输出极性（带N的是高级定时器中互补通道的配置）
+// 在这里可以设置输出极性，在OC初始化函数中也可以用结构体设置输出极性，这里相当于将单独修改结构体中的某一参数封装到一个函数中
+//在结构体初始化的那个函数里也可以设置极性，这两个地方设置极性的作用是一样的，只不过是用结构体是一起初始化的，在这里是单独函数进行修改的
+//一般来说，结构体里的参数都会有一个单独的函数可进行更改
+void TIM_OC1PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity);
+void TIM_OC1NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity);
+void TIM_OC2PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity);
+void TIM_OC2NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity);
+void TIM_OC3PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity);
+void TIM_OC3NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity);
+void TIM_OC4PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity);
+ 
+// 单独修改输出使能参数
+void TIM_CCxCmd(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_CCx);
+void TIM_CCxNCmd(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_CCxN);
+ 
+// 单独更改输出比较模式的函数
+void TIM_SelectOCxM(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_OCMode);
+```
+
+ 3.OC输出比较的一些小功能（不常用，了解即可）
+
+```c
+// 配置强制输出模式（运行中暂停输出波形且强制输出高/低电平）
+// 强制输出高电平和设置100%占空比等效，强制输出低电平和设置0%占空比等效
+void TIM_ForcedOC1Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction);
+void TIM_ForcedOC2Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction);
+void TIM_ForcedOC3Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction);
+void TIM_ForcedOC4Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction);
+ 
+// 配置CCR寄存器的预装功能（影子寄存器，就是写入的值不会立即生效而是在更新事件才会生效，可以避免一些小问题）
+void TIM_OC1PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload);
+void TIM_OC2PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload);
+void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload);
+void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload);
+ 
+// 配置快速使能（手册中“单脉冲模式”一节有介绍）
+void TIM_OC1FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast);
+void TIM_OC2FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast);
+void TIM_OC3FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast);
+void TIM_OC4FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast);
+ 
+// 清除REF信号（手册中在“外部事件时清除REF信号”一节有介绍）
+void TIM_ClearOC1Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear);
+void TIM_ClearOC2Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear);
+void TIM_ClearOC3Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear);
+void TIM_ClearOC4Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear);
+```
+
+4.补充
+
+```c
+//仅高级定时器使用
+//在使用高级定时器输出PWM时。需要调用这个函数，使能输出。否则PWM将不能正常输出
+void TIM_CtrlPWMOutputs(TIM_TypeDef* TIMx, FunctionalState NewState);
+```
+
+5.补充
+
+>  //TIM\_OCMode 输出比较模式中的选择
+>
+>  -   TIM\_OCMode\_Timing//冻结模式
+>  -   TIM\_OCMode\_Active//相等时置有效电平
+>  -   TIM\_OCMode\_Inactive//相等时置无效电平
+>  -   TIM\_OCMode\_Toggle//相等时电平翻转
+>  -   **TIM\_OCMode\_PWM1//PWM模式1，主要用**
+>  -   TIM\_OCMode\_PWM2//PWM模式2
+>  -   TIM\_ForcedAction\_Active//强制输出模式，初始化时不使用
+>  -   TIM\_ForcedAction\_InActive
+
+> TIM\_Output\_Compare\_Polarity  输出比较的极性选择
+>
+> -   TIM\_OCPolarity\_High  //高极性，就是极性不翻转，REF波形直接输出，或者说是有效电平是高电平，REF有效时，输出高电平
+> -   TIM\_OCPolarity\_Low //低极性，就是REF电平取反，或者说是有效电平为低电平
+
+___
+
+### PWM驱动LED呼吸灯
+
+接线图如下：注意LED是正极接在PA0引脚，负极接在GND的驱动方法，这样就是高电平点亮，低电平熄灭，这是正极性的驱动方法，这样的话观察更直观一点，就是占空比越大LED越亮，占空比越小LED越暗 。
+
+![](https://i-blog.csdnimg.cn/blog_migrate/abe63b766ffa0fb7fcc1c4164d372df9.jpeg)
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "PWM_LED.h"
+ 
+uint8_t i;
+ 
+int main(void)
+{
+	
+	OLED_Init();	//初始化OLED
+	pwm_init();
+ 
+	while(1)
+	{
+		//不断调用PWM_SetCompare1函数，更改CCR的值，实现LED呼吸灯的效果
+		for(i=0;i<=100;i++)
+		{
+			PWM_SetCompare1(i);//设置CCR寄存器的值
+			Delay_ms(10);
+		}
+		for(i=0;i<=100;i++)
+		{
+			PWM_SetCompare1(100-i);
+			Delay_ms(10);
+		}
+	}
+}
+```
+
+PWM\_LED.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+/*
+pwm初始化函数基本步骤（参考笔记PWM基本结构图）
+第一步，RCC开启时钟，把要用的TIM外设和GPIO外设的时钟打开
+第二步，配置单元，包括时钟源选择和时基单元都配置好
+第三步，配置输出比较单元，包括CCR值、输出比较模式、极性选择、输出使能这些参数，在库函数里也是用结构体统一来配置
+第四步，配置GPIO，把PWM对应的GPIO口，初始化为复用推挽输出的配置，Pwm和GPIO的对应关系可以参考引脚定义表
+第五步，运行控制，启动计数器，这样就能输出PWM了
+*/
+ 
+void pwm_init(void)
+{
+	//1.打开时钟，选择内部时钟
+	//使用APB1的开启时钟函数，TIM2是APB1总线的外设
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);	//打开时钟
+	
+	//引脚重映射内容，将PA0引脚重映射到PA15，将下面GPIO改为PA15其它不动
+//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);
+    //引脚重映射；引脚重映射（TIM2的CH1本来是挂载在PA0引脚的，现在我想在其他引脚使用TIM2的CH1通道
+//	GPIO_PinRemapConfig(GPIO_PartialRemap1_TIM2,ENABLE);
+    //参考手册AFIO。将PA0引脚重映射到PA15，第一个参数可以是GPIO_PartialRemap1_TIM2或GPIO_FullRemap_TIM2
+//	GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable,ENABLE);
+    //取消调试端口复用JTAG，PA15端口默认使用JTAG调试端口，需要关闭；
+    //SWJ就是SWD和JTAG两种调试方式；
+    /*
+    GPIO_Remap_SWJ_NoJTRST，解除JTRST引脚复用，解除PB4的调试端口功能
+    GPIO_Remap_SWJ_JTAGDisable，解除JTAG端口复用，PA15,PB3,PB4变为GPIO
+    GPIO_Remap_SWJ_Disable，全部解除SWD和JTAG调试端口，导致Jlink失效，无法下载程序，只能串口下载*/
+    //若想用PA15\PB3\PB4三个引脚做GPIO使用，先打开AFIO再将JTAG复用解除
+ 
+	//2.初始化时基单元
+	//选择时基单元的时钟,选择内部时钟;若不调用这个函数，系统上电也是默认是内部时钟
+	TIM_InternalClockConfig(TIM2);
+	
+	//3.配置时基单元 
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;  //指定时钟分频
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式:向上计数
+	/*
+	公式：
+	PWM频率：Freq = CK_PSC / (PSC + 1) / (ARR + 1)
+	PWM占空比：Duty = CCR / (ARR + 1)
+	PWM分辨率：Reso = 1 / (ARR + 1)
+	若PWM波形为频率为1KHz，占空比为50%，分辨率为1%
+	CK_PSC=72MHz
+	代入公式：
+	Freq =1000Hz=72MHz / 720 / 100
+	Duty = 50% = 50 / 100
+	Reso = 1% = 1 / 100
+	因此：PSC=719，ARR=99，ARR=50
+	*/
+	TIM_TimeBaseInitStructure.TIM_Period = 100 - 1;  //ARR自动重装器 周期
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 720 - 1;  //PSC 预分频器
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;  //重复计数器的值（高级定时器）
+	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);//(普通定时器，时基单元初始化结构体)
+	TIM_ClearFlag(TIM2,TIM_FLAG_Update);
+	
+	//4.初始化输出比较单元（通道）
+	TIM_OCInitTypeDef TIM_OCInitStructure;
+	TIM_OCStructInit(&TIM_OCInitStructure);//给结构体赋初始值；若不想把所有成员都列一遍赋值，就可以先用这个函数赋一个初始值，再更改你想改的值
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;//设置输出比较的模式
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;//设置输出比较的极性
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;//设置输出使能（输出状态）
+	TIM_OCInitStructure.TIM_Pulse = 50;//设置CCR，Pulse直译是脉冲
+	TIM_OC1Init(TIM2, &TIM_OCInitStructure);
+    //使用PA0口对应是第一个输出比较通道；在TIM2的OC1通道上就可以输出PWM波形了
+	
+	//5.初始化GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;//结构体变量名GPIO_InitStructure
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	
+    //复用推挽输出；PWM波形通过引脚输出，使用定时器来控制引脚，输出数据寄存器将被断开，
+    //输出控制权将转移给片上外设（这里片上外设引脚连接的就是TIM2的CH1通道）
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; //默认50mhz输出
+	GPIO_Init(GPIOA,&GPIO_InitStructure);		//使用的是地址传递		
+	
+	//6.启动定时器
+	TIM_Cmd(TIM2,ENABLE);//PWM波形就能通过PA0输出了
+}
+ 
+ 
+//让LED呈现呼吸灯的效果，那就是不断更改CCR的值就行了
+//在运行过程更改CCR，使用函数TIM_SetCompare1封装用来单独更改通道1的CCR值
+ 
+//TIM_SetCompare1封装，修改Compare1就能修改ccr的值
+void PWM_SetCompare1(uint16_t Compare1)
+{
+	TIM_SetCompare1(TIM2,Compare1);	
+}
+```
+
+___
+
+### PWM驱动舵机
+
+![](https://i-blog.csdnimg.cn/blog_migrate/8b1b4c69f13d52f359d0c1cf5a21cfa7.jpeg)
+
+驱动舵机的关键就是输出一个下面一样的[PWM波](https://so.csdn.net/so/search?q=PWM%E6%B3%A2&spm=1001.2101.3001.7020)形，只要波形能够按照如下规定，准确的输出，那驱动舵机就非常简单了。
+
+![](https://i-blog.csdnimg.cn/blog_migrate/9224adc43f6b7502ba541a6c189d0bb3.png)
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "serve.h"
+#include "key.h"
+ 
+uint8_t keynum; //按键键码
+float angle;//角度变量
+ 
+int main(void)
+{
+	
+	OLED_Init();	//初始化OLED
+	serve_init();
+	key_init();
+	
+	OLED_ShowString(1, 1 ,"angle:");
+	
+	//serve_setangle(120); //舵机设置角度
+	//PWM_SetCompare2(500); //对应舵机0度的位置
+	//建立一个舵机模块，封装函数。调用函数就能变为对应的角度，舵机设置角度，参数是0到180度
+	
+	while(1)
+	{
+		keynum = key_getnum();
+		if(keynum == 1)
+		{
+			angle += 30;
+			if(angle > 180)
+			{
+			angle = 0;
+			}
+		}
+		serve_setangle(angle); //舵机设置角度
+		OLED_ShowNum(1,7,angle,3);//一行七列显示angle变量长度为3
+ 
+	}
+}
+```
+
+pwm\_led.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+/*
+pwm初始化函数基本步骤（参考笔记PWM基本结构图）
+第一步，RCC开启时钟，把要用的TIM外设和GPIO外设的时钟打开
+第二步，配置单元，包括时钟源选择和时基单元都配置好
+第三步，配置输出比较单元，包括CCR值、输出比较模式、极性选择、输出使能这些参数，在库函数里也是用结构体统一来配置
+第四步，配置GPIO，把PWM对应的GPIO口，初始化为复用推挽输出的配置，Pwm和GPIO的对应关系可以参考引脚定义表
+第五步，运行控制，启动计数器，这样就能输出PWM了
+*/
+ 
+//驱动舵机用的是PA1口的通道2
+void pwm_init(void)
+{
+	//1.打开时钟，选择内部时钟
+	//使用APB1的开启时钟函数，TIM2是APB1总线的外设
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);	//打开时钟
+	
+	//2.初始化时基单元
+	//选择时基单元的时钟,选择内部时钟;若不调用这个函数，系统上电也是默认是内部时钟
+	TIM_InternalClockConfig(TIM2);
+	
+	//3.配置时基单元 
+	/*
+	**********************************************************
+	公式：
+	PWM频率：  Freq = CK_PSC / (PSC + 1) / (ARR + 1)
+	PWM占空比：Duty = CCR / (ARR + 1)
+	PWM分辨率：Reso = 1 / (ARR + 1)
+	************************************************************
+	若PWM波形为频率为1KHz，占空比为50%，分辨率为1%
+	舵机要求的周期是20ms，频率就是1/20ms=50hz；舵机要求高电平时间是0.5ms-2.5ms，也就是占空比
+	ARR设置为20k对应20ms（计数器加一次就是1us）
+	CCR设置500就是0.5ms，设置2500就是2.5ms
+	*/
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;  //指定时钟分频
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式
+	TIM_TimeBaseInitStructure.TIM_Period = 20000 - 1;  //ARR 周期
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 72 - 1;  //PSC 预分频器
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;  //重复计数器的值
+	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);
+	TIM_ClearFlag(TIM2,TIM_FLAG_Update);
+	
+	//4.初始化输出比较单元（通道）
+	TIM_OCInitTypeDef TIM_OCInitStructure;
+	TIM_OCStructInit(&TIM_OCInitStructure);//给结构体赋初始值；若不想把所有成员都列一遍赋值，就可以先用这个函数赋一个初始值，再更改你想改的值
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;//设置输出比较的模式
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;//设置输出比较的极性
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;//设置输出使能（输出状态）
+	TIM_OCInitStructure.TIM_Pulse = 50;//设置CCR，Pulse直译是脉冲
+	TIM_OC2Init(TIM2, &TIM_OCInitStructure);//OC2是通道2；通道和引脚是对应的；对于同一个定时器的不同通道输出的PWM的特点如后：因为不同通道共用一个计数器，所以它们的频率必须是一样的，它们的占空比由各自的CCR决定的；由于计数器的更新，所有PWM同时跳变，所以它们的相位是同步的
+	
+	//5.初始化GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;		//结构体变量名GPIO_InitStructure
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	//复用推挽输出；PWM波形通过引脚输出，使用定时器来控制引脚，输出数据寄存器将被断开，输出控制权将转移给片上外设（这里片上外设引脚连接的就是TIM2的CH1通道）
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; //默认50mhz输出
+	GPIO_Init(GPIOA,&GPIO_InitStructure);		//使用的是地址传递		
+	
+	//6.启动定时器
+	TIM_Cmd(TIM2,ENABLE);//PWM波形就能通过PA0输出了
+}
+ 
+ 
+ 
+//TIM_SetCompare2封装，使用通道2
+void PWM_SetCompare2(uint16_t Compare)
+{
+	TIM_SetCompare2(TIM2,Compare);
+	
+}
+```
+
+serve.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "PWM_LED.h"  //继承pwm的功能
+ 
+ 
+//舵机初始化函数
+ 
+void serve_init(void)
+{
+	pwm_init();//将pwm底层初始化
+}
+ 
+/*
+0度 对应 CCR 500
+180          2500
+对angle进行缩放。0-180是180范围，500-2500是2000范围，所以angle / 180*2000 + 500偏移，就得到目标比例了完成0-180到500-2500的映射了
+*/
+ 
+void serve_setangle(float angle) //舵机设置角度
+{
+	PWM_SetCompare2(angle / 180 * 2000 + 500);//线性映射
+}
+```
+
+___
+
+### PWM驱动直流电机
+
+![](https://i-blog.csdnimg.cn/blog_migrate/2ff425e50255a75f0060026b98329d33.jpeg)
+
+-   VM是电机电源，接在STLINK的5v引脚
+-   VCC逻辑电源接在面包板3.3v正极
+-   A01和AO2是电机输出端接电机的两根线，接线不分正反，对调两根线，电机的旋转方向就会反过来
+-   STBY是待机控制脚，不需要待机，直接接逻辑电源正3.3v
+-   控制引脚 AIN1和AIN2是方向控制，任意接两个GPIO就可以
+-   控制引脚 PWMA是速度控制，需接PWM的输出脚，PA2对应的是TIM2的通道3
+
+    加大PWM频率，当PWM频率足够大时，超出人耳的范围，人耳就听不到了，人耳听到的范围是20Hz到20KHz。可以减小PSC来加大频率且不会影响占空比  
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "moter.h"
+#include "key.h"
+ 
+uint8_t keynum;//按键键码
+int8_t speed;//有符号的速度变量
+ 
+ 
+int main(void)
+{
+	
+	OLED_Init();	//初始化OLED
+	moter_init();
+	key_init();
+	
+	OLED_ShowString(1,1,"speed:");
+	
+	while(1)
+	{	
+		keynum = key_getnum();
+		if(keynum == 1)
+		{
+			speed += 20;
+			if(speed > 100)
+			{
+				speed = -100;//speed从-100到100变化
+			}	
+		}
+		moter_setspeed(speed);//实现按键控制速度
+		OLED_ShowSignedNum(1,7,speed,3);
+	}
+}
+ 
+```
+
+PWM\_LED.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+/*
+pwm初始化函数基本步骤（参考笔记PWM基本结构图）
+第一步，RCC开启时钟，把要用的TIM外设和GPIO外设的时钟打开
+第二步，配置单元，包括时钟源选择和时基单元都配置好
+第三步，配置输出比较单元，包括CCR值、输出比较模式、极性选择、输出使能这些参数，在库函数里也是用结构体统一来配置
+第四步，配置GPIO，把PWM对应的GPIO口，初始化为复用推挽输出的配置，Pwm和GPIO的对应关系可以参考引脚定义表
+第五步，运行控制，启动计数器，这样就能输出PWM了
+*/
+ 
+//1.电机接在TIM2的通道3上。修改：GPIO_Pin_2。TIM_OC3Init。PWM_SetCompare3
+//2.对于直流电机也建立一个hardware模块
+ 
+void pwm_init(void)
+{
+	//1.打开时钟，选择内部时钟
+	//使用APB1的开启时钟函数，TIM2是APB1总线的外设
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);	//打开时钟
+	
+	//2.初始化时基单元
+	//选择时基单元的时钟,选择内部时钟;若不调用这个函数，系统上电也是默认是内部时钟
+	TIM_InternalClockConfig(TIM2);
+	
+	//3.配置时基单元 
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;  //指定时钟分频
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式
+	/*
+	公式：
+	PWM频率：Freq = CK_PSC / (PSC + 1) / (ARR + 1)
+	PWM占空比：Duty = CCR / (ARR + 1)
+	PWM分辨率：Reso = 1 / (ARR + 1)
+	若PWM波形为频率为1KHz，占空比为50%，分辨率为1%
+	CK_PSC=72MHz
+	代入公式：
+	Freq =1000Hz=72MHz / 720 / 100
+	Duty = 50% = 50 / 100
+	Reso = 1% = 1 / 100
+	因此：PSC=719，ARR=99，ARR=50
+	*/
+	TIM_TimeBaseInitStructure.TIM_Period = 100 - 1;  //ARR 周期
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 36 - 1;  //PSC 预分频器,现在为20KHz
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;  //重复计数器的值（高级定时器）
+	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);
+	TIM_ClearFlag(TIM2,TIM_FLAG_Update);//清除中断置位标志
+	
+	//4.初始化输出比较单元（通道）
+	TIM_OCInitTypeDef TIM_OCInitStructure;
+	TIM_OCStructInit(&TIM_OCInitStructure);//给结构体赋初始值；若不想把所有成员都列一遍赋值，就可以先用这个函数赋一个初始值，再更改你想改的值
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;//设置输出比较的模式（默认向上计数）
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;//设置输出比较的极性（高电平为正）
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;//设置输出使能（输出状态）
+	TIM_OCInitStructure.TIM_Pulse = 50;//设置CCR，Pulse直译是脉冲，此时为50%占空比
+	TIM_OC3Init(TIM2, &TIM_OCInitStructure);//TIM2通道3，PA2
+	
+	//5.初始化GPIO（PA2）
+	GPIO_InitTypeDef GPIO_InitStructure;		//结构体变量名GPIO_InitStructure
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	
+    //复用推挽输出；PWM波形通过引脚输出，使用定时器来控制引脚，输出数据寄存器将被断开，
+    //输出控制权将转移给片上外设（这里片上外设引脚连接的就是TIM2的CH1通道）
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; //默认50mhz输出
+	GPIO_Init(GPIOA,&GPIO_InitStructure);		//使用的是地址传递		
+	
+	//6.启动定时器
+	TIM_Cmd(TIM2,ENABLE);//PWM波形就能通过PA0输出了
+}
+
+//TIM_SetCompare1封装，传入参数改变CCR值
+void PWM_SetCompare3(uint16_t Compare)
+{
+	TIM_SetCompare3(TIM2,Compare);	
+}
+```
+
+moter.c
+
+```c
 #include "stm32f10x.h" // Device header
-
-int16_t encoder_count;
-
-void encoder_init(void)
-
+#include "PWM_LED.h"   //继承PWM模块
+ 
+ 
+void moter_init(void) //初始化函数
 {
-
-//第一步，时钟配置
-
-RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE); //开启RCC时钟
-
-RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE); //开启AFIO时钟
-
-//EXTI和NVIC两个外设的时钟是一直开的 ，NVIC内核外设都是不需要开启时钟
-
-//第二步，配置GPIO
-
-//首先定义结构体
-
-GPIO_InitTypeDef GPIO_initstruct; //结构体名字GPIO_initstruct
-
-//将结构体成员引出来
-
-//对于EXTI来说，模式为浮空输入|上拉输入|下拉输入；不知该写什么模式，可以看参考手册中的外设GPIO配置
-
-GPIO_initstruct.GPIO_Mode = GPIO_Mode_IPU;
-
-GPIO_initstruct.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
-
-GPIO_initstruct.GPIO_Speed = GPIO_Speed_50MHz;
-
-//最后初始化GPIO
-
-GPIO_Init(GPIOB,&GPIO_initstruct); //传地址
-
-//第三步，配置AFIO外设中断引脚选择
-
-//AFIO的库函数是和GPIO在一个文件里，可以查看Library文件中的gpio.h查看函数
-
-GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource0);
-
-GPIO_EXTILineConfig(GPIO_PortSourceGPIOB,GPIO_PinSource1);
-
-//第四步，配置EXTI,这样PB14的电平信号就能够通过EXTI通向下一级的NVIC了
-
-EXTI_InitTypeDef EXTI_InitStructure;//结构体类型名EXTI_InitTypeDef，变量名EXTI_InitStructure
-
-EXTI_InitStructure.EXTI_Line = EXTI_Line0 | EXTI_Line1;
-
-EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-
-EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;//因为上面是GPIO_Mode_IPU设置为高电平，所以触发中断是下降
-
-EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-
-EXTI_Init(&EXTI_InitStructure);
-
-//第五步，配置NVIC，NVIC是内核外设，所以它的库函数在misc.h
-
-NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //分组方式，整个芯片只能用一种。如放在模块中进行分组，要确保每个模块分组都选的是同一个；或者将这个代码放在主函数的最开始
-
-NVIC_InitTypeDef NVIC_InitStructure;
-
-NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
-
-NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-
-NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-
-NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-
-NVIC_Init(&NVIC_InitStructure);
-
-NVIC_InitStructure.NVIC_IRQChannel = EXTI1_IRQn;
-
-NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-
-NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
-
-NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-
-NVIC_Init(&NVIC_InitStructure);
-
+	pwm_init();//调用底层的PWM_init，初始化pwm
+	
+	//需要额外初始化方向控制的两个脚，即初始化GPIO引脚
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);	//打开时钟
+	//配置端口模式
+	GPIO_InitTypeDef GPIO_InitStructA;		//结构体变量名GPIO_InitStructA
+	GPIO_InitStructA.GPIO_Mode = GPIO_Mode_Out_PP;	//推挽输出
+	GPIO_InitStructA.GPIO_Pin = GPIO_Pin_4 |GPIO_Pin_5;	//或运算，选择两个引脚
+	GPIO_InitStructA.GPIO_Speed = GPIO_Speed_50MHz; //默认50mhz输出
+	GPIO_Init(GPIOA,&GPIO_InitStructA);		//使用的是地址传递			
 }
-
-int16_t encoder_get(void)
-
+ 
+ 
+//设置速度的函数
+void moter_setspeed(int8_t speed)
 {
-
-int16_t temp;
-
-temp = encoder_count;
-
-encoder_count = 0;
-
-return temp;
-
-}
-
-void EXTI0_IRQHandler(void)
-
-{
-
-if(EXTI_GetITStatus(EXTI_Line0) == SET)
-
-{
-
-if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_1) == 0)
-
-{
-
-encoder_count--;
-
-}
-
-EXTI_ClearITPendingBit(EXTI_Line0);
-
-}
-
-}
-
-void EXTI1_IRQHandler(void)
-
-{
-
-if(EXTI_GetITStatus(EXTI_Line1) == SET)
-
-{
-
-if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_0) == 0)
-
-{
-
-encoder_count++;
-
-}
-
-EXTI_ClearITPendingBit(EXTI_Line1);
-
-}
-
+	//针对正转和翻转，用if来分别处理
+	if(speed >= 0)//正转的逻辑
+	{
+		//首先将方向控制脚设置为一个高电平，一个低电平.哪个为高哪个为底无所谓
+		GPIO_SetBits(GPIOA,GPIO_Pin_4);
+		GPIO_ResetBits(GPIOA,GPIO_Pin_5);
+		//速度
+		PWM_SetCompare3(speed);//传入ccr，0~100,占空比0~100
+	}
+	else//speed就是负数，代表反转
+	{
+		//首先是正反转，将set和reset反过来就能反转了 
+		GPIO_ResetBits(GPIOA,GPIO_Pin_4);
+		GPIO_SetBits(GPIOA,GPIO_Pin_5);
+		PWM_SetCompare3(-speed);//此时speed为负数，必须为正数，在speed前加负号
+	} 
 }
 ```
 
-encoder.h
+## 6-5输入捕获
 
-```cpp
+### 一、输入捕获  
+1.1 输入捕获简介
+
+
+  输入捕获，即Input Capture，英文缩写为IC。输入捕获模式下，当通道输入引脚出现指定电平跳变瞬间（可以定义为上升沿、下降沿），当前CNT（计数寄存器）的值将被锁存到CCR（捕获比较寄存器）中（检测电平跳变，然后执行动作（作用和外部中断差不多，只不过外部中断执行的动作是向CPU申请中断，输入捕获执行的是控制后续电路）），可用于测量PWM波形的频率、占空比、脉冲间隔、电平持续时间等参数。在这里，脉冲间隔和频率差不多、电平持续时间和占空比也是互相对应的关系。
+
+每个高级定时器和通用定时器都拥有4各输入捕获通道，且二者没有区别。基本定时器没有输入捕获的功能。  
+
+  输入捕获模块可以配置为PWMI（PWM输入）模式和主从触发模式。PWMI模式是PWM的输入模式，专门用来同时测量PWM波形的频率和占空比的。主从触发模式可以实现对频率或占空比的硬件的全自动测量。把这两个功能结合起来，测量频率和占空比就是硬件全自动执行，软件不需进行任何干预，也不需进中断，需要测量的时候，直接读取CCR寄存器就行了，使用非常方便且极大地减轻了软件的压力。
+
+​    如下图，左边为输入捕获电路，4个输入捕获和输出比较通道，共用4个CCR寄存器，另外它们的CH1到4的4个通道引脚也是共用的，所以对于同一个定时器，输入捕获和输出比较只能使用其中一个，不能同时使用。
+
+> 输入捕获对比输出比较：
+>
+> -   输出比较，引脚是输出端口，根据CNT和CCR的大小关系来执行输出动作
+> -   输入捕获，引脚是输入端口，接收到输入信号执行CNT锁存到CCR的动作
+
+#### 1.2输入捕获的各部分电路
+
+        从左向右依次进行电路分析：
+
+#### ![](pic_win/4b152c655002d5380d9785af0356c48c.png)       
+
+-   最左边是四个通道的引脚，参考引脚定义表，就指导引脚是复用在哪个位置
+
+![](pic_win/35a7524d4843b18f819f3d61d324488d.png)
+
+-   然后引脚进来，有一个三输入的异或门，这个异或门的输入接在了通道1、2、3端口，异或门的执行逻辑是（不同为1，相同为0），当三个引脚的任何一个有电平翻转时，输出引脚就产生一次电平翻转，3个引脚电平都相同为0，3个引脚中有高有低为1。
+
+![](pic_win/21e6bd31ef7ca438b3fca207b42450b2.png)
+
+-   然后输出通过数据选择器，到达输入捕获通道1，数据选择器如果选择上面一个，那输入捕获通道1的输入就是三个引脚的异或值；若选择下面一个，异或门就没有用。设计异或门，其实还是为了三相无刷电机服务的，无刷电机有三个霍尔传感器检测转子的位置，可以根据转子的位置来进行换相。
+    
+
+![](pic_win/dbd74a4aa81946219d05f625e59b7211.png)
+
+-   输入信号来到了输入滤波器和边沿检测器（极性选择）。输入滤波器可以对信号进行滤波，避免一些高频的毛刺信号误触发；边沿检测器就是和外部中断一样，可以选择高电平触发或者低电平触发，当出现指定的电平时，边沿检测电路就会触发后续电路执行动作。设计了两套滤波和边沿检测电路，第一套电路经过滤波和极性选择得到TI1FP1，输入给通道1的后续电路。第二套电路，经过另一个滤波和极性选择，得到TI1FP2，输入给通道2的后续电路，同理，下面TI2信号进来，也经过两套滤波和极性选择得到TI2FP1输入通道1和TI2FP2输入通道2。可以进行交叉连接，例如CH1引脚输入给通道2，CH2引脚输入给通道1，进行交叉连接的目的是两个：1.一个通道灵活切换两个引脚，可以灵活切换后续捕获电路的输入，2.两个通道同时捕获一个引脚，可以把一个引脚的输入，同时映射到两个捕获单元，这也是PWMI模式的经典结构，实现两个通道（IC）对一个引脚（CH）进行捕获，就可以同时测量频率和占空比。可以选择各自独立连接，也可以选择进行交叉连接。另外还有一个TRC信号，也可选择作为捕获部分的输入，TRC信号来源于最上面，设计也是为了无刷电机的驱动。
+
+![](pic_win/364f02dff444ff8d9c14e7a4823da362.png)
+
+-   然后来到了预分频器。每个通道各有一个预分频器，可以选择对前面的信号进行分频，分频之后的触发信号，就可以触发电路进行工作了，每来一个触发信号，CNT的值就会向CCR转运一次，转运的同时会发生一个捕获事件，这个事件会在状态寄存器置标志位，同时也可以产生中断，如果需要在捕获的瞬间，处理一些事情的话，就可以开启这个捕获中断，比如可以配置上升沿触发捕获，每来一个上升沿，CNT转运到CCR一次，又因为CNT计数器是由内部的标准时钟驱动的，所以CNT的数值可以用来记录两个上升沿之间的时间间隔（周期）再取倒数就是测周法测量的频率了，在一次捕获后将CNT清零（可以用主从触发模式来自动完成CNT清零）
+
+![](pic_win/388c51a129252c70d122744eddbac6d0.png)
+
+
+  输入捕获通道1的详细框图如下所示：（如下是上面框图的一个细化结构，基本功能都是一样的）
+
+![](pic_win/52eee81a40d2c25b2bc9d1110590d7b5.png)
+
+​     如上图，电路细节内容如下：
+
+-   引脚进来，先经过一个滤波器，滤波器的输入是TI1就是CH1的引脚，输出的TI1F就是滤波后的信号
+    
+-   FDTS是滤波器的采样时钟来源
+    
+-   CCMR1寄存器里的ICF位可以控制滤波器的参数
+    
+-   滤波器的工作原理就是：以采样频率对输入信号进行采样，当连续N个值都为高电平，输出才为高电平，当连续N个值都为低电平，输出才为低电平，如果信号出现高频抖动，导致连续采样N个值不全都一样，那输出就不会变化，这样就可以达到滤波的效果。采样频率越低，采样个数N越大，滤波效果就越好。在实际应用中，如果波形噪声比较大，就可以把IC1F位参数设置大一点来过滤噪声。
+    
+-   滤波之后的信号通过边沿检测器。捕获上升沿或者下降沿
+    
+-   CCER寄存器里的CC1P位可以进行极性选择
+    
+-   最终得到TI1FP1触发信号
+    
+-   通过数据选择器，进入通道1后续的捕获电路。
+    
+
+![](pic_win/0a50a4da1577abdbda02be9a66b5ca58.png)
+
+-   当然还有一套一样的电路得到TI1FP2触发信号，连通到通道2的后续电路，上图并没有画出来，同样，通道2有TI2FP1连通到通道1的后续，通道2也有TI2FP2连通到通道2的后续，总共有四种连接方式，然后经过数据选择器，进入后续捕获部分电路
+-   CCMR寄存器的CC1S位可以对数据选择器进行选择
+-   之后，CCMR寄存器的ICPS位可以配置分频器，可以选择不分频、2分频、4分频、8分频
+-   CCMR寄存器的CC1E位，控制输出使能或失能。如果使能了输出，输入端产生指定边沿信号，经过层层电路，就可以最后将CNT的值转运到CCR里来，每捕获一次CNT的值，都要把CNT清0一下，以便于下一次的捕获，从模式控制器就可以在捕获之后自动完成CNT的清零工作
+-   TI1FP1信号和TI1F\_ED边沿信号，都可以通向从模式控制器，比如TI1FP1信号的上升沿触发捕获，还可以同时触发从模式，这个从模式里就有电路，可以自动完成CNT的清零。从模式就是完成自动化操作的利器
+
+![](pic_win/faefcb11d19d943c9728f8ee75c656e1.png)
+
+####   
+1.3 输入捕获的主模式、从模式、触发源选择（简称：主从触发模式）
+
+![](pic_win/efdb8eda1677e0f3b82d5cbfc1aa66ce.png)
+
+  CCR对CNT进行捕获之后，需要对CNT进行一次清0操作，这样每次捕获得到的值才是测周法，两个上升沿（下降沿）之间的时间间隔。这个清0操作，就需要用到主从触发模式来自动完成。由输入捕获通道1的详细框图可得：经过滤波和极性选择的TI1FP1信号和经过滤波的边沿信号TI1F\_ED都可以通向从模式控制器，之后便可以通过硬件电路自动完成CNT的清0操作。  
+  主从触发模式，即主模式、从模式和触发源选择三个功能的简称。主模式可以将定时器内部的信号映射到TRGO引脚，用于触发其他外设的操作；从模式可以接收其他外设或自身外设的一些信号，用于触发自己的一些操作（定时器的运行）；触发源选择，即选择从模式的触发信号源功能，也可以认为它是从模式的一部分。  
+  在从模式下，可以通过触发源选择功能选择一个信号产生TRGI信号，之后去触发从模式，从模式可以在上面列表中选择一项操作来自动执行。关于主从模式的详细说明可以参见手册：
+
+#### ![](pic_win/1cee83cfe5d7ecc95607d8e1cab1bc78.png)![](pic_win/4b0c481f78b80af1262dfc4d6bc15248.png)
+
+#### ![](pic_win/adb265eb30187cf787a9fdf1d054139e.png)  
+1.4 输入捕获和PWMI基本结构
+
+1.4.1输入捕获基本结构  
+
+        下图是输出捕获模式测频率的基本结构图。
+
+![](pic_win/21a39c3329530545d06acc239ef2ec53.png)  
+  上图清晰地展示了输入捕获模式测量频率的过程，同时也是编程的逻辑基础。在这里我们只使用了一个通道，所以它只能测量频率。  
+  首先，配置时基单元，启动寄存器，则CNT就会在预分频之后的时钟驱动下不断自增。测周法用CNT来计数，间接实现计时的功能。经过预分频后的时钟频率，就是测周法的标准频率fc。之后，GPIO输入一个待测的方波信号，经过经过滤波器和边沿检测选择TI1FP1为上升沿触发，之后数据选择器选择直连通道，分频器选择不分频。当TI1FP1出现上升沿之后，CNT的值就会被CCR1转运捕获；同时触发源选择模块选择TI1FP1为触发信号，从模式选择复位操作，触发CNT清零（先后顺序是：先转运CNT的值到CCR，再触发从模式给CNT清零。或者是非阻塞的同时转移：CNT的值转移到CCR，同时0转移到CNT里面去，总之是先捕获，再清零）。当电路不断工作时，CCR1中的值始终是最新一个周期的计数值，即测周法的计次数 N。所以，当我们想读取信号的频率时，只需要读取CCR1得到N，再计算fc/N就得到频率了。当不需要读取时，整个电路全自动的测量，不需要占用任何软件资源。
+
+>   这里需要注意以下两点：
+>
+> -   CNT的计数值是有上限的。由于ARR最大为65535，故CNT最大也只能计65535个数。如果信号频率太低，CNT的计数值可能会溢出。
+> -   从模式的触发源选择中有TI1FP1和TI2FP2，但是没有TI3和TI4的信号。所以如果要使用从模式自动清零CNT，就必须使用通道1或通道2作为输入。对于通道3和通道4，就只能开启捕获中断，在中断中手动清0了（程序会处于频繁中断的状态，比较占用软件资源）。
+
+1.4.2 PWMI基本结构
+
+![](pic_win/59cfa7f390cabe8cc4e7f4fe14ae5285.png)
+
+PWMI模式使用两个通道同时捕获一个引脚，可以同时测量周期和占空比，相比前面输入捕获，下面多了一个TI1FP2的通道。
+
+首先TI1FP1配置上升沿触发，触发捕获和清零CNT，正常的捕获周期，再来一个TI1FP2，配置为下降沿触发，通过交叉通道去触发通道2的捕获单元（最开始上升沿CCR1捕获同时清零CNT，之后CNT一直加，然后在下降沿时刻触发CCR2捕获，这时CCR2的值就是CNT从上升沿到下降沿的计数值也就是高电平期间的计数值，CCR2捕获并不触发CNT清零，所以CNT继续加，直到下一次上升沿，CCR1捕获周期并CNT清零，这样执行之后CCR1就是一整个周期的计数值，CCR2就是高电平期间的计数值，用CCR2/CCR1就是占空比，以上就是PWMI模式使用两个通道来捕获频率和占空比的思路。另外也可以两个通道同时捕获第一个引脚的输入）
+
+___
+
+### 二、频率的测量方法
+
+![](pic_win/9e926e74c08a03b9411ccf1b796ece2b.png)
+
+  如上图是频率逐渐降低的方波波形，越往左频率越高，越往右频率越低，这里信号都是只有高低电平的数字信号，对于STM32测频率而言，它也是只能测量数字信号的。如果需要测量一个正弦波则需要搭建一个信号预处理电路，最简单的就是用运放搭建一个比较器，把正弦波转换为数字信号再输入给STM32就行了；如果你测量的信号电压非常高，那还要考虑隔离的问题，比如使用隔离放大器、电压互感器等元件，隔离高压端和低压端，保证电路的安全。总之，经过处理最终输入给STM32的信号是如上图的高低电平信号，高电平3.3v，低电平0v。
+
+为了测量频率，有两种方法可以选择：测频法、测周法
+
+测频法：定时器中断，并记录捕获次数；测周法：捕获中断，并记录定时器次数。
+
+#### 2.1 测频法
+
+
+  测频法的测试方法（直接按频率定义来进行测量的方法）是：在闸门时间T内，对上升沿（也可以是下降沿）计次，得到N，则待测信号频率𝑓𝑥 为：                                 
+
+                               𝑓𝑥 = 𝑁 / 𝑇
+
+![](pic_win/5d0b95ece141e88b1b7fc3dca89176c7.png)
+
+  例如，可以定义闸门时间闸门时间T=1s （砸门时间不是必须为1s），则在一秒中得到的上升沿的个数（每来一个上升沿就是完整的一个周期的信号个数）就是频率
+
+> 频率的定义就是，1s内出现了多少个重复的周期，那频率就是多少Hz
+
+#### 2.2 测周法
+
+
+  测周法的测试方法是：两个上升沿内，以标准频率fc计次，fc=72M/（psc+1），得到N(就是读取CCR的值），则测量频率𝑓𝑥为：  
+                                                        𝑓𝑥 = 𝑓𝑐 / 𝑁 
+
+![](pic_win/1dc6e53344f4ec0118aacbd670a06302.png)
+
+  测周法的基本思想是：周期的倒数就是频率。如果我们能用定时器测量出一个周期的时间（相邻上升沿或相邻下降沿的间隔时间）取倒数即得到测量频率。
+
+捕获信号的两个上升沿，然后测量一下两个上升沿之间持续的时间，但是实际上，并没有一个精度无穷大的秒表来测量时间，测量时间的方法，实际上也是定时器计次，我们使用一个已知的标准频率fc的计次时钟来驱动计数器，从一个上升沿开始计数器从0开始一直计到下一个上升沿停止，计一个数的时间是1/fc，计N个数时间就是N/fc也就是周期，再取倒数就得到了频率fx
+
+   输入捕获模块采用测周法进行测量。
+
+#### 2.3 测频法和测周法的[误差分析](https://so.csdn.net/so/search?q=%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90&spm=1001.2101.3001.7020)
+
+
+  测频法适用于测量高频信号，测周法适用于测量低频信号。
+
+根据上图可以清晰地看出，测频法在闸门时间内，最好要多出现一些上升沿，计次数量多一些有助于减小误差，测频法要求信号频率要稍微高一些，测频法的测量结果更新慢一些，测量结果是一段时间的平均值，值比较平滑，数值相对稳定；对于测周法，就要求信号频率低一些，低频信号，周期比较长，计次就会比较多，有助于减小误差，测周法的测量结果更新的快，只测量一个周期，就能出一次结果，数据跳变也非常快，所以出结果的速度取决于待测信号的频率，一般而言，待测信号都是几百hz几千hz，所以一般情况下，测周法结果更新更快，但是由于它只测量一个周期，所以结果值会受噪声的影响，波动比较大，这就是这两种方法的基本特征对比。
+
+测频法计次和测周法计次，这个计次数量N尽量要大一些，N越大，相对误差越小，因为在这些方法中，计次可能存在正负1误差，要想减小正负1误差，就尽量多记一些数，当计次N比较大时，正负1对N的影响就会很小  
+
+  由于测量原理的差异，一般而言，测频法的结果更新频率会比较慢，但是数值较为稳定；测周法的结果更新频率较快，数据跳变也比较灵敏。从原理上看，测频法自带一个均值滤波的功能，如果在闸门时间 T内被测频率有变化，测频法得到的实际是这一段闸门时间内的平均频率；而测周法只测量一个周期，故其结果会受噪声的影响，波动会比较大。所以，对于测频法和测周法的一个共同点是：N越大，误差就越小。在两种方法中，计次都可能会产生正负1误差。在测频法的一个闸门时间内，并不是每一个被测信号的周期都是完整的；测周法的标准计数信号的信号也不一定是被测信号的整数倍，所以它也不一定是每一个都完整的。对于上述的两种情况，都会出现多计一个数或者少计一个数的情况，所以会产生正负1误差。  
+  如何在不同情况下正确选择测频法和测周法呢？所以多高算高频，多低算低频，我们有以下一个参数来考量：中界频率，测频法和测周法误差相等的频率点。由于两种方法的误差都与N的正负1误差有关，所以当两种方法计次的N相同时，两种方法的误差也就相同。消去两种方法公式中的N，将测频法和测周法的N提出来，令两个方法N相等，将fx解出来，可得：
+
+![](pic_win/dc2de7ee4350c10fd5f19fcfad87a7c7.png)
+
+式中，T 是测频法的闸门时间，f c是测频法的标准频率。
+
+​    当待测信号频率小于中界频率时，测周法误差更小，选择测周法更合适；当待测信号频率大于中界频率时，测频法误差更小，选择测频法更合适。
+
+#### 2.4用STM32来实现测频法和测周法
+
+   测频法，之前学过的外设可以实现，对射式红外传感器计次、定时器外部时钟，这些代码稍加改进就是测频法，比如 对射式红外传感器计次，每来一个上升沿计次+1，再用一个定时器，定一个1s的定时中断，在中断里，每隔1s取一下计次值，同时清0，为下一次做准备，这样每次读取的计次值就直接是频率；对应定时器外部时钟的代码，也是如此，每隔1s取一下计次，就能实现测频法测量频率的功能了。
+
+本节输入捕获测频率，使用的方法是测周法。就是测量两个上升沿之间的时间，来进行频率测量。
+
+___
+
+### 三、手册
+
+        手册本节相应的内容，描述是寄存器的方式，结合上面笔记内容进行进一步理解
+
+> -   手册中，  脉冲宽度测量就是占空比，  周期测量就是频率
+> -   主要理解，从模式配合输入捕获完成硬件自动化
+
+![](pic_win/c09aff5015230af55acf88cbd5904506.png)![](pic_win/9b3c379941721bf478df15f5765947f1.png)![](pic_win/b2b32bdaa8ff3a552010feec18a8e6e5.png)
+
+TIM_PWMIConfig(TIM3,&TIM_ICInitTypeDef);
+
+### 6-6输入捕获实例代码
+
+ 两个代码的接线图都一样，如下
+
+![](https://i-blog.csdnimg.cn/blog_migrate/df52a7e113b74c9bb0235c1a19c76288.jpeg)        测量信号的输入引脚是PA6，信号从PA6进来，待测的PWM信号也是STM32自己生成的，输出引脚是PA0。
+
+        需要配置电路连接图示如下：
+
+![](https://i-blog.csdnimg.cn/blog_migrate/d3258d062821130a305439ceefe4917f.png)
+
+        所以步骤就是：
+
+-   第一步，RCC开启时钟，把GPIO和TIM的时钟打开
+-   第二步，GPIO初始化，把GPIO配置成输入模式（一般选择上拉输入或浮空输入模式）
+-   第三步，配置时基单元，让CNT计数器在内部时钟的驱动下自增运行，和之前代码一样
+-   第四步，配置输入捕获单元，包括滤波器、极性、直连通道、交叉通道、分频器这些参数，用一个结构体就可以统一进行配置了
+-   第五步，选择从模式的触发源，触发源选择为TI1FP1，这里调用一个库函数给一个参数就行了
+-   第六步，选择触发之后执行的操作，执行Reset操作，这里调用一个库函数就行了
+-   最后，当这些电路都配置好之后，调用TIM\_Cmd函数，开启定时器。这样所有的电路就能配合起来了，按照我们的要求工作了。当我们需要读取最新一个周期的频率时，直接读取CCR寄存器，然后按照fc/N，计算一下就行了，这就是整个程序的思路
+
+### 输入捕获相关库函数
+
+1.1.输入捕获初始化配置
+
+```c
+// 输入捕获IC初始化函数
+// 输入捕获和输出比较都有四个通道，输出比较每个通道单独占一个函数，输入捕获每个通道共用一个函数（在结构体里会额外有一个参数可以用来选择具体是配置哪个通道，因为可能有交叉通道所以函数合在一起比较方便）
+void TIM_ICInit(TIM_TypeDef* TIMx, TIM_ICInitTypeDef* TIM_ICInitStruct);
+ 
+// 可以给输入捕获结构体赋一个初始值
+void TIM_ICStructInit(TIM_ICInitTypeDef* TIM_ICInitStruct);
+ 
+// 这个函数和TIM_ICInit类似都是用于初始化输入捕获单元的，但是TIM_ICInit函数只是单一地配置一个通道而TIM_PWMIConfig可以快速配置两个通道的PWMI模式（自动将另一个通道配置为相反的模式）
+void TIM_PWMIConfig(TIM_TypeDef* TIMx, TIM_ICInitTypeDef* TIM_ICInitStruct);
+ 
+// 单独写入时基单元的PSC，第三个参数与预装载有关
+void TIM_PrescalerConfig(TIM_TypeDef* TIMx, uint16_t Prescaler, uint16_t TIM_PSCReloadMode);
+ 
+// 单独配置四个通道的预分频器，结构体中也可以配置，效果相同
+void TIM_SetIC1Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC);
+void TIM_SetIC2Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC);
+void TIM_SetIC3Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC);
+void TIM_SetIC4Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC);
+ 
+// 分别读取四个通道的CCR的值（与输出比较中的TIM_SetComparex函数对应，读写的都是CCR寄存器；输出比较模式下CCR是只写，要用SetCompare写入；输入捕获模式下CCR是只读，要用GetCapture读出）
+uint16_t TIM_GetCapture1(TIM_TypeDef* TIMx);
+uint16_t TIM_GetCapture2(TIM_TypeDef* TIMx);
+uint16_t TIM_GetCapture3(TIM_TypeDef* TIMx);
+uint16_t TIM_GetCapture4(TIM_TypeDef* TIMx);
+```
+
+1.2.主从触发模式配置
+
+```c
+// 选择输入（从模式）触发源TRGI
+void TIM_SelectInputTrigger(TIM_TypeDef* TIMx, uint16_t TIM_InputTriggerSource);
+ 
+// 选择输出（主模式）触发源TRGO，选择主模式触发的触发源
+void TIM_SelectOutputTrigger(TIM_TypeDef* TIMx, uint16_t TIM_TRGOSource);
+ 
+// 选择从模式需要执行的操作
+void TIM_SelectSlaveMode(TIM_TypeDef* TIMx, uint16_t TIM_SlaveMode);
+```
+
+>         注意滤波器和分频器的区别：虽然它俩都是计次，但是滤波器计次并不会改变信号的原有频率，一般滤波器的采样频率都会远高于信号频率，所以滤波器只会滤除高频噪声使信号更平滑，1KHz滤波之后仍然是1KHz，信号频率不会变化；而分频器就是对信号本身进行计次，会改变频率，1KHz，2分频之后就是500Hz，4分频就是250Hz。
+
+### 输入捕获模式测频率
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "PWM_LED.h"
+#include "IC.h"
+ 
+ 
+int main(void)
+{
+	
+	OLED_Init();	//初始化OLED
+	pwm_init();
+	IC_init();//初始化整个电路 
+	
+	OLED_ShowString(1,1,"Freq:00000Hz");
+	
+	
+	//PA0口输出1khz频率，50%占空比的待测信号;PWM模块将待测信号输出给PA0，PA0然后通过导线输入到PA6（PA6是TIM3的通道1，通道1通过输入捕获模块测量得到频率，然后在主循环里不断刷新显示频率）
+	PWM_setPSC(720-1); //频率=72M/(psc+1)/(arr+1)   //频率=72M/720/100 =1khz
+	PWM_SetCompare1(50);//占空比=ccr/（ARR+1）      //占空比=50/100 = 50%
+ 
+	while(1)
+	{
+		OLED_ShowNum(1,6,IC_GetFreq(),5);//不断刷新显示频率
+	}
+}
+```
+
+IC.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+ 
+void IC_init(void)
+{
+	//1.打开时钟，选择内部时钟
+	//使用APB1的开启时钟函数，TIM3是APB1总线的外设
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);//打开时钟,PA6的通道1
+ 
+	//2.初始化GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;//结构体变量名GPIO_InitStructure
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//上拉输入
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//默认50mhz输出
+	GPIO_Init(GPIOA,&GPIO_InitStructure);//使用的是地址传递
+	
+	//3.1.初始化时基单元
+	//选择时基单元的时钟,选择内部时钟;若不调用这个函数，系统上电也是默认是内部时钟
+	TIM_InternalClockConfig(TIM3);
+	
+	//3.2.配置时基单元参数 
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;  //指定时钟分频
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式，向上计数
+				/*公式：	
+				PWM频率：Freq = CK_PSC / (PSC + 1) / (ARR + 1)
+				PWM占空比：Duty = CCR / (ARR + 1)
+				PWM分辨率：Reso = 1 / (ARR + 1)           */
+	TIM_TimeBaseInitStructure.TIM_Period = 65536 - 1; //ARR周期，最好要设置大一些防止计数溢出，16位的计数器可以满量程计数是65535
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 72 - 1; //PSC预分频器，标准频率就是72M/72=1MHz；这个值决定了测周法的标准频率fc，72M/预分频就是计数器自增的频率就是计数标准频率；需要根据信号频率的分步范围来调整
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;  //重复计数器的值
+	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseInitStructure);
+	
+	//4.初始化输入捕获单元
+	TIM_ICInitTypeDef TIM_ICInitStructure;
+	TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;//选择通道，使用TIM3的通道1
+	TIM_ICInitStructure.TIM_ICFilter = 0xF;//配置输入捕获的滤波器，数越大，滤波效果越好，每个数值对应的采样频率和采样次数在参考手册里有，若信号有毛刺和噪声就可以增大滤波器参数可以有效避免干扰
+	TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;//对应边沿检测、极性选择部分，可以选择上升沿触发/下降沿触发/上升沿和下降沿都触发
+	TIM_ICInitStructure.TIM_ICPrescaler = TIM_ICPSC_DIV1;//分频器，触发信号分频器，不分频就是每次触发都有效，2分频就是每隔一次有效一次，以此类推
+	TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;//选择触发信号从哪个引脚输入，对应配置数据选择器的。可以选择直连通道/交叉通道/TRC引脚
+	TIM_ICInit(TIM3,&TIM_ICInitStructure);
+	
+	//5.配置触发源选择，配置TRGI的触发源为TI1FP1
+	TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1);//触发源选择TI1FP1
+	
+	
+	//6.配置从模式，为Reset
+	TIM_SelectSlaveMode(TIM3,TIM_SlaveMode_Reset);//从模式选择Reset
+	
+	//7.启动定时器，调用TIM_Cmd
+	TIM_Cmd(TIM3,ENABLE);//CNT就会在内部时钟的驱动下不断自增，即使没有信号过来，它也会不断自增；有信号来的时候，CNT就会在从模式的作用下自动清零并不会影响测量
+	/*
+	初始化之后，整个电路就能全自动测量了，当我们想查看频率时，需要读取CCR进行计算，所以需要在下面写一个函数
+	*/
+}
+ 
+uint32_t IC_GetFreq(void)
+{
+//使用测周法的公式，fc=72M/（psc+1），目前psc=72-1，所以fc=1MHz
+	return 1000000 / (TIM_GetCapture1(TIM3) + 1);	//返回的是最新一个周期的频率值（单位是HZ） = 1MHz（1000000） / N(就是读取CCR的值）
+}
+```
+
+PWM.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+/*
+pwm初始化函数基本步骤（参考笔记PWM基本结构图）
+第一步，RCC开启时钟，把要用的TIM外设和GPIO外设的时钟打开
+第二步，配置单元，包括时钟源选择和时基单元都配置好
+第三步，配置输出比较单元，包括CCR值、输出比较模式、极性选择、输出使能这些参数，在库函数里也是用结构体统一来配置
+第四步，配置GPIO，把PWM对应的GPIO口，初始化为复用推挽输出的配置，Pwm和GPIO的对应关系可以参考引脚定义表
+第五步，运行控制，启动计数器，这样就能输出PWM了
+*/
+ 
+//PWM控制呼吸灯的代码逻辑是初始化TIM2的通道1，产生一个PWM波形，输出引脚是PA0，然后通过PWM_SetCompare1可以调节CCR1寄存器的值从而控制PWM的占空比，PWM的频率是固定写好在初始化程序里了，运行时候调节不太方便
+//在最后再加一个函数，用来便捷地调节PWM频率，PSC和ARR都可以调节频率，但是调节ARR会影响占空比，通过PSC调节频率不会影响占空比，所以计划是固定ARR值，通过调节PSC来改变PWM频率
+//一般可以根据分辨率的要求先确定ARR，PSC决定频率，CCR决定占空比
+ 
+void pwm_init(void)
+{
+	//1.打开时钟，选择内部时钟
+	//使用APB1的开启时钟函数，TIM2是APB1总线的外设
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);	//打开时钟
+	
+	//2.初始化时基单元
+	//选择时基单元的时钟,选择内部时钟;若不调用这个函数，系统上电也是默认是内部时钟
+	TIM_InternalClockConfig(TIM2);
+	
+	//3.配置时基单元 
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;  //指定时钟分频
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式
+	/*
+	公式：
+	PWM频率：Freq = CK_PSC / (PSC + 1) / (ARR + 1)
+	PWM占空比：Duty = CCR / (ARR + 1)
+	PWM分辨率：Reso = 1 / (ARR + 1)
+	*/
+	TIM_TimeBaseInitStructure.TIM_Period = 100 - 1;  //ARR 周期
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 720 - 1;  //PSC 预分频器
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;  //重复计数器的值
+	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);
+	TIM_ClearFlag(TIM2,TIM_FLAG_Update);
+	
+	//4.初始化输出比较单元（通道）
+	TIM_OCInitTypeDef TIM_OCInitStructure;
+	TIM_OCStructInit(&TIM_OCInitStructure);//给结构体赋初始值；若不想把所有成员都列一遍赋值，就可以先用这个函数赋一个初始值，再更改你想改的值
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;//设置输出比较的模式
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;//设置输出比较的极性
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;//设置输出使能（输出状态）
+	TIM_OCInitStructure.TIM_Pulse = 50;//设置CCR，Pulse直译是脉冲
+	TIM_OC1Init(TIM2, &TIM_OCInitStructure);//使用PA0口对应是第一个输出比较通道；在TIM2的OC1通道上就可以输出PWM波形了
+	
+	//5.初始化GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;		//结构体变量名GPIO_InitStructure
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	//复用推挽输出；PWM波形通过引脚输出，使用定时器来控制引脚，输出数据寄存器将被断开，输出控制权将转移给片上外设（这里片上外设引脚连接的就是TIM2的CH1通道）
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; //默认50mhz输出
+	GPIO_Init(GPIOA,&GPIO_InitStructure);		//使用的是地址传递		
+	
+	//6.启动定时器
+	TIM_Cmd(TIM2,ENABLE);//PWM波形就能通过PA0输出了
+}
+ 
+ 
+ 
+//在运行过程更改CCR，使用函数TIM_SetCompare1封装用来单独更改通道1的CCR值，进而改变占空比
+void PWM_SetCompare1(uint16_t Compare1)//TIM_SetCompare1封装
+{
+	TIM_SetCompare1(TIM2,Compare1);
+}
+ 
+//封装此函数，在初始化之后单独修改PSC,进而改变频率
+void PWM_setPSC(uint16_t prescaler)
+{
+//调用库函数里单独写入PSC的函数，在tim.h中找，这个函数还有一个重装模式的参数所以叫TIM_PrescalerConfig
+	TIM_PrescalerConfig(TIM2,prescaler,TIM_PSCReloadMode_Immediate);//写入PSC,第二个参数是写入PSC的值，直接将外层函数的prescaler参数传进去，第三个参数是重装模式（还是影子寄存器、预装载这个问题，就是写入的值是立刻生效还是在更新事件生效；立刻生效可能会在值改变时产生切断波形的现象会出现不完整的周期，更新事件生效就是会有一个缓存器，延迟参数的写入时间，等一个周期结束了，在更新事件时，再统一改变参数，保证每个周期的完整）
+ 
+}
+```
+
+### PWMI模式测频率和占空比
+
+main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "PWM_LED.h"
+#include "IC.h"
+ 
+ 
+ 
+int main(void)
+{
+	
+	OLED_Init();	//初始化OLED
+	pwm_init();
+	IC_init();//初始化整个电路 
+	
+	OLED_ShowString(1,1,"Freq:00000Hz");
+	OLED_ShowString(2,1,"Duty:00%");
+	
+	//PA0口输出1khz频率，50%占空比的待测信号;PWM模块将待测信号输出给PA0，PA0然后通过导线输入到PA6（PA6是TIM3的通道1，通道1通过输入捕获模块测量得到频率，然后在主循环里不断刷新显示频率）
+	PWM_setPSC(7200-1); //频率=72M/(psc+1)/(arr+1)   //频率=72M/720/100 =1khz
+	PWM_SetCompare1(80);//占空比=ccr/（ARR+1）      //占空比=50/100 = 50%
+ 
+	while(1)
+	{
+		OLED_ShowNum(1,6,IC_GetFreq(),5);//不断刷新显示频率
+		OLED_ShowNum(2,6,IC_GetDuty(),2);//不断刷新显示占空比
+	}
+}
+```
+
+IC.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+//PWMI模式，方法1：修改上一个程序的4.初始化输入捕获单元
+//方法2：使用TIM_PWMIConfig函数
+ 
+void IC_init(void)
+{
+	//1.打开时钟，选择内部时钟
+	//使用APB1的开启时钟函数，TIM3是APB1总线的外设
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);//打开时钟,PA6的通道1
+ 
+	//2.初始化GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;//结构体变量名GPIO_InitStructure
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//上拉输入
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//默认50mhz输出
+	GPIO_Init(GPIOA,&GPIO_InitStructure);//使用的是地址传递
+	
+	//3.1.初始化时基单元
+	//选择时基单元的时钟,选择内部时钟;若不调用这个函数，系统上电也是默认是内部时钟
+	TIM_InternalClockConfig(TIM3);
+	
+	//3.2.配置时基单元参数 
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;  //指定时钟分频
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式，向上计数
+				/*公式：	
+				PWM频率：Freq = CK_PSC / (PSC + 1) / (ARR + 1)
+				PWM占空比：Duty = CCR / (ARR + 1)
+				PWM分辨率：Reso = 1 / (ARR + 1)  
+				目前我们给的标准频率时1mhz，计数器最大只能计到65535，所以所测量的最低频率是1m/65535=15hz，如果信号频率再低，计数器就要溢出了所以最低频率就是15hz左右，如果想再降低一些最低频率的限制可以把psc再加大点这样标准频率就更低所支持测量的最低频率也就更低；最大频率没有界限，1MHZ，信号频率接近1mhz时误差已经非常大了，
+				*/
+	TIM_TimeBaseInitStructure.TIM_Period = 65536 - 1; //ARR周期，最好要设置大一些防止计数溢出，16位的计数器可以满量程计数是65535
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 72 - 1; //PSC预分频器，标准频率就是72M/72=1MHz；这个值决定了测周法的标准频率fc，72M/预分频就是计数器自增的频率就是计数标准频率；需要根据信号频率的分步范围来调整
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;  //重复计数器的值
+	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseInitStructure);
+	
+	//4.初始化输入捕获单元，PWMI模式需配置成两个通道同时捕获同一个引脚的模式（一个简单的想法是：将通道初始化部分复制一份，结构体定义不需复制，通道1是直连模式上升沿触发通道2也延用这个配置）
+	TIM_ICInitTypeDef TIM_ICInitStructure;
+	TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;//选择通道，使用TIM3的通道1
+	TIM_ICInitStructure.TIM_ICFilter = 0xF;//配置输入捕获的滤波器，数越大，滤波效果越好，每个数值对应的采样频率和采样次数在参考手册里有，若信号有毛刺和噪声就可以增大滤波器参数可以有效避免干扰
+	TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;//对应边沿检测、极性选择部分，可以选择上升沿触发/下降沿触发/上升沿和下降沿都触发
+	TIM_ICInitStructure.TIM_ICPrescaler = TIM_ICPSC_DIV1;//分频器，触发信号分频器，不分频就是每次触发都有效，2分频就是每隔一次有效一次，以此类推
+	TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;//选择触发信号从哪个引脚输入，对应配置数据选择器的。可以选择直连通道/交叉通道/TRC引脚
+	TIM_ICInit(TIM3,&TIM_ICInitStructure);
+	
+	//方法1，：将通道初始化部分复制一份，结构体定义不需复制
+//	TIM_ICInitStructure.TIM_Channel = TIM_Channel_2;//改为通道2
+//	TIM_ICInitStructure.TIM_ICFilter = 0xF;
+//	TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Falling;//改为下降沿触发
+//	TIM_ICInitStructure.TIM_ICPrescaler = TIM_ICPSC_DIV1;
+//	TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_IndirectTI;//交叉输入
+//	TIM_ICInit(TIM3,&TIM_ICInitStructure);
+	
+	//方法2：使用TIM_PWMIConfig函数,可快捷地把电路配置成PWMI模式的标准结构，这个函数只支持通道1和2不支持通道3和4，和方法1的效果是一样的，只需传入一个通道的参数就行了，在函数里会自动把剩下的一个通道初始化成相反的配置（比如已经传入了通道1、直连、上升沿，那函数里就会顺带配置通道2、交叉、下降沿）
+	TIM_PWMIConfig(TIM3,&TIM_ICInitStructure);
+	
+	//5.配置触发源选择，配置TRGI的触发源为TI1FP1
+	TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1);//触发源选择TI1FP1
+	
+	
+	//6.配置从模式，为Reset
+	TIM_SelectSlaveMode(TIM3,TIM_SlaveMode_Reset);//从模式选择Reset
+	
+	//7.启动定时器，调用TIM_Cmd
+	TIM_Cmd(TIM3,ENABLE);//CNT就会在内部时钟的驱动下不断自增，即使没有信号过来，它也会不断自增；有信号来的时候，CNT就会在从模式的作用下自动清零并不会影响测量
+	/*
+	初始化之后，整个电路就能全自动测量了，当我们想查看频率时，需要读取CCR进行计算，所以需要在下面写一个函数
+	*/
+}
+ 
+//获取频率的函数
+uint32_t IC_GetFreq(void)
+{
+//使用测周法的公式，fc=72M/（psc+1），目前psc=72-1，所以fc=1MHz
+	return 1000000 / (TIM_GetCapture1(TIM3) + 1);	//返回的是最新一个周期的频率值（单位是HZ） = 1MHz（1000000） / N(就是读取CCR的值）
+}
+ 
+//获取占空比的函数
+uint32_t IC_GetDuty(void)
+{
+//高电平的计数值存在CCR2里，整个周期的计数值存在CCR1里，用CCR2/CCR1就能得到占空比了
+	 return (TIM_GetCapture2(TIM3) + 1) * 100 / (TIM_GetCapture1(TIM3) + 1);//显示整数的话，给它乘100，这样返回值的范围就是0-100，对应占空比0%-100%
+	//经过实测，CCR总会少一个数，所以需要各加一个1补回来
+ 
+}
+```
+
+pwm.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+/*
+pwm初始化函数基本步骤（参考笔记PWM基本结构图）
+第一步，RCC开启时钟，把要用的TIM外设和GPIO外设的时钟打开
+第二步，配置单元，包括时钟源选择和时基单元都配置好
+第三步，配置输出比较单元，包括CCR值、输出比较模式、极性选择、输出使能这些参数，在库函数里也是用结构体统一来配置
+第四步，配置GPIO，把PWM对应的GPIO口，初始化为复用推挽输出的配置，Pwm和GPIO的对应关系可以参考引脚定义表
+第五步，运行控制，启动计数器，这样就能输出PWM了
+*/
+ 
+//PWM控制呼吸灯的代码逻辑是初始化TIM2的通道1，产生一个PWM波形，输出引脚是PA0，然后通过PWM_SetCompare1可以调节CCR1寄存器的值从而控制PWM的占空比，PWM的频率是固定写好在初始化程序里了，运行时候调节不太方便
+//在最后再加一个函数，用来便捷地调节PWM频率，PSC和ARR都可以调节频率，但是调节ARR会影响占空比，通过PSC调节频率不会影响占空比，所以计划是固定ARR值，通过调节PSC来改变PWM频率
+//一般可以根据分辨率的要求先确定ARR，PSC决定频率，CCR决定占空比
+ 
+void pwm_init(void)
+{
+	//1.打开时钟，选择内部时钟
+	//使用APB1的开启时钟函数，TIM2是APB1总线的外设
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);	//打开时钟
+	
+	//2.初始化时基单元
+	//选择时基单元的时钟,选择内部时钟;若不调用这个函数，系统上电也是默认是内部时钟
+	TIM_InternalClockConfig(TIM2);
+	
+	//3.配置时基单元 
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;  //指定时钟分频
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式
+	/*
+	公式：
+	PWM频率：Freq = CK_PSC / (PSC + 1) / (ARR + 1)
+	PWM占空比：Duty = CCR / (ARR + 1)
+	PWM分辨率：Reso = 1 / (ARR + 1)
+	*/
+	TIM_TimeBaseInitStructure.TIM_Period = 100 - 1;  //ARR 周期
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 720 - 1;  //PSC 预分频器
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;  //重复计数器的值
+	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);
+	TIM_ClearFlag(TIM2,TIM_FLAG_Update);
+	
+	//4.初始化输出比较单元（通道）
+	TIM_OCInitTypeDef TIM_OCInitStructure;
+	TIM_OCStructInit(&TIM_OCInitStructure);//给结构体赋初始值；若不想把所有成员都列一遍赋值，就可以先用这个函数赋一个初始值，再更改你想改的值
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;//设置输出比较的模式
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;//设置输出比较的极性
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;//设置输出使能（输出状态）
+	TIM_OCInitStructure.TIM_Pulse = 50;//设置CCR，Pulse直译是脉冲
+	TIM_OC1Init(TIM2, &TIM_OCInitStructure);//使用PA0口对应是第一个输出比较通道；在TIM2的OC1通道上就可以输出PWM波形了
+	
+	//5.初始化GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;		//结构体变量名GPIO_InitStructure
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	//复用推挽输出；PWM波形通过引脚输出，使用定时器来控制引脚，输出数据寄存器将被断开，输出控制权将转移给片上外设（这里片上外设引脚连接的就是TIM2的CH1通道）
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; //默认50mhz输出
+	GPIO_Init(GPIOA,&GPIO_InitStructure);		//使用的是地址传递		
+	
+	//6.启动定时器
+	TIM_Cmd(TIM2,ENABLE);//PWM波形就能通过PA0输出了
+}
+ 
+ 
+ 
+//在运行过程更改CCR，使用函数TIM_SetCompare1封装用来单独更改通道1的CCR值，进而改变占空比
+void PWM_SetCompare1(uint16_t Compare1)//TIM_SetCompare1封装
+{
+	TIM_SetCompare1(TIM2,Compare1);
+}
+ 
+//封装此函数，在初始化之后单独修改PSC,进而改变频率
+void PWM_setPSC(uint16_t prescaler)
+{
+//调用库函数里单独写入PSC的函数，在tim.h中找，这个函数还有一个重装模式的参数所以叫TIM_PrescalerConfig
+	TIM_PrescalerConfig(TIM2,prescaler,TIM_PSCReloadMode_Immediate);//写入PSC,第二个参数是写入PSC的值，直接将外层函数的prescaler参数传进去，第三个参数是重装模式（还是影子寄存器、预装载这个问题，就是写入的值是立刻生效还是在更新事件生效；立刻生效可能会在值改变时产生切断波形的现象会出现不完整的周期，更新事件生效就是会有一个缓存器，延迟参数的写入时间，等一个周期结束了，在更新事件时，再统一改变参数，保证每个周期的完整）
+ 
+}
+```
+
+## 6-7编码器
+
+### 01\. 编码器接口简介
+
+-   Encoder Interface 编码器接口
+-   编码器接口可接收增量（正交）编码器的信号，根据编码器旋转产生的正交信号脉冲，自动控制CNT自增或自减，从而指示编码器的位置、旋转方向和旋转速度
+-   每个高级定时器和通用定时器都拥有1个编码器接口
+-   两个输入引脚借用了输入捕获的通道1和通道2
+
+### 02\. 正交编码器
+
+![在这里插入图片描述](pic_win/00a4bcca2dc734b84537c34e3f7b4f29.png)
+
+### 03\. 编码器接口基本结构
+
+![在这里插入图片描述](pic_win/aeb18315b79d346fa1de3c8d0c111943.png)
+
+### 04\. 工作模式
+
+![在这里插入图片描述](pic_win/9b85db330463308d55a46b5b809c2cbb.png)
+
+### 05\. 实例(均不反相)
+
+![在这里插入图片描述](pic_win/38b71ccb0db4469b4bc0be9396d827ff.png)
+
+### 06\. 实例（TI1反相）
+
+![在这里插入图片描述](pic_win/f7a51b16a56f57f6b493a8d23f9f3c66.png)
+
+### 
+
+### **6-8编码器实例代码**
+
+
+
+![](https://i-blog.csdnimg.cn/blog_migrate/8da526b51a6341b776dbea8389c0f7b4.jpeg)main.c
+
+这段代码主要作用是通过定时器定时执行 \`TIM2\_IRQHandler\` 中断服务程序，在定时器中断处理函数中读取编码器的值，并将其存储在 \`speed\` 变量中，然后在主循环中利用 OLED 显示器显示速度值。
+
+值得注意的是，在 \`main\` 函数中需要调用 \`OLED\_Init()\` 进行 OLED 显示器的初始化，并在使用 OLED 显示的地方调用 \`OLED\_ShowString\` 和 \`OLED\_ShowSignedNum\` 函数进行显示。
+
+除了这些代码片段外，程序的其他部分，例如 \`OLED\_Init\`、\`Timer\_Init\`、\`Encoder\_init\` 等函数的定义以及头文件的包含内容，以及关于定时器和编码器的配置，也是非常重要的。
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "Timer.h"
+#include "Encoder.h"
+ 
+ 
+uint16_t speed;
+ 
+int main(void)
+{
+	
+	OLED_Init();	//初始化OLED
+	Timer_Init();    //初始化定时器
+	Encoder_init();
+	
+	OLED_ShowString(1,1,"speed:");
+ 
+	while(1)
+	{
+		OLED_ShowSignedNum(1,7,speed,5);//每隔一段时间读取一次；用定时中断
+	}
+ 
+}
+ 
+ 
+//定时器2中断函数放在使用中断的main.c文件中；在startup文件中；定时中断每隔1s执行一次
+void TIM2_IRQHandler(void) //当定时器产生更新中断时，这个函数就会自动被执行
+{
+	//检查中断标志位
+	if(TIM_GetITStatus(TIM2,TIM_IT_Update) == SET)
+	{
+	//执行相应的用户代码
+		speed = Encoder_Get();   //定时器每隔1s读取一下速度，存在speed变量里
+		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);//清除标志位
+	}
+ 
+}
+```
+
+### Encoder.c
+
+这段代码是针对 STM32 微控制器的编码器初始化和测速函数的实现，用于读取编码器的旋转位置和速度。以下是对代码的简要说明：
+
+1\. \`Encoder\_init\` 函数是编码器的初始化函数，主要包括了以下几个步骤：  
+   - 开启时钟，选择内部时钟，以及初始化 GPIO 接口。  
+   - 配置时基单元 TIM3，设置预分频器、计数器模式和周期等参数。  
+   - 配置输入捕获单元（通道）TIM\_ICInit，设置滤波器和极性。  
+   - 最后调用 \`TIM\_EncoderInterfaceConfig\` 函数配置编码器接口。  
+   - 启动定时器 TIM3。
+
+2\. \`Encoder\_Get\` 函数是用于测速的函数，主要实现了在固定的时间间隔内读取一次计数器的值，并清零计数器。函数返回了测量得到的编码器的变化值，即速度信息。
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+//编码器旋转控制CNT自增自减	
+//编码器初始化函数，编码器电路初始化后，CNT就会随着编码器旋转而自增自减；直接读出CNT值就能测量编码器的位置；测量编码器的速度和方向就需要每隔一段固定的闸门时间取出一次CNT然后再把CNT清零这就是测频法测量速度了
+/*
+第一步，RCC开启时钟，开启GPIO和定时器的时钟
+第二步，配置GPIO，需将PA6和PA7配置成输入模式
+第三步，配置时基单元，预分频器一般选择不分频，ARR一般给最大值655535，只需要CNT执行计数就行了
+第四步，配置输入捕获单元，这里只有滤波器和极性两个参数有用，后面的参数没有用到，与编码器无关
+第五步，配置编码器接口模式，直接调用一个库函数
+最后，调用TIM_Cmd，启动定时器
+*/
+ 
+void Encoder_init(void)
+{
+	//1.打开时钟，选择内部时钟
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+	
+	//2.初始化GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;		
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//上拉输入，与外部模块保持默认电平一致（上拉与下拉的选择原则）；一般来说是默认高电平，所以一般上拉输入用的比较多；若不确定外部模块输出的默认状态或外部信号输出功率非常小，这时就尽量选择浮空输入（浮空输入：没有上拉和下拉电阻去影响外部信号，缺点是当引脚悬空，没有默认的电平了，输入就会受噪声干扰，来回不断地跳变）
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+	GPIO_Init(GPIOA,&GPIO_InitStructure);		
+	
+	//不需要初始化时基单元下面这个内部时钟函数，因为编码器接口会托管时钟，编码器接口就是一个带方向控制的外部时钟，所以内部时钟就不用了
+	//TIM_InternalClockConfig(TIM3);
+	
+	//3.配置时基单元 
+	/*
+	公式：
+	PWM 频 率：Freq = CK_PSC / (PSC + 1) / (ARR + 1)
+	PWM占空比：Duty = CCR / (ARR + 1)
+	PWM分辨率：Reso = 1 / (ARR + 1)
+	*/
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;  //指定时钟分频
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式，这个参数也是没有作用的，计数方向也是被编码器接口托管的
+	TIM_TimeBaseInitStructure.TIM_Period = 65536 - 1;  //ARR 周期 ，满量程计数，这样计数的范围是最大的而且方便换算成负数
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 1 - 1;  //PSC 预分频器，不分频，编码器的时钟直接驱动计数器
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;  //重复计数器的值
+	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseInitStructure);	//初始化TIM3
+	
+	//4.配置输入捕获单元（通道）,编码器接口只使用了通道1和2的滤波器和极性选择
+	//首先定义结构体变量，然后StructInit给结构体赋一个初始值，再部分修改我们想要的参数，调用ICInit配置一遍电路，结构体变量的配置在调用ICInit函数之后就写入到硬件的寄存器了，所以ICInit之后这个结构体我们可以换个值继续使用、不需要重新定义新的结构体
+	TIM_ICInitTypeDef TIM_ICInitStructure;
+	TIM_ICStructInit(&TIM_ICInitStructure);//结构体初始化,防止结构体中出现不确定值可能造成问题，最好用StructInit给结构体赋一个初始值
+	TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;	//通道1
+	TIM_ICInitStructure.TIM_ICFilter = 0xF;	//滤波器为0xF
+	//TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;	//电平极性为上升沿，这里的上升沿参数代表的是高低电平极性不反转；等会配置编码器接口的时候也有极性配置，属于重复配置，这个其实可以删掉；这里的上升沿并不代表上升沿有效，因为编码器接口始终都是上升沿、下降沿都有效
+	TIM_ICInit(TIM3, &TIM_ICInitStructure);
+	TIM_ICInitStructure.TIM_Channel = TIM_Channel_2;	//通道2
+	TIM_ICInitStructure.TIM_ICFilter = 0xF;	//滤波器为0xF
+	//TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;	//电平极性为上升沿，这里的上升沿参数代表的是高低电平极性不反转；等会配置编码器接口的时候也有极性配置，属于重复配置，这个其实可以删掉；这里的上升沿并不代表上升沿有效，因为编码器接口始终都是上升沿、下降沿都有效
+	TIM_ICInit(TIM3, &TIM_ICInitStructure);
+	
+	//5.配置编码器接口，只需调用一个函数就行了；；需保证TIM_EncoderInterfaceConfig在TIM_ICInit函数之后，否则TIM_ICInit覆盖TIM_EncoderInterfaceConfig函数的配置
+	TIM_EncoderInterfaceConfig(TIM3,TIM_EncoderMode_TI12,TIM_ICPolarity_Rising,TIM_ICPolarity_Rising);//选择Rising是通道不反相，选择Falling是通道反相；重复配置TIM_ICPolarity_Rising，后面的参数会覆盖前面的参数配置
+	
+	//6.启动定时器
+	TIM_Cmd(TIM3,ENABLE);
+}
+ 
+int16_t Encoder_Get(void)
+{
+	//测速，在固定的匝门时间读一次CNT然后把CNT清零
+	int16_t temp;//因为要先读取CNT再清零，所以要用temp缓存一下
+	temp = TIM_GetCounter(TIM3);//读取CNT
+	TIM_SetCounter(TIM3,0);//CNT清零	
+	return temp;
+ 
+}
+ 
+ 
+```
+
+### Encoder.h
+
+这段代码是编码器模块的头文件 "Encoder.h" 的内容。它使用了条件编译指令，防止头文件的重复包含。
+
+在头文件中，声明了两个函数的原型：  
+\- \`Encoder\_init\`：编码器的初始化函数。  
+\- \`Encoder\_Get\`：获取编码器的值（位置或速度）的函数。
+
+同时，使用了预处理指令 \`#ifndef\`、\`#define\`、\`#endif\`，确保头文件只包含一次，以避免重复定义的错误。
+
+通过包含这个头文件，其他源文件就可以使用 \`Encoder\_init\` 和 \`Encoder\_Get\` 函数进行编码器的初始化和获取编码器的值。
+
+```c
 #ifndef __ENCODER_H
-
 #define __ENCODER_H
-
-void encoder_init(void);
-
-int16_t encoder_get(void);
-
+ 
+void Encoder_init(void);
+int16_t Encoder_Get(void);
+ 
 #endif
 ```
+
+## 7-1ADC数模转换
+
+### 一、ADC知识点
+
+精华：ADC其实就像是一个电压表，把引脚的电压测出来放在一个变量里，这就是ADC的作用。 
+
+#### ADC简介
+
+-   ADC（Analog-Digital Converter）模拟-数字转换器，简称模数转换器或AD转换器
+-   ADC可以将引脚上连续变化的模拟电压转换为内存中存储的数字变量，建立模拟电路到数字电路的桥梁。（1.STM32主要是数字电路，数字电路只有高低电平，没有几v电压的概念，所以想读取电压值，就需要借助adc模数转换器来实现，adc读取引脚上的模拟电压转换为一个数据存在寄存器里，我们再把这个数据读取到变量里来就可以进行显示、判断、记录等操作了；2.数字到模拟的桥梁是DAC数字模拟转换器，使用DAC就可以将数字变量转换为模拟电压，PWM也是数字到模拟的桥梁，PWM实现的就是DAC的功能，同时PWM只有完全导通和完全断开两种状态，在这两种状态上都没有功率损耗，所以在直流电机调速这种大功率的应用场景使用pwm来等效模拟量是比DAC更好的选择并且pwm电路更加简单更加常用，所以pwm还是挤占了dac很多的应用空间，目前dac的应用主要是在波形生成领域比如信号发生器、音频解码芯片等这些领域pwm还是不好代替的）
+
+-   12位逐次逼近型ADC，1us转换时间。（逐次逼近型是ADC的工作模式；12位和1us涉及到adc的俩个关键参数，第一个是分辨率，一般用多少位来表示，12位ad值表示范围就是0~2^12-1就是量化结果的范围0~4095，位数越高量化结果就越精细，对应分辨率就越高；第二个是转换时间就是转换频率，ad转换是需要花一小段时间的，这里1us就是表示从ad转换开始到产生结果需要花1us的时间，对应ad转换的频率就是1MHz（1MHz的周期是1微秒，是stm32的adc最快转换频率），如果你需要转换一个频率非常高的信号那就需要考虑一下这个转换频率是不是够用，如果你的信号频率比较低那这个最大1MHz的转换频率也完全够用）
+-   输入电压范围：0~3.3V，转换结果范围：0~4095。（adc的输入电压一般要求是在芯片供电的负极和正极之间变化的，0v对应0，3.3v对应4095，中间都是一一对应的线性关系）
+-   18个输入通道，可测量16个外部和2个内部信号源。（外部信号源就是16个gpio口，在引脚上直接接模拟信号就行了，不需任何额外的电路，引脚就直接能测电压；2个内部信号源是内部温度传感器和内部参考电压，温度传感器可以测量cpu的温度，比如你电脑可以显示一个cpu的温度就可以用adc读取这个温度传感器来测量，内部参考电压是一个1.2v左右的基准电压，这个基准电压是不随外部供电电压变化而变化的，所以如果你芯片的供电不是标准的3.3v那测量外部引脚的电压可能就不对，这时就可以读取这个基准电压进行校准，这样就能得到正确的电压值了）
+-   规则组和注入组两个转换单元。（是stm32 adc的增强功能，普通的ad转换流程是启动一次转换读一次值然后再启动再读值这样的流程，stm32的adc可以列一个组，一次启动一个组连续转换多个值并且有两个组，一个是用于常规使用的规则组，一个是用于突发事件的注入组）
+-   模拟看门狗自动监测输入电压范围。（一般可以用于测量光线强度，温度这些值，并且经常会有个需求，就是如果光线高于某个阈值/低于某个阈值或者温度高于某个阈值/低于某个阈值执行一些操作，这个高于某个阈值/低于某个阈值的判断就可以用模拟看门狗来自动执行，模拟看门狗可以监测指定的某些通道，当ad值高于设定的上阈值或低于下阈值时它就会申请中断，就可以在中断函数里执行相应的操作，这样就不用不断地手动读值再用if进行判断了）
+-   STM32F103C8T6 的ADC资源：ADC1、ADC2，10个外部输入通道。（最多支持16个外部信号源，若想用更多的外部通道，可以选择引脚更多的型号，具体有多少个通道可以参考数据手册）
+
+> 补充get
+>
+> \# 电位器（滑动变阻器），用电位器可产生一个0-3.3v连续变化的模拟电压信号，用stm32内部的ADC读取电压数据，显示在屏幕上，可以读取AD转换后的原始数据和经过处理后实际的电压值
+>
+> \# stm32的ADC是12位的，所以AD结果最大值是4095，也就是2^12-1，对应的电压是3.3v
+
+对于单片机的普通GPIO来说，只能读取引脚的高低电平，要么是高电平，要么是低电平，只有两个值，而使用了ADC之后，我们就可以对高电平和低电平之间的任意电压进行量化，最终用一个变量来表示，读取这个变量就可以知道这个引脚的具体电压到底是多少了，所以ADC其实就是一个电压表，把引脚的电压测出来放在一个变量里，这就是ADC的作用。
+
+#### 逐次逼近型ADC芯片ADC0809
+
+下图为逐次逼近型adc的内部结构，了解这个结构对你学习stm32的adc有很大帮助，因为stm32的adc原理和这个是一样的，但是是他们32只画了一个框表示adc，并没有描述内部结构，所以先介绍一下这个结构，这样再理解stm32的adc就会简单一些，下图为adc0809的内部结构图。
+
+![](pic_win/94b4e69d2940d1b78a95ddb8826f6eae.png)
+
+ ADC0809是一个独立的8位逐次逼近型ADC芯片。它拥有IN0~IN7，8个输入通道，通过地址锁存器和译码器电路实现对通道的选择，且每一次转换通道选择开关只能转换一个通道的信号（**输入通道选择这部分**相当于一个可以通过模拟信号的数据选择器）。ADC转换的速度非常快，从信号转换开始到结束只需要几个us的时间，如果想转换多路信号，不必设计多个ADC，只需要在每一次转换前通过多路选择开关选择要转换的通路即可。 STM32的ADC拥有18个输入通道，与这里的输入通道选择部分8个输入通道的结构相对应。
+
+ 接下来如何知道这个**电压对应的编码数据**是多少呢：就需要用逐次逼近的方法一一比较了。 电压比较器可以判断两个输入信号电压的大小关系，输出一个高低电平指示谁大谁小，两个输入端一个是待测电压另一个是DAC的电压输出端，给dac一个数据它就可以输出数据对应的电压，若dac输出的电压比较大就调小dac数据，若dac输出电压比较小就增大dac数据，直到dac输出电压和外部通道输入的电压近似相等，这样dac输入的数据就是外部电压的编码数据了，这就是dac的实现原理，这个电压调节的过程就是逐次逼近SAR来完成的。 ADC内部拥有一个DAC模块，其内部是通过加权电阻网络实现模数转换，可以将逐次逼近寄存器SAR的值转换为对应的模拟电压值，将其电压值再与待测电压相比较，比较结果控制SAR中存储的值，直到DAC输出的电压与外部通道输入的电压近似相等，DAC输入的数据就是外部电压的编码数据了。为了最快找到未知编码的电压，通常使用二分法进行查找。且使用二分法查找未知电压的编码的好处在于：每次选择比较的值（2^n）恰好为对应二进制数字的每一位的权数，判断过程相当于，从高位到底位依次判断为1还是为0的过程，**这就是逐次逼近型名字的来源**。要找到未知编码的电压，8位ADC需要判断8次，12位ADC需要判断12次，这就是逐次逼近的过程。转换结束后，dac的输入数据就是未知电压的编码，通过8位数字输出端口（D0~D7）进行输出。
+
+ 结构图上方的EOC（End Of Convert）是转换结束信号。该芯片通过START端口控制转换开始（给一个输入脉冲，开始转换），CLOCK是adc时钟（因为adc内部是一步一步进行判断的所以需要时钟来推进这个过程）控制ADC内部的转换工作频率。V ref ( + )   和V ref ( − )  是DAC的参考电压，定义数据对应的电压范围（比如255对应3.3V还是5V），这个dac的参考电压也决定了adc的输入范围，所以它也是adc参考电压。最后左边vcc和gnd是整个芯片的供电，通常参考电压的正极和VCC是一样的，会接在一起，参考电压的负极和gnd是一样的，也接在一起，**所以一般情况下，adc输入电压的范围和adc的供电是一样的**。
+
+#### STM32的逐次逼近型ADC
+
+#### STM32的ADC框图
+
+        一般在手册里，每个外设的最前面都有一个整体的结构图，这个结构图还是非常重要的，需要多花时间看看。
+
+![](pic_win/53870393570189327312b33fba13e0e4.png)
+
+STM32中ADC的结构框图如上图所示。总共有18个输入通道包括16个gpio口和2个内部通道（内部温度传感器和内部参考电压）。模拟多路开关可以指定我们想要的通道，右边是多路开关的输出，进入到模数转换器（这里模数转换器就是执行刚讲的逐次比较的过程），转换结果会直接放在数据寄存器里，读取寄存器就能知道adc转换的结构了。
+
+对于普通的adc，多路开关一般都是只选中一个（就是选中一个通道、开始转换、等待转换完成、读取结果，这是普通的流程）。而stm32的多路开关就比较高级，可以同时选中多个，而且在转换的时候还分成了两个组（规则组和注入组），其中规则组可以一次性最多选中16个通道，注入组最多可以选中4个通道。
+
+其“模拟至数字转换器”模块的工作模式与ADC0809在原理上完全相同。不同点有以下几点：
+
+-   普通的ADC多路开关一般只选中一个，STM32的ADC可以同时选中多个通道进行转换，规则组最多同时选中16个通道，注入组一次最多可以选中4个通道。（以餐厅点菜模型为例，普通模式为每次点一个菜，做好菜后上菜；**STM32可以做到每次列出一个菜单，规则组一次最多可以列16个菜，注入组一次最多可以列4个菜，做好后依次上菜**）
+-   STM32中的ADC的转换结果会被存储在对应的数据寄存器中。**对于规则组通道，其只有一个数据寄存器（餐桌上只能摆一个菜）**，后转换的数据会将之前转换的数据覆盖，之前转换的数据就会丢失。对于规则组通道，要想实现同时转换的功能，最好配合DMA来将转换后的数据及时转运，**DMA可以在每上一个菜之后，把这个菜挪到其它地方去，防止被覆盖，**就可以保证转换的数据不会丢失了。**对于注入组通道，它拥有4个数据寄存器（餐厅的VIP坐席，餐桌上一次可以摆四个菜）**。对于注入组而言，就不用担心数据覆盖的问题了。一般情况下，使用规则组和DMA就可以满足大部分的使用需求。（所以接下来主要讲规则组，注入组涉及的不多，可以看手册自行了解）
+-   结构图的左下角为触发转换信号，对应ADC0809的START信号。STM32的触发转换信号来源有两种：软件触发和硬件触发。软件触发就是在程序中手动调用一条代码就可以启动转换了。硬件触发信号可以来自于定时器的各个通道、定时器TRGO定时器主模式的输出，外部中断EXTI。
+-   在STM32中，V R E F ( + )  一般和V  DDA   （ADC模块的正极供电引脚）接在一起，V R E F ( − )  一般和V SSA   ADC模块的负极供电引脚）接在一起。本课程使用的芯片没有单独的V  REF(+)   和V  REF(−)   的引脚，它在芯片内部就已经和对应引脚连接在一起了。V  DDA   和V  SSA   是STM32模拟部分的电源，例如ADC、RC振荡器、锁相环等，在套件中的最小系统板中已经将V  DDA   与3.3V、V S S A 与GND相连接了）。
+-   这里ADC的时钟ADCCLK是来自于RCC的APB2时钟。由原理图可得，ADCCLK最大为14MHz，所以**ADC预分频器只能选择6分频（得到12MHz）和8分频（得到9MHz）两个值**。
+    
+-   ADC可以通过DMA请求信号触发DMA转运数据。
+    
+-   模拟看门狗的功能是监测指定的通道。可以设置模拟看门狗的阈值高限（12位）、阈值底限（12位）和指定“看门”的通道。只要通道的电压值超过阈值范围，模拟看门狗就会“乱叫”，申请一个模拟看门狗的中断，之后通向NVIC。
+    
+-   ECC是规则组的完成信号，JEOC是注入组完成信号，这两个信号会在状态寄存器里置一个标志位，读取这个标志位就能知道是不是转换结束了，同时这两个标志位也可以去到NVIC申请中断，如果开启了NVIC对应的通道就会触发中断
+    
+
+定时器可以通向DAC、ADC这些外设用于触发转换，因为ADC经常需要过一个固定时间段转换一次，比如每隔1ms转换一次（正常思路就是用定时器每隔1ms申请一次中断，在中断里手动开始一次转换）但是**频繁进中断对我们的程序是由一定影响的**，比如你有很多中断都需要频繁进入，那肯定会影响主程序的执行并且不同中断之间由于优先级的不同也会导致某些中断不能及时得到响应，如果触发ADC的中断不能及时响应那adc的转换频率就肯定会产生影响，**所以对于这种需要频繁进中断，并且在中断里只完成了简单工作的情况，一般都会有硬件支持**（比如可以给tim3定个1ms的时间并且把tim3的更新事件选择为TRGO输出，然后**在ADC选择开始触发信号为tim3的TRGO，这样tim3的更新事件就能通过硬件自动触发adc转换了，整个过程不需进中断，节省了中断资源，这就是定时器触发的作用**）
+
+#### STM32的ADC基本结构总结
+
+如下图，左边是输入通道，16个gpio口外加两个内部通道，然后进行AD转换器，ad转换器里有两个组，一个是规则组、一个是注入组，规则组最多可以选中16个通道。注入组最多可以选择4个通道，然后转换的结果可以存放在AD数据寄存器里，其中规则组有1个数据寄存器，注入组有4个，然后有触发控制提供了开始转换的START信号，触发控制可以选择软件触发和硬件触发，硬件触发主要来自定时器，也可以选择外部中断引脚，然后还有ADC时钟CLOCK来自RCC，adc逐次比较的过程就是由这个时钟推动的，然后可以布置一个模拟看门狗用于检测转换结果的范围，如果超出设定的阈值就通过中断输出控制向NVIC申请中断，另外规则组和注入组转换完成后会有个EOC信号会置一个标志位，当然也可以通向NVIC，最后还有个右下角有个开关控制，在库函数中就是ADC\_Cmd函数用于给ADC上电，以上就是[STM32 ADC](https://so.csdn.net/so/search?q=STM32%20ADC&spm=1001.2101.3001.7020)的内部结构了
+
+![](pic_win/17cfefe7985d619e9c5f9b421dd4ca2a.png)
+
+#### STM32的ADC输入通道和引脚的关系
+
+由ADC的内部结构可知，STM32的ADC对应16个输入通道。这16个输入通道对应的GPIO端口如下表所示：
+
+![](pic_win/cec606256485d354f9ee1f85eb7771e8.png)
+
+上表展示了ADC通道和引脚复用之间的连接关系，这个对应关系也可以参考引脚定义表。可以看到，只有ADC1拥有温度传感器和内部参考电压的采样通道。ADC1和ADC2的引脚完全相同，ADC3有些是存在变化的。本节课程使用的STM32F103C8T6没有PC0到PC5的引脚，故也就不存在通道10到通道15。
+
+参考下面引脚定义表可以看到，STM32的ADC1和ADC2的引脚是相同的。这样的设计是为**双ADC模式**服务的。关于双ADC模式的内容比较复杂，这里仅作简单了解即可。双ADC模式，即ADC1和ADC2同时工作，二者可以配合为同步模式、交叉模式等多种不同的工作模式。以交叉模式为例，ADC1和ADC2交叉对同一个通道进行采样，这样就可以进一步提高采样率（**交叉模式就像你打拳一样，左手打一圈、右手打一圈快速交叉地打拳，那打击的频率肯定比一个拳头打得快**）。当然ADC1和ADC2也是可以分开使用的，可以分别对不同的引脚进行采样，这样也是可以的
+
+**注：**引脚定义表中例如**ADC12\_IN0**，的意思是ADC1和ADC2的IN0都是在PA0上。
+
+![](pic_win/413254637e4b295a807501804eb813c9.png)
+
+#### STM32的ADC规则组的四种转换模式
+
+STM32中的ADC规则组的转换模式有以下四种：
+
+> 单次转换  非扫描模式
+>
+> 单次转换  扫描模式
+>
+> 连续转换  非扫描模式
+>
+> 连续转换  扫描模式 
+
+精华提取： 
+
+单次转换：每触发一次，**转换结束就会停**下来，下次转换就得再触发才能开始。
+
+连续转换： 一次转换完成后不会停止，而是立刻开始下一轮的转换，并**持续**下去。
+
+非扫描模式：**只**对存放在**序列1的通道**起作用。
+
+扫描模式：用到**“菜单”列表**，可以在菜单里点菜，每个菜单列表位置是通道几是可以任意指定的并且可以重复，然后初始化结构体有个**通道数目**的参数（表明用了几个通道）
+
+扫描模式下转换到数据寄存器的过程中，用DMA防止数据被覆盖，DMA进行数据及时转移
+
+在扫描模式的情况下，还可以使用**间断模式**。它的作用是在扫描的过程中，每隔几次转换就暂停，需要再次触发才能继续。该模式仅作了解即可。
+
+-   单次转换非扫描模式
+
+    如下列表就是规则组的菜单，有16个空位，分别是序列1~16，你可以在列表点菜就是写入你要转换的通道，在非扫描的模式下，这个菜单就只有一个序列1的位置有效，这时菜单同时选中一组的方式就退化为简单地选中一个的方式了，可以在序列1的位置指定我们想转换的通道，比如通道2写到这个位置，然后就可以触发转换，adc就会对通道2进行模数转换，过一小段时间后，转换完成，转换结果放在数据寄存器里，同时给EOC标志位置1，整个转换过程就结束了，然后判断EOC标志位，如果转换完了就可以在数据寄存器里读取结果了，若想再启动一次转换就需要再触发一次，转换结束，置EOC标志位，读结果，若想换一个通道转换，那就在转换之前把第一个位置的通道2改成其它通道，然后再启动转换就行了，以上就是单次转换非扫描模式 ，没有用到菜单列表是比较简单地一种模式
+
+![](pic_win/00a0773ea54f40b65ff4f77dc1e171a8.png)
+
+-   连续转换非扫描模式
+
+首先连续转换非扫描模式是非扫描模式，所以菜单列表只用第一个，与上一种单次转换非扫描模式不同的是，它在一次转换结束后不会停止，而是立刻开始下一轮的转换，然后一直持续下去，这样就只需要最开始触发一次，之后就可以一直转换了，这个模式的好处是开始转换之后就不需等待一段时间，因为它一直都在转换，所以不需手动开始转换了也不用判断是否结束，想读ad值的时候直接从数据寄存器读取，以上就是连续转换非扫描模式
+
+![](pic_win/f4e8ab903a8565ab9a1cd479ccd4bcd4.png)
+
+-   单次转换扫描模式
+
+每触发一次，转换结束就会停下来，下次转换就得再触发才能开始。扫描模式用到“菜单”列表，可以在菜单里点菜，每个菜单列表位置是通道几是可以任意指定的并且可以重复，然后初始化结构体有个通道数目的参数（表明用了几个通道）
+
+每次触发之后，就会依次对前7（通道数目）个位置进行AD转换，转换结果都放在数据寄存器里，为了防止数据被覆盖，就需要用DMA及时将数据挪走，7个通道转换完成后产生EOC信号，转换结束，然后再触发下一次，就又开始新一轮的转换，以上就是单次转换扫描模式
+
+![](pic_win/db8b42cd6a5237d50890bfd23d8d6612.png)
+
+-    连续转换扫描模式 
+
+连续转换扫描模式与单次转换扫描模式不同之处就是一次转换完成后，立刻进行下一次的转换
+
+![](pic_win/88aa84a875592f92768cd8f07e649937.png)
+
+#### STM32的ADC规则组的触发源
+
+规则组的触发源如下表所示
+
+有来自定时器的信号、来自引脚或定时器的信号（具体是引脚还是定时器需要用AFIO重映射来确定）、软件控制位（就是软件触发）
+
+触发信号的选择可以通过设置寄存器来完成EXTSEL\[2:0\]，当然使用库函数的话直接给一个参数就行了
+
+![](pic_win/8f1f4b100198014e2bbfe9006bc8e072.png)
+
+#### 数据对齐
+
+STM32中的ADC是12位的，但是数据寄存器拥有16位，故存在数据对齐的问题。数据右对齐，即作为转换结果的12位数据向右靠，高位补0；数据左对齐，即作为转换结果的12位数据向左靠，低位补0。**在使用时通常使用数据右对齐，这样在读取时直接读取寄存器即可**。如果选择左对齐直接读取，得到的数据会比实际的数据大16倍。当对分辨率的要求不高时（对电压仅作大概的判断即可）可以采用左对齐，将数据寄存器的高8位取出，就相当于舍弃了转换结果的4位的精度，12位的ADC退化位为8位的ADC。
+
+注：二进制中，数据左移一次，就等效于把这个数据乘2，左移4次就相当于把结果乘16
+
+![](pic_win/e56bc45e0d68b55de24300b0dc1e29ff.png)
+
+#### AD转换时间
+
+​    AD的转换时间是一个很短的时间，如果不需要极高的转换频率，那么转换时间是可以忽略的。那么转换时间具体是多少呢？  
+
+  AD转换的步骤分别是：采样、保持、量化、编码。其中采样和保持可以看作一个过程，量化和编码可以看作一个过程。量化和编码实际上就是ADC逐次比较的过程，一般ADC的位数越多，所花费的时间就越长。采样和保持是为了保证在量化和编码的过程中输入电压的变化不会过大。在量化和编码之前，需要添加采样-保持电路，即需要设置一个采样开关，打开开关一段时间来收集电压（可以用一个小容量的电容来存储这个电压），存储完成之后断开开关，再进行之后的AD转换。这样就可以保证在量化和编码器件始终保持电压基本不变。这个采样时间是比较长的。ADC的采样时间可以在程序中进行配置。之后花费12个ADC周期进行量化和编码，多余的0.5个周期完成了其他的工作。
+
+所以AD转换所花费时间为：采样-保持电路的采样时间 + 量化和编码花费的时间（12.5个ADC周期）。**即STM32 ADC总转换时间 = 采样时间 + 12.5个ADC周期**
+
+ADC周期就是从RCC分频过来的ADCCLK，ADCCLK最大是14MHz  
+
+  最短的转换时间：当ADCCLK = 14MHz，采样时间为1.5个ADC周期时：ADC总转换时间为1us
+
+![](pic_win/f35670d02f232d2502bd5fb3c73ef694.png)
+
+这就是最快1us时间的来源，如果采样周期再长些就达不到1us了。当然，可以通过设置将ADC的转换频率超过14MHz，这样ADC就会工作在超频状态下。超频时转换时间可能会更短，不过电路的稳定性将无法保证。
+
+![](pic_win/282fa0274c06c818f6e80b27aa6ce734.png)
+
+#### ADC校准
+
+ ADC有一个固定的内置自校准模式。校准可大幅减小因内部电容器组的变化而造成的准精度误差。校准期间，在每个电容器上都会计算出一个误差修正码(数字值)，这个码用于消除在随后的转换中每个电容器上产生的误差。建议在每次上电后执行依次校准，且启动校准前，ADC必须处于关电状态超过至少两个ADC周期。（不需要理解，这个校准过程是固定的，只需要在ADC初始化的最后加几条代码就行了，至于如何计算如何校准，不需管）
+
+![](pic_win/1bebe47b017d868cb833278cd857688b.png)
+
+#### ADC的外围电路
+
+第一个是电位器产生可调电压的电路。电位器产生一个可调电压，这里电位器的两个固定端，一端接3.3v一端接gnd，这样中间的滑动就可以输出一个0~3.3v可调的电压输出，可以接adc的输入通道比如PA0口，当滑动端往上滑时，电压增大，往下滑时电压减小，注意电阻的阻值不能给太小因为电阻两端也是直接跨接在电源正负极的，如果阻值太小电阻就会比较费电，再小就有可能发热冒烟 ，一般至少接kΩ级的电阻，比如这里接的是10k电阻
+
+第二个是分压方法来输出传感器阻值的电路。一般来说像光敏电阻、热敏电阻、红外接收管、麦克风等都可以等效为可变电阻N1，电阻值无法直接测量，所以就可以通过和一个固定电阻串联分压来得到一个反应电阻值的电压的电路。传感器N1阻值变小时，下拉作用变强，输出端PA1电压就下降；传感器N1阻值变大时，下拉作用变弱，输出端PA1受上拉电阻的作用，电压就会升高。固定电阻R1一般可以选择和传感器N1阻值相近的电阻，这样可以得到一个位于中间电压区域比较好的输出，当然这里的固定电阻R1和传感器N1的位置也可以缓过来，这样输出电压的极性就反过来了。
+
+第三个是简单的电压转换电路。比如你想测一个0-5v的VIN电压，但是ADC只能接受0-3.3v的电压，那就可以使用这样的简易转换电路，还是使用电阻进行分压，上面电阻r1阻值17k，下面阻值r2是33k，一共是50k，根据分压公式，中间的电压就是VIN/50K \* 33k最后得到的电压范围就是0-3.3v，就可以进入adc转换了，若想采集5v、10v这些电压的话就可以使用这个电路，但是若电压再高些就不建议使用这个电路了可能会比较危险，高电压采集最好使用一些专用的采集芯片，比如隔离放大器等，做好高低电压的隔离，保证电路的安全
+
+![](pic_win/e1f856f17d061fb5d8cace329c75a5d9.png)
+
+___
+
+### 二、 AD单通道&AD多通道应用程序示例
+
+#### ADC 常用库函数
+
+-   ADC的RCC时钟配置函数
+
+该配置函数定义存放在`stm32f10x_rcc.h`文件中，用来配置ADCCLK分频器。它可以对APB2的72MHz时钟选择2、4、6、8分频，输出到ADCCLK。
+
+```cpp
+void RCC_ADCCLKConfig(uint32_t RCC_PCLK2)
+```
+
+-   ADC设置(adc.h)
+
+```c
+// 恢复ADC缺省配置
+void ADC_DeInit(ADC_TypeDef* ADCx);
+// ADC初始化
+void ADC_Init(ADC_TypeDef* ADCx, ADC_InitTypeDef* ADC_InitStruct);
+// ADC配置结构体初始化
+void ADC_StructInit(ADC_InitTypeDef* ADC_InitStruct);
+ 
+// ADC上电工作函数，即开关控制函数
+void ADC_Cmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+ 
+// ADC开启DMA输出信号
+void ADC_DMACmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+ 
+// ADC中断输出控制函数
+void ADC_ITConfig(ADC_TypeDef* ADCx, uint16_t ADC_IT, FunctionalState NewState);
+ 
+// 下面4个函数用于ADC工作前的校准操作，在ADC初始化完成后依次调用即可
+// ADC复位校准
+void ADC_ResetCalibration(ADC_TypeDef* ADCx);
+// ADC获取复位校准状态
+FlagStatus ADC_GetResetCalibrationStatus(ADC_TypeDef* ADCx);
+// ADC开始校准
+void ADC_StartCalibration(ADC_TypeDef* ADCx);
+// ADC获取开始校准状态
+FlagStatus ADC_GetCalibrationStatus(ADC_TypeDef* ADCx);
+ 
+// ADC软件触发转换，给CR2的SWSTART置1（开始转换后立即自动清0）
+void ADC_SoftwareStartConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+// ADC获取软件触发状态，获取CR2的SWSTART（开始转换规则通道）位
+// 不能用它判断转换是否结束，一般不用，了解即可
+FlagStatus ADC_GetSoftwareStartConvStatus(ADC_TypeDef* ADCx);
+ 
+// ADC规则组通道配置，给转换序列的每个位置填写指定的通道
+void ADC_RegularChannelConfig(ADC_TypeDef* ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime);
+ 
+// ADC外部触发转换控制（是否允许外部触发转换）
+void ADC_ExternalTrigConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+ 
+// ADC获取转换值，获取AD转换的数据寄存器
+uint16_t ADC_GetConversionValue(ADC_TypeDef* ADCx);
+ 
+// ADC获取双模式转换值，读取双ADC模式下ADC的转换结果
+uint32_t ADC_GetDualModeConversionValue(void);
+ 
+// ADC温度传感器、内部参考电压控制，开启内部的两个转换通道
+void ADC_TempSensorVrefintCmd(FunctionalState NewState);
+ 
+// 下面的函数与操作标志位寄存器状态有关
+// ADC获取标志位状态，可通过获取EOC标志位判断转换是否结束
+FlagStatus ADC_GetFlagStatus(ADC_TypeDef* ADCx, uint8_t ADC_FLAG);
+// 清除标志位
+void ADC_ClearFlag(ADC_TypeDef* ADCx, uint8_t ADC_FLAG);
+// 获取中断标志位
+ITStatus ADC_GetITStatus(ADC_TypeDef* ADCx, uint16_t ADC_IT);
+// 清除中断挂起位
+void ADC_ClearITPendingBit(ADC_TypeDef* ADCx, uint16_t ADC_IT);
+```
+
+-   模拟看门狗配置（本节暂不涉及，需要可以了解）
+
+```c
+// 对模拟看门狗进行配置
+// 是否启动模拟看门狗
+void ADC_AnalogWatchdogCmd(ADC_TypeDef* ADCx, uint32_t ADC_AnalogWatchdog);
+// 配置模拟看门狗高低阈值
+void ADC_AnalogWatchdogThresholdsConfig(ADC_TypeDef* ADCx, uint16_t HighThreshold, uint16_t LowThreshold);
+// 配置看门通道
+void ADC_AnalogWatchdogSingleChannelConfig(ADC_TypeDef* ADCx, uint8_t ADC_Channel);
+```
+
+-   注入组相关配置函数（本节暂不涉及，需要可以了解）
+
+```c
+void ADC_AutoInjectedConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+void ADC_InjectedDiscModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+void ADC_ExternalTrigInjectedConvConfig(ADC_TypeDef* ADCx, uint32_t ADC_ExternalTrigInjecConv);
+void ADC_ExternalTrigInjectedConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+void ADC_SoftwareStartInjectedConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+FlagStatus ADC_GetSoftwareStartInjectedConvCmdStatus(ADC_TypeDef* ADCx);
+void ADC_InjectedChannelConfig(ADC_TypeDef* ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime);
+void ADC_InjectedSequencerLengthConfig(ADC_TypeDef* ADCx, uint8_t Length);
+void ADC_SetInjectedOffset(ADC_TypeDef* ADCx, uint8_t ADC_InjectedChannel, uint16_t Offset);
+uint16_t ADC_GetInjectedConversionValue(ADC_TypeDef* ADCx, uint8_t ADC_InjectedChannel);
+```
+
+-   ADC间断模式配置
+
+```c
+// 下面两个函数用来配置STM32中ADC的间断模式
+// 配置每隔几个通道间断依次
+void ADC_DiscModeChannelCountConfig(ADC_TypeDef* ADCx, uint8_t Number);
+// 开启间断模式
+void ADC_DiscModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState);
+```
+
+#### ADC 单通道转换
+
+![](pic_win/2f66c0ea221870956e81d9230428923c.png)
+
+-   `AD.c`
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+/**
+  * @brief  ADC初始化函数（软件触发，且这里不使用模拟看门狗和中断）
+  * @param  无
+  * @retval 无
+  */
+void AD_Init(void)
+{
+	// 1. RCC开启时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+	
+	RCC_ADCCLKConfig(RCC_PCLK2_Div6);	// ADCCLK = 72MHz / 6 = 12MHz
+	
+	// 2. 配置GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	// 3. 将指定的GPIO端口接入规则组列表中
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);	// 把通道0填入序列1中，通道的采样周期是55.5个ADCCLK的周期
+	
+	// 4. 配置ADC
+	ADC_InitTypeDef ADC_InitStruct;
+	ADC_InitStruct.ADC_Mode = ADC_Mode_Independent;						// ADC模式（独立模式或双ADC模式）：独立模式						
+	ADC_InitStruct.ADC_DataAlign = ADC_DataAlign_Right;					// ADC数据对齐：右对齐
+	ADC_InitStruct.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;	// ADC外部触发源选择：不使用外部源触发（这里使用软件触发）
+	ADC_InitStruct.ADC_ContinuousConvMode = DISABLE;					// ADC连续转换模式：单次转换
+	ADC_InitStruct.ADC_ScanConvMode = DISABLE;							// ADC扫描模式：非扫描
+	ADC_InitStruct.ADC_NbrOfChannel = 1;								// 扫描模式下通道的数量
+	ADC_Init(ADC1, &ADC_InitStruct);
+	
+	/*	中断和模拟看门狗在此配置	*/
+	
+	// 5. 开关控制
+	ADC_Cmd(ADC1, ENABLE);
+	
+	// 6. 对ADC进行校准
+	ADC_ResetCalibration(ADC1);								// 复位校准
+	while (ADC_GetResetCalibrationStatus(ADC1) == SET);		// 等待复位校准完成
+	ADC_StartCalibration(ADC1);								// 开始校准
+	while (ADC_GetCalibrationStatus(ADC1) == SET);			// 等待校准完成
+}
+ 
+/**
+  * @brief  ADC结果读取函数（软件触发）
+  * @param  无
+  * @retval 转换之后的结果
+  */
+uint16_t AD_GetValue(void)
+{
+	// 1. 软件触发开启转换
+	ADC_SoftwareStartConvCmd(ADC1, ENABLE);
+	
+	// 2. 等待转换完成（获取标志位状态，等待EOC标志位置1）
+	while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);		// 转换未完成则等待（55.5T + 12.5T = 68T，结果大概为5.6us）
+	
+	// 3. 读取ADC数据寄存器并返回
+	return ADC_GetConversionValue(ADC1);	// 读取之后会自动清除EOC标志位
+}
+ 
+ 
+```
+
+-   `main.c`
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "AD.h"
+ 
+uint16_t AD_Value;
+float Voltage;
+ 
+int main()
+{
+	OLED_Init();
+	AD_Init();
+	
+	OLED_ShowString(1, 1, "AD_Value:");
+	OLED_ShowString(2, 1, "Voltage:0.00V");
+	
+	while(1)
+	{
+		AD_Value = AD_GetValue();
+		Voltage = (float)AD_Value / 4095 * 3.3;			// 整数除以小数会舍弃小数部分
+		
+		OLED_ShowNum(1, 10, AD_Value, 4);
+		OLED_ShowNum(2, 9, Voltage, 1);								// 显示整数部分
+		OLED_ShowNum(2, 11, (uint16_t)(Voltage * 100) % 100, 2);	// 显示小数部分
+		
+		Delay_ms(100);
+	}
+}
+ 
+```
+
+#### ADC 多通道转换
+
+![](pic_win/6548813961555c83ecc26fba98edb63c.png)
+
+-   `AD.c`
+
+```c
+#include "stm32f10x.h"                  // Device header
+ 
+/**
+  * @brief  ADC初始化函数（单次转换非扫描实现多通道转换，软件触发，且这里不使用模拟看门狗和中断）
+  * @param  无
+  * @retval 无
+  */
+void AD_Init(void)
+{
+	// 1. RCC开启时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+	
+	RCC_ADCCLKConfig(RCC_PCLK2_Div6);	// ADCCLK = 72MHz / 6 = 12MHz
+	
+	// 2. 配置GPIO
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	// 3. 将指定的GPIO端口接入规则组列表中
+	/*	这里要在每一次转换前都更改转换列表中要转换的GPIO端口	*/
+	
+	// 4. 配置ADC
+	ADC_InitTypeDef ADC_InitStruct;
+	ADC_InitStruct.ADC_Mode = ADC_Mode_Independent;						// ADC模式（独立模式或双ADC模式）：独立模式						
+	ADC_InitStruct.ADC_DataAlign = ADC_DataAlign_Right;					// ADC数据对齐：右对齐
+	ADC_InitStruct.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;	// ADC外部触发源选择：不使用外部源触发（这里使用软件触发）
+	ADC_InitStruct.ADC_ContinuousConvMode = DISABLE;					// ADC连续转换模式：单次转换
+	ADC_InitStruct.ADC_ScanConvMode = DISABLE;							// ADC扫描模式：非扫描
+	ADC_InitStruct.ADC_NbrOfChannel = 1;								// 扫描模式下通道的数量
+	ADC_Init(ADC1, &ADC_InitStruct);
+	
+	/*	中断和模拟看门狗在此配置	*/
+	
+	// 5. 开关控制
+	ADC_Cmd(ADC1, ENABLE);
+	
+	// 6. 对ADC进行校准
+	ADC_ResetCalibration(ADC1);								// 复位校准
+	while (ADC_GetResetCalibrationStatus(ADC1) == SET);		// 等待复位校准完成
+	ADC_StartCalibration(ADC1);								// 开始校准
+	while (ADC_GetCalibrationStatus(ADC1) == SET);			// 等待校准完成
+}
+ 
+/**
+  * @brief  ADC结果读取函数（单次转换非扫描实现多通道转换，软件触发）
+  * @param  无
+  * @retval 转换之后的结果
+  */
+uint16_t AD_GetValue(uint8_t ADC_Channel)
+{
+	ADC_RegularChannelConfig(ADC1, ADC_Channel, 1, ADC_SampleTime_55Cycles5);	// 把通道作为参数填入序列1中，通道的采样周期是55.5个ADCCLK的周期
+	
+	// 1. 软件触发开启转换
+	ADC_SoftwareStartConvCmd(ADC1, ENABLE);
+	
+	// 2. 等待转换完成（获取标志位状态，等待EOC标志位置1）
+	while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);		// 转换未完成则等待（55.5T + 12.5T = 68T，结果大概为5.6us）
+	
+	// 3. 读取ADC数据寄存器并返回
+	return ADC_GetConversionValue(ADC1);	// 读取之后会自动清除EOC标志位
+}
+ 
+ 
+```
+
+-   `main.c`
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "AD.h"
+ 
+uint16_t AD0, AD1, AD2, AD3;
+ 
+int main()
+{
+	OLED_Init();
+	AD_Init();
+	
+	OLED_ShowString(1, 1, "AD0:");
+	OLED_ShowString(2, 1, "AD1:");
+	OLED_ShowString(3, 1, "AD2:");
+	OLED_ShowString(4, 1, "AD3:");
+ 
+	
+	while(1)
+	{
+		AD0 = AD_GetValue(ADC_Channel_0);
+		AD1 = AD_GetValue(ADC_Channel_1);
+		AD2 = AD_GetValue(ADC_Channel_2);
+		AD3 = AD_GetValue(ADC_Channel_3);
+		
+		OLED_ShowNum(1, 5, AD0, 4);
+		OLED_ShowNum(2, 5, AD1, 4);
+		OLED_ShowNum(3, 5, AD2, 4);
+		OLED_ShowNum(4, 5, AD3, 4);
+ 
+		Delay_ms(100);
+	}
+}
+ 
+```
+
+## 8-1DMA直接储存器
+
+### 01\. DMA简介
+
+小容量产品是指闪存[存储器](https://so.csdn.net/so/search?q=%E5%AD%98%E5%82%A8%E5%99%A8&spm=1001.2101.3001.7020)容量在16K至32K字节之间的STM32F101xx、STM32F102xx和STM32F103xx微控制器。
+
+中容量产品是指闪存存储器容量在64K至128K字节之间的STM32F101xx、STM32F102xx和STM32F103xx[微控制器](https://so.csdn.net/so/search?q=%E5%BE%AE%E6%8E%A7%E5%88%B6%E5%99%A8&spm=1001.2101.3001.7020)。
+
+大容量产品是指闪存存储器容量在256K至512K字节之间的STM32F101xx和STM32F103xx微控制器。
+
+互联型产品是指STM32F105xx和STM32F107xx微控制器。
+
+直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传输。无须CPU干预，数据可以通过DMA快速地移动，这就节省了CPU的资源来做其他操作。
+
+两个DMA控制器有12个通道(DMA1有7个通道，DMA2有5个通道)，每个通道专门用来管理来自于一个或多个外设对存储器访问的请求。还有一个仲裁器来协调各个DMA请求的优先权。
+
+•DMA（Direct Memory Access）直接存储器存取
+
+•DMA可以提供外设和存储器或者存储器和存储器之间的高速数据传输，无须CPU干预，节省了CPU的资源
+
+•12个独立可配置的通道： DMA1（7个通道）， DMA2（5个通道）
+
+•每个通道都支持软件触发和特定的硬件触发
+
+•STM32F103C8T6 DMA资源：DMA1（7个通道）
+
+### 02\. DMA主要特性
+
+● 12个独立的可配置的通道(请求)：DMA1有7个通道，DMA2有5个通道
+
+● 每个通道都直接连接专用的硬件DMA请求，每个通道都同样支持软件触发。这些功能通过软件来配置。
+
+● 在同一个DMA模块上，多个请求间的优先权可以通过软件编程设置(共有四级：很高、高、中等和低)，优先权设置相等时由硬件决定(请求0优先于请求1，依此类推) 。  
+● 独立数据源和目标数据区的传输宽度(字节、半字、全字)，模拟打包和拆包的过程。源和目标地址必须按数据传输宽度对齐。
+
+● 支持循环的缓冲器管理
+
+● 每个通道都有3个事件标志(DMA半传输、DMA传输完成和DMA传输出错)，这3个事件标志逻辑或成为一个单独的中断请求。
+
+● 存储器和存储器间的传输
+
+● 外设和存储器、存储器和外设之间的传输
+
+● 闪存、SRAM、外设的SRAM、APB1、APB2和AHB外设均可作为访问的源和目标。
+
+● 可编程的数据传输数目：最大为65535
+
+### 03\. 存储器映像
+
+![在这里插入图片描述](pic_win/955eb5e21337d1a304e113d6963fc7bf.png)
+
+存储器映像  
+<img src="pic_win/5ccef4b2fb03f328d3fda9b8409ca820.png" alt="在这里插入图片描述" style="zoom:200%;" />
+
+### 04\. DMA框图
+
+DMA控制器和Cortex™-M3核心共享系统数据总线，执行直接存储器数据传输。当CPU和DMA同时访问相同的目标(RAM或外设)时，DMA请求会暂停CPU访问系统总线达若干个周期，总线仲裁器执行循环调度，以保证CPU至少可以得到一半的系统总线(存储器或外设)带宽。  
+![在这里插入图片描述](pic_win/3542c7e5ee0d546f80546dbdfe7435b5.png)
+
+### 05\. DMA基本结构
+
+![在这里插入图片描述](pic_win/fc70c5bd989f6e02443363dcc004f490.png)
+
+### 06\. DMA请求
+
+DMA1 控制器从外设(TIMx\[x=1、2、3、4\]、ADC1、SPI1、SPI/I2S2、I2Cx\[x=1、2\]和USARTx\[x=1、2、3\])产生的7个请求，通过逻辑或输入到DMA1控制器，这意味着同时只能有一个请求有效。参见下图的DMA1请求映像。
+
+外设的DMA请求，可以通过设置相应外设寄存器中的控制位，被独立地开启或关闭。  
+![在这里插入图片描述](pic_win/3c7ab2a1c2d5e873e1ed805679d3adcb.png)
+
+![在这里插入图片描述](pic_win/e68a7a24855c3e6307145ffecda9144a.png)
+
+**DMA2 控制器**
+
+从外设(TIMx\[5、6、7、8\]、ADC3、SPI/I2S3、UART4、DAC通道1、2和SDIO)产生的5个请求，经逻辑或输入到DMA2控制器，这意味着同时只能有一个请求有效。参见下图的DMA2请求映像。
+
+外设的DMA请求，可以通过设置相应外设寄存器中的DMA控制位，被独立地开启或关闭。
+
+注意： DMA2 控制器及相关请求仅存在于大容量产品和互联型产品中。
+
+![在这里插入图片描述](pic_win/73bddd1f25b8f6d2acbb19bafb69f161.png)
+
+### 07\. 数据宽度与对齐
+
+![在这里插入图片描述](pic_win/57dd02b2b9f5be4a56e1e546da044fb0.png)
+
+### 08\. 数据转运+DMA
+
+![在这里插入图片描述](pic_win/1d17876f92e56f36f99d03a175ad4c09.png)
+
+### 09\. ADC扫描模式+DMA
+
+![在这里插入图片描述](pic_win/f1801097044df20cc01b7d2dc76f4b42.png)
+
+### 
+
+### **实例程序**
+
+### 01\. DMA简介
+
+小容量产品是指闪存[存储器](https://so.csdn.net/so/search?q=%E5%AD%98%E5%82%A8%E5%99%A8&spm=1001.2101.3001.7020)容量在16K至32K字节之间的STM32F101xx、STM32F102xx和STM32F103xx微控制器。
+
+中容量产品是指闪存存储器容量在64K至128K字节之间的STM32F101xx、STM32F102xx和STM32F103xx[微控制器](https://so.csdn.net/so/search?q=%E5%BE%AE%E6%8E%A7%E5%88%B6%E5%99%A8&spm=1001.2101.3001.7020)。
+
+大容量产品是指闪存存储器容量在256K至512K字节之间的STM32F101xx和STM32F103xx微控制器。
+
+互联型产品是指STM32F105xx和STM32F107xx微控制器。
+
+直接存储器存取(DMA)用来提供在外设和存储器之间或者存储器和存储器之间的高速数据传输。无须CPU干预，数据可以通过DMA快速地移动，这就节省了CPU的资源来做其他操作。
+
+两个DMA控制器有12个通道(DMA1有7个通道，DMA2有5个通道)，每个通道专门用来管理来自于一个或多个外设对存储器访问的请求。还有一个仲裁器来协调各个DMA请求的优先权。
+
+### 02\. DMA相关API
+
+#### 2.1 DMA\_Init
+
+```c
+/**
+  * @brief  Initializes the DMAy Channelx according to the specified
+  *         parameters in the DMA_InitStruct.
+  * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and 
+  *   x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+  * @param  DMA_InitStruct: pointer to a DMA_InitTypeDef structure that
+  *         contains the configuration information for the specified DMA Channel.
+  * @retval None
+  */
+void DMA_Init(DMA_Channel_TypeDef* DMAy_Channelx, DMA_InitTypeDef* DMA_InitStruct)
+功能:
+	根据 DMA_InitStruct 中指定的参数初始化 DMA 的通道 x 寄存器
+参数:
+   DMA Channelx：x 可以是 1，2…，或者 7 来选择 DMA 通道 x
+   DMA_InitStruct：指向结构 DMA_InitTypeDef 的指针，包含了 DMA 通道 x 的配置信息    
+返回值:
+	无       
+
+```
+
+#### 2.2 DMA\_InitTypeDef
+
+```c
+/** 
+  * @brief  DMA Init structure definition
+  */
+
+typedef struct
+{
+  uint32_t DMA_PeripheralBaseAddr; /*!< Specifies the peripheral base address for DMAy Channelx. */
+
+  uint32_t DMA_MemoryBaseAddr;     /*!< Specifies the memory base address for DMAy Channelx. */
+
+  uint32_t DMA_DIR;                /*!< Specifies if the peripheral is the source or destination.
+                                        This parameter can be a value of @ref DMA_data_transfer_direction */
+
+  uint32_t DMA_BufferSize;         /*!< Specifies the buffer size, in data unit, of the specified Channel. 
+                                        The data unit is equal to the configuration set in DMA_PeripheralDataSize
+                                        or DMA_MemoryDataSize members depending in the transfer direction. */
+
+  uint32_t DMA_PeripheralInc;      /*!< Specifies whether the Peripheral address register is incremented or not.
+                                        This parameter can be a value of @ref DMA_peripheral_incremented_mode */
+
+  uint32_t DMA_MemoryInc;          /*!< Specifies whether the memory address register is incremented or not.
+                                        This parameter can be a value of @ref DMA_memory_incremented_mode */
+
+  uint32_t DMA_PeripheralDataSize; /*!< Specifies the Peripheral data width.
+                                        This parameter can be a value of @ref DMA_peripheral_data_size */
+
+  uint32_t DMA_MemoryDataSize;     /*!< Specifies the Memory data width.
+                                        This parameter can be a value of @ref DMA_memory_data_size */
+
+  uint32_t DMA_Mode;               /*!< Specifies the operation mode of the DMAy Channelx.
+                                        This parameter can be a value of @ref DMA_circular_normal_mode.
+                                        @note: The circular buffer mode cannot be used if the memory-to-memory
+                                              data transfer is configured on the selected Channel */
+
+  uint32_t DMA_Priority;           /*!< Specifies the software priority for the DMAy Channelx.
+                                        This parameter can be a value of @ref DMA_priority_level */
+
+  uint32_t DMA_M2M;                /*!< Specifies if the DMAy Channelx will be used in memory-to-memory transfer.
+                                        This parameter can be a value of @ref DMA_memory_to_memory */
+}DMA_InitTypeDef;
+
+
+```
+
+DMA\_PeripheralBaseAddr
+
+该参数用以定义 DMA 外设基地址
+
+DMA\_MemoryBaseAddr
+
+该参数用以定义 DMA 内存基地址
+
+**DMA\_DIR**
+
+```c
+/** @defgroup DMA_data_transfer_direction 
+  * @{
+  */
+
+#define DMA_DIR_PeripheralDST              ((uint32_t)0x00000010)
+#define DMA_DIR_PeripheralSRC              ((uint32_t)0x00000000)
+
+```
+
+**DMA\_PeripheralInc**
+
+```c
+/** @defgroup DMA_peripheral_incremented_mode 
+  * @{
+  */
+
+#define DMA_PeripheralInc_Enable           ((uint32_t)0x00000040)
+#define DMA_PeripheralInc_Disable          ((uint32_t)0x00000000)
+
+```
+
+**DMA\_MemoryInc**
+
+```c
+/** @defgroup DMA_memory_incremented_mode 
+  * @{
+  */
+
+#define DMA_MemoryInc_Enable               ((uint32_t)0x00000080)
+#define DMA_MemoryInc_Disable              ((uint32_t)0x00000000)
+
+```
+
+**DMA\_PeripheralDataSize**
+
+```c
+/** @defgroup DMA_peripheral_data_size 
+  * @{
+  */
+
+#define DMA_PeripheralDataSize_Byte        ((uint32_t)0x00000000)
+#define DMA_PeripheralDataSize_HalfWord    ((uint32_t)0x00000100)
+#define DMA_PeripheralDataSize_Word        ((uint32_t)0x00000200)
+
+```
+
+**DMA\_MemoryDataSize**
+
+```c
+/** @defgroup DMA_memory_data_size 
+  * @{
+  */
+
+#define DMA_MemoryDataSize_Byte            ((uint32_t)0x00000000)
+#define DMA_MemoryDataSize_HalfWord        ((uint32_t)0x00000400)
+#define DMA_MemoryDataSize_Word            ((uint32_t)0x00000800)
+
+```
+
+**DMA\_Mode**
+
+```c
+/** @defgroup DMA_circular_normal_mode 
+  * @{
+  */
+
+#define DMA_Mode_Circular                  ((uint32_t)0x00000020)
+#define DMA_Mode_Normal                    ((uint32_t)0x00000000)
+
+```
+
+**DMA\_Priority**
+
+```c
+/** @defgroup DMA_priority_level 
+  * @{
+  */
+
+#define DMA_Priority_VeryHigh              ((uint32_t)0x00003000)
+#define DMA_Priority_High                  ((uint32_t)0x00002000)
+#define DMA_Priority_Medium                ((uint32_t)0x00001000)
+#define DMA_Priority_Low                   ((uint32_t)0x00000000)
+
+```
+
+**DMA\_M2M**
+
+```c
+/** @defgroup DMA_memory_to_memory 
+  * @{
+  */
+
+#define DMA_M2M_Enable                     ((uint32_t)0x00004000)
+#define DMA_M2M_Disable                    ((uint32_t)0x00000000)
+
+```
+
+#### 2.3 DMA\_Cmd
+
+```c
+/**
+  * @brief  Enables or disables the specified DMAy Channelx.
+  * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and 
+  *   x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+  * @param  NewState: new state of the DMAy Channelx. 
+  *   This parameter can be: ENABLE or DISABLE.
+  * @retval None
+  */
+void DMA_Cmd(DMA_Channel_TypeDef* DMAy_Channelx, FunctionalState NewState)
+功能:
+	使能或者失能指定的通道 x
+参数:
+   DMA Channelx：x 可以是 1，2…，或者 7 来选择 DMA 通道 x
+   NewState：DMA 通道 x 的新状态 这个参数可以取：ENABLE 或者 DISABLE  
+返回值:
+	无        
+
+```
+
+#### 2.4 DMA\_SetCurrDataCounter
+
+```c
+/**
+  * @brief  Sets the number of data units in the current DMAy Channelx transfer.
+  * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and 
+  *         x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+  * @param  DataNumber: The number of data units in the current DMAy Channelx
+  *         transfer.   
+  * @note   This function can only be used when the DMAy_Channelx is disabled.                 
+  * @retval None.
+  */
+void DMA_SetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx, uint16_t DataNumber)
+功能:
+	设置DMA转换数据个数
+参数:
+   DMA Channelx：x 可以是 1，2…，或者 7 来选择 DMA 通道 x
+   DataNumber：数据个数
+返回值:
+	无      
+    
+
+```
+
+#### 2.5 DMA\_GetFlagStatus
+
+```c
+FlagStatus DMA_GetFlagStatus(uint32_t DMAy_FLAG)
+功能:
+	检查指定的 DMA 通道 x 标志位设置与否
+参数:
+   DMA_FLAG：待检查的 DMA 标志位
+返回值:
+	DMA_FLAG 的新状态（SET 或者 RESET）     
+
+```
+
+#### 2.6 DMA\_ClearFlag
+
+```c
+void DMA_ClearFlag(uint32_t DMAy_FLAG)
+功能:
+	清除 DMA 通道 x 待处理标志位
+参数:
+    DMA_FLAG：待清除的 DMA 标志位，使用操作符“|”可以同时选中多个DMA 标志位
+返回值:
+	无     
+
+```
+
+### 03\. DMA数据单通道接线图
+
+![在这里插入图片描述](pic_win/6d87cb5d46fb2c073cdfb1c5df189122.png)
+
+### 04\. DMA数据单通道示例
+
+dma.h
+
+```c
+#ifndef __MYDMA_H
+#define __MYDMA_H
+
+void MyDMA_Init(uint32_t AddrA, uint32_t AddrB, uint16_t Size);
+void MyDMA_Transfer(void);
+
+#endif
+
+```
+
+dma.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+
+uint16_t MyDMA_Size;					//定义全局变量，用于记住Init函数的Size，供Transfer函数使用
+/**
+  * 函    数：DMA初始化
+  * 参    数：AddrA 原数组的首地址
+  * 参    数：AddrB 目的数组的首地址
+  * 参    数：Size 转运的数据大小（转运次数）
+  * 返 回 值：无
+  */
+void MyDMA_Init(uint32_t AddrA, uint32_t AddrB, uint16_t Size)
+{
+	MyDMA_Size = Size;					//将Size写入到全局变量，记住参数Size
+	
+	/*开启时钟*/
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);						//开启DMA的时钟
+	
+	/*DMA初始化*/
+	DMA_InitTypeDef DMA_InitStructure;							   //定义结构体变量
+	DMA_InitStructure.DMA_PeripheralBaseAddr = AddrA;				//外设基地址，给定形参AddrA
+	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;	//外设数据宽度，选择字节（8位）
+	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Enable;		//外设地址自增，选择使能
+	DMA_InitStructure.DMA_MemoryBaseAddr = AddrB;					//存储器基地址，给定形参AddrB
+	DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;	//存储器数据宽度，选择字节
+	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;		   //存储器地址自增，选择使能表示自增
+	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;			//数据传输方向，选择由外设到存储器
+	DMA_InitStructure.DMA_BufferSize = Size;					//转运的数据大小（转运次数）
+	DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;				//模式，选择正常模式
+	DMA_InitStructure.DMA_M2M = DMA_M2M_Enable;				  //存储器到存储器，选择使能，软件触发
+	DMA_InitStructure.DMA_Priority = DMA_Priority_Medium;		//数据转运优先级，选择中等
+	DMA_Init(DMA1_Channel1, &DMA_InitStructure);	//将结构体变量交给DMA_Init，配置DMA1的通道1
+	
+	/*DMA使能*/
+	DMA_Cmd(DMA1_Channel1, DISABLE);	//这里先不给使能，初始化后不会立刻工作，等后续调用Transfer后，再开始
+}
+
+/**
+  * 函    数：启动DMA数据转运
+  * 参    数：无
+  * 返 回 值：无
+  */
+void MyDMA_Transfer(void)
+{
+	DMA_Cmd(DMA1_Channel1, DISABLE);				//DMA失能，在写入传输计数器之前，需要DMA暂停工作
+	DMA_SetCurrDataCounter(DMA1_Channel1, MyDMA_Size);	//写入传输计数器，指定将要转运的次数
+	DMA_Cmd(DMA1_Channel1, ENABLE);						//DMA使能，开始工作
+	
+	while (DMA_GetFlagStatus(DMA1_FLAG_TC1) == RESET);	//等待DMA工作完成
+	DMA_ClearFlag(DMA1_FLAG_TC1);						//清除工作完成标志位
+}
+```
+
+测试程序1 main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "MyDMA.h"
+
+const uint8_t src[] = {0x1, 0x2, 0x3, 0x4};//次数据存在flash中
+
+uint8_t dest[] = {0, 0, 0, 0};
+
+ int main(void)
+ {		 
+	 //初始化
+	OLED_Init();
+	 
+	dma_init((uint32_t)src, (uint32_t)dest, 4);
+	 
+	OLED_ShowHexNum(1, 1, src[0], 2);
+	OLED_ShowHexNum(1, 4, src[1], 2);
+	OLED_ShowHexNum(1, 7, src[2], 2);
+	OLED_ShowHexNum(1, 10, src[3], 2);
+	 
+	OLED_ShowHexNum(2, 1, dest[0], 2);
+	OLED_ShowHexNum(2, 4, dest[1], 2);
+	OLED_ShowHexNum(2, 7, dest[2], 2);
+	OLED_ShowHexNum(2, 10, dest[3], 2); 
+	 
+	dma_trasfer();
+	
+	OLED_ShowHexNum(3, 1, src[0], 2);
+	OLED_ShowHexNum(3, 4, src[1], 2);
+	OLED_ShowHexNum(3, 7, src[2], 2);
+	OLED_ShowHexNum(3, 10, src[3], 2);
+	 
+	OLED_ShowHexNum(4, 1, dest[0], 2);
+	OLED_ShowHexNum(4, 4, dest[1], 2);
+	OLED_ShowHexNum(4, 7, dest[2], 2);
+	OLED_ShowHexNum(4, 10, dest[3], 2); 	 
+	 
+	 while(1)
+	 {		 
+	 }
+	 
+	 return 0;
+ }
+
+```
+
+测试程序2 main.c
+
+```c
+#include "stm32f10x.h"                  // Device header
+#include "Delay.h"
+#include "OLED.h"
+#include "MyDMA.h"
+
+uint8_t DataA[] = {0x01, 0x02, 0x03, 0x04};				//定义测试数组DataA，为数据源
+uint8_t DataB[] = {0, 0, 0, 0};							//定义测试数组DataB，为数据目的地
+
+int main(void)
+{
+	/*模块初始化*/
+	OLED_Init();				//OLED初始化
+	
+	MyDMA_Init((uint32_t)DataA, (uint32_t)DataB, 4);	//DMA初始化，把源数组和目的数组的地址传入
+	
+	/*显示静态字符串*/
+	OLED_ShowString(1, 1, "DataA");
+	OLED_ShowString(3, 1, "DataB");
+	
+	/*显示数组的首地址*/
+	OLED_ShowHexNum(1, 8, (uint32_t)DataA, 8);
+	OLED_ShowHexNum(3, 8, (uint32_t)DataB, 8);
+		
+	while (1)
+	{
+		DataA[0] ++;		//变换测试数据
+		DataA[1] ++;
+		DataA[2] ++;
+		DataA[3] ++;
+		
+		OLED_ShowHexNum(2, 1, DataA[0], 2);		//显示数组DataA
+		OLED_ShowHexNum(2, 4, DataA[1], 2);
+		OLED_ShowHexNum(2, 7, DataA[2], 2);
+		OLED_ShowHexNum(2, 10, DataA[3], 2);
+		OLED_ShowHexNum(4, 1, DataB[0], 2);		//显示数组DataB
+		OLED_ShowHexNum(4, 4, DataB[1], 2);
+		OLED_ShowHexNum(4, 7, DataB[2], 2);
+		OLED_ShowHexNum(4, 10, DataB[3], 2);
+		
+		Delay_ms(1000);		//延时1s，观察转运前的现象
+		
+		MyDMA_Transfer();	//使用DMA转运数组，从DataA转运到DataB
+		
+		OLED_ShowHexNum(2, 1, DataA[0], 2);		//显示数组DataA
+		OLED_ShowHexNum(2, 4, DataA[1], 2);
+		OLED_ShowHexNum(2, 7, DataA[2], 2);
+		OLED_ShowHexNum(2, 10, DataA[3], 2);
+		OLED_ShowHexNum(4, 1, DataB[0], 2);		//显示数组DataB
+		OLED_ShowHexNum(4, 4, DataB[1], 2);
+		OLED_ShowHexNum(4, 7, DataB[2], 2);
+		OLED_ShowHexNum(4, 10, DataB[3], 2);
+
+		Delay_ms(1000);		//延时1s，观察转运后的现象
+	}
+}
+
+```
+
+### 05\. DMA数据多通道接线图
+
+![在这里插入图片描述](pic_win/c35c3d5975c47dd1bc33766143c049a1.png)
+
+### 06\. DMA数据多通道示例一
+
+单次转换 扫描模式
+
+adc.h
+
+```c
+#ifndef __ADC_H__
+#define __ADC_H__
+
+#include "stm32f10x.h"                  // Device header
+
+
+extern uint16_t adc_value[4];
+
+void adc_init(void);
+
+void adc_getvalue(void);
+
+
+#endif /*__ADC_H__*/
+
+
+```
+
+adc.c
+
+```c
+#include "adc.h"
+
+uint16_t adc_value[4] = {0};
+
+void adc_init(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	ADC_InitTypeDef ADC_InitStruct;
+	DMA_InitTypeDef DMA_InitStruct;
+	
+	
+	//开启ADC时钟  PA0 --> ADC1_0
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+	
+	//开启GPIOA的时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	
+	//开启时钟
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+	
+	//设置为6分频  72M / 6 = 12M 
+	RCC_ADCCLKConfig(RCC_PCLK2_Div6);
+	
+	
+	//GPIO配置 
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+	GPIO_InitStructure.GPIO_Speed =   GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	// 4个ADC通道
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 2, ADC_SampleTime_55Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_2, 3, ADC_SampleTime_55Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_3, 4, ADC_SampleTime_55Cycles5);
+		
+		
+	//ADC配置
+	ADC_InitStruct.ADC_ContinuousConvMode = DISABLE; //单次转换
+	ADC_InitStruct.ADC_ScanConvMode = ENABLE; //扫描模式
+	ADC_InitStruct.ADC_DataAlign = ADC_DataAlign_Right;
+	ADC_InitStruct.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
+	ADC_InitStruct.ADC_Mode = ADC_Mode_Independent;
+	ADC_InitStruct.ADC_NbrOfChannel = 4; //4个通道
+	ADC_Init(ADC1, &ADC_InitStruct);
+	
+	
+	DMA_InitStruct.DMA_MemoryBaseAddr = (uint32_t)adc_value;
+	DMA_InitStruct.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+	DMA_InitStruct.DMA_MemoryInc = DMA_MemoryInc_Enable;
+	DMA_InitStruct.DMA_Mode = DMA_Mode_Normal;
+	DMA_InitStruct.DMA_PeripheralBaseAddr = (uint32_t)&ADC1->DR;
+	DMA_InitStruct.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+	DMA_InitStruct.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+	DMA_InitStruct.DMA_Priority = DMA_Priority_Low;
+	DMA_InitStruct.DMA_BufferSize = 4;
+	DMA_InitStruct.DMA_DIR = DMA_DIR_PeripheralSRC;
+	DMA_InitStruct.DMA_M2M = DMA_M2M_Disable;//硬件触发
+	
+	DMA_Init(DMA1_Channel1, &DMA_InitStruct);
+	
+	DMA_Cmd(DMA1_Channel1, DISABLE);
+
+	ADC_DMACmd(ADC1, ENABLE);
+	
+	//使能ADC
+	ADC_Cmd(ADC1, ENABLE);
+	
+	//校准ADC
+	ADC_ResetCalibration(ADC1);
+	while(ADC_GetResetCalibrationStatus(ADC1));
+	
+	ADC_StartCalibration(ADC1);
+	while(ADC_GetCalibrationStatus(ADC1));
+	
+}
+
+void adc_getvalue(void)
+{
+	DMA_Cmd(DMA1_Channel1, DISABLE);
+	DMA_SetCurrDataCounter(DMA1_Channel1, 4);
+	DMA_Cmd(DMA1_Channel1, ENABLE);
+	
+	ADC_SoftwareStartConvCmd(ADC1, ENABLE);
+	
+	while(DMA_GetFlagStatus(DMA1_FLAG_TC1) == RESET);
+	DMA_ClearFlag(DMA1_FLAG_TC1);
+}
+
+```
+
+main.c
+
+```c
+#include "stm32f10x.h"
+
+#include "delay.h"
+#include "oled.h"
+#include "adc.h"
+
+
+ int main(void)
+ {	
+	 //初始化
+	 OLED_Init();
+	 adc_init();
+
+	 //显示字符串
+	 OLED_ShowString(1, 1, "AD0: ");
+	 OLED_ShowString(2, 1, "AD1: ");
+	 OLED_ShowString(3, 1, "AD2: ");
+     OLED_ShowString(4, 1, "AD3: ");
+	 
+	 while(1)
+	 {
+		adc_getvalue();
+		 
+		OLED_ShowNum(1, 5, adc_value[0], 4);
+		OLED_ShowNum(2, 5, adc_value[1], 4);
+		OLED_ShowNum(3, 5, adc_value[2], 4);
+		OLED_ShowNum(4, 5, adc_value[3], 4);		 	 
+		 delay_ms(100);
+	 }
+	 
+ }
+
+```
+
+### 07\. DMA数据多通道示例二
+
+连续扫描，循环转换
+
+adc.h
+
+```c
+#ifndef __ADC_H__
+#define __ADC_H__
+
+#include "stm32f10x.h"                  // Device header
+
+
+extern uint16_t adc_value[4];
+
+void adc_init(void);
+
+#endif /*__ADC_H__*/
+
+```
+
+adc.c
+
+```c
+#include "adc.h"
+
+uint16_t adc_value[4] = {0};
+
+void adc_init(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	ADC_InitTypeDef ADC_InitStruct;
+	DMA_InitTypeDef DMA_InitStruct;
+	
+	
+	//开启ADC时钟  PA0 --> ADC1_0
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+	
+	//开启GPIOA的时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	
+	//开启时钟
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+	
+	//设置为6分频  72M / 6 = 12M 
+	RCC_ADCCLKConfig(RCC_PCLK2_Div6);
+	
+	
+	//GPIO配置 
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+	GPIO_InitStructure.GPIO_Speed =   GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	// 4个ADC通道
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 2, ADC_SampleTime_55Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_2, 3, ADC_SampleTime_55Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_3, 4, ADC_SampleTime_55Cycles5);
+		
+		
+	//ADC配置
+	ADC_InitStruct.ADC_ContinuousConvMode = ENABLE; //连续模式
+	ADC_InitStruct.ADC_ScanConvMode = ENABLE; //扫描模式
+	ADC_InitStruct.ADC_DataAlign = ADC_DataAlign_Right;
+	ADC_InitStruct.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
+	ADC_InitStruct.ADC_Mode = ADC_Mode_Independent;
+	ADC_InitStruct.ADC_NbrOfChannel = 4; //4个通道
+	ADC_Init(ADC1, &ADC_InitStruct);
+	
+	
+	DMA_InitStruct.DMA_MemoryBaseAddr = (uint32_t)adc_value;
+	DMA_InitStruct.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+	DMA_InitStruct.DMA_MemoryInc = DMA_MemoryInc_Enable;
+	DMA_InitStruct.DMA_Mode = DMA_Mode_Circular; //DMA循环模式
+	DMA_InitStruct.DMA_PeripheralBaseAddr = (uint32_t)&ADC1->DR;
+	DMA_InitStruct.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+	DMA_InitStruct.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+	DMA_InitStruct.DMA_Priority = DMA_Priority_Low;
+	DMA_InitStruct.DMA_BufferSize = 4;
+	DMA_InitStruct.DMA_DIR = DMA_DIR_PeripheralSRC;
+	DMA_InitStruct.DMA_M2M = DMA_M2M_Disable;
+	
+	DMA_Init(DMA1_Channel1, &DMA_InitStruct);
+	
+	DMA_Cmd(DMA1_Channel1, ENABLE);
+
+	ADC_DMACmd(ADC1, ENABLE);
+	
+	//使能ADC
+	ADC_Cmd(ADC1, ENABLE);
+	
+	//校准ADC
+	ADC_ResetCalibration(ADC1);
+	while(ADC_GetResetCalibrationStatus(ADC1));
+	
+	ADC_StartCalibration(ADC1);
+	while(ADC_GetCalibrationStatus(ADC1));
+	
+	//ADC触发
+	ADC_SoftwareStartConvCmd(ADC1, ENABLE);
+	
+}
+```
+
+main.c
+
+```c
+#include "stm32f10x.h"
+
+#include "delay.h"
+#include "oled.h"
+#include "adc.h"
+
+
+ int main(void)
+ {	
+	 
+	 //初始化
+	 OLED_Init();
+	 adc_init();
+
+	 //显示字符串
+	 OLED_ShowString(1, 1, "AD0: ");
+	 OLED_ShowString(2, 1, "AD1: ");
+	 OLED_ShowString(3, 1, "AD2: ");
+     OLED_ShowString(4, 1, "AD3: ");
+	 
+	 while(1)
+	 {	 
+		OLED_ShowNum(1, 5, adc_value[0], 4);
+		OLED_ShowNum(2, 5, adc_value[1], 4);
+		OLED_ShowNum(3, 5, adc_value[2], 4);
+		OLED_ShowNum(4, 5, adc_value[3], 4);		 
+		 		 
+		delay_ms(100);
+	 }
+	 
+ }
+```
+
+## 9-1串口通信
+
+### 01\. 串行通讯与并行通讯
+
+按数据传送的方式，通讯可分为串行通讯与并行通讯，串行通讯是指设备之间通过少量数据信号线(一般是8根以下)， 地线以及控制信号线，按数据位形式一位一位地传输数据的通讯方式。而并行通讯一般是指使用8、16、32及64根或更多的数据线进行传输的通讯方式， 它们的通讯传输对比说明见图 并行通讯与串行通讯的对比图 ，并行通讯就像多个车道的公路， 可以同时传输多个数据位的数据，而串行通讯，而串行通讯就像单个车道的公路，同一时刻只能传输一个数据位的数据。  
+![在这里插入图片描述](pic_win/1209187b7c2f05f8e1193f017291d036.png)
+
+很明显，因为一次可传输多个数据位的数据 ，在[数据传输速率](https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E9%80%9F%E7%8E%87&spm=1001.2101.3001.7020)相同的情况下，并行通讯传输的数据量要大得多， 而串行通讯则可以节省数据线的硬件成本(特别是远距离时)以及PCB的布线面积， 串行通讯与并行通讯的特性对比见表 串行通讯与并行通讯的特性对比。
+
+![在这里插入图片描述](pic_win/a07380ad8430389009049c81b71d8b34.png)
+
+不过由于并行传输对同步要求较高，且随着通讯速率的提高，信号干扰的问题会显著影响通讯性能，现在随着技术的发展，越来越多的应用场合采用高速率的串行差分传输。
+
+### 02\. [全双工](https://so.csdn.net/so/search?q=%E5%85%A8%E5%8F%8C%E5%B7%A5&spm=1001.2101.3001.7020)、半双工及单工通讯
+
+根据数据通讯的方向，通讯又分为全双工、半双工及单工通讯，它们主要以信道的方向来区分，见图 全双工-半双工及单工通讯 及表 通讯方式说明。
+
+![在这里插入图片描述](pic_win/134d6de5cb6552e3ccdcc7d8b6be9492.png)
+
+仍以公路来类比，全双工的通讯就是一个双向车道，两个方向上的车流互不相干；半双工则像乡间小道那样，同一时刻只能让一辆小车通过， 另一方向的来车只能等待道路空出来时才能经过；而单工则像单行道，另一方向的车辆完全禁止通行。
+
+![在这里插入图片描述](pic_win/ce08ff38ef80eb74f3fbe020e6a493c3.png)
+
+### 03\. 同步通讯与异步通讯
+
+根据通讯的数据同步方式，又分为同步和异步两种，可以根据通讯过程中是否有使用到时钟信号进行简单的区分。
+
+在同步通讯中，收发设备双方会使用一根信号线表示时钟信号，在时钟信号的驱动下双方进行协调， 同步数据，见图 同步通讯。 通讯中通常双方会统一规定在时钟信号的上升沿或下降沿对数据线进行采样。
+
+![在这里插入图片描述](pic_win/e3f8ee27249cf58a3db8b448f82df613.png)
+
+在异步通讯中不使用时钟信号进行数据同步，它们直接在数据信号中穿插一些同步用的信号位，或者把主体数据进行打包， 以数据帧的格式传输数据，见图 某种异步通讯 ，某些通讯中还需要双方约定数据的传输速率，以便更好地同步。
+
+![在这里插入图片描述](pic_win/9e33baa6f14735bb30b07bc88333c326.png)
+
+在同步通讯中，数据信号所传输的内容绝大部分就是有效数据，而异步通讯中会包含有帧的各种标识符，所以同步通讯的效率更高， 但是同步通讯双方的时钟允许误差较小，而异步通讯双方的时钟允许误差较大。
+
+### 04\. 通讯速率
+
+衡量通讯性能的一个非常重要的参数就是通讯速率，通常以比特率(Bitrate)来表示，即每秒钟传输的二进制位数， 单位为比特每秒(bit/s)。容易与比特率混淆的概念是“波特率”(Baudrate)，它表示每秒钟传输了多少个码元。 而码元是通讯信号调制的概念，通讯中常用时间间隔相同的符号来表示一个二进制数字，这样的信号称为码元。 如常见的通讯传输中，用0V表示数字0，5V表示数字1，那么一个码元可以表示两种状态0和1，所以一个码元等于一个二进制比特位， 此时波特率的大小与比特率一致；如果在通讯传输中，有0V、2V、4V以及6V分别表示二进制数00、01、10、11， 那么每个码元可以表示四种状态，即两个二进制比特位，所以码元数是二进制比特位数的一半，这个时候的波特率为比特率的一半。 因为很多常见的通讯中一个码元都是表示两种状态，人们常常直接以波特率来表示比特率，虽然严格来说没什么错误，但希望您能了解它们的区别。
+
+### 05\. 通信接口
+
+通信的目的：将一个设备的数据传送到另一个设备，扩展硬件系统
+
+通信协议：制定通信的规则，通信双方按照协议规则进行数据收发
+
+![在这里插入图片描述](pic_win/682141fcf713f180d4966e301a875eaa.png)
+
+### 06\. 串口通信
+
+•串口是一种应用十分广泛的通讯接口，串口成本低、容易使用、通信线路简单，可实现两个设备的互相通信
+
+•单片机的串口可以使单片机与单片机、单片机与电脑、单片机与各式各样的模块互相通信，极大地扩展了单片机的应用范围，增强了单片机系统的硬件实力
+
+![在这里插入图片描述](pic_win/1244acba43616618a0fa1d68377ad40f.png)
+
+### 07\. 硬件电路
+
+•简单双向串口通信有两根通信线（发送端TX和接收端RX）
+
+•TX与RX要交叉连接
+
+•当只需单向的数据传输时，可以只接一根通信线
+
+•当电平标准不一致时，需要加电平转换芯片
+
+![在这里插入图片描述](pic_win/760ceeff5dbcdb19df3bcf21442c82bc.png)
+
+### 08\. 电平标准
+
+•电平标准是数据1和数据0的表达方式，是传输线缆中人为规定的电压与数据的对应关系，串口常用的电平标准有如下三种：
+
+•TTL电平：+3.3V或+5V表示1，0V表示0
+
+•RS232电平：-3~-15V表示1，+3~+15V表示0
+
+•RS485电平：两线压差+2~+6V表示1，-2~-6V表示0（[差分信号](https://so.csdn.net/so/search?q=%E5%B7%AE%E5%88%86%E4%BF%A1%E5%8F%B7&spm=1001.2101.3001.7020)）
+
+### 09\. 串口参数及时序
+
+•波特率：串口通信的速率
+
+•起始位：标志一个数据帧的开始，固定为低电平
+
+•数据位：数据帧的有效载荷，1为高电平，0为低电平，低位先行
+
+•校验位：用于数据验证，根据数据位计算得来
+
+•停止位：用于数据帧间隔，固定为高电平
+
+![在这里插入图片描述](pic_win/6f8b0c4a995a77cf6b55c1830afcd244.png)
+
+### 10\. 串口时序
+
+![在这里插入图片描述](pic_win/481df68722f66e6d96584770f284022b.png)
+
+### 
+
+### 01\. 串口简介
+
+[串口通讯](https://so.csdn.net/so/search?q=%E4%B8%B2%E5%8F%A3%E9%80%9A%E8%AE%AF&spm=1001.2101.3001.7020)(Serial Communication)是一种设备间非常常用的串行通讯方式，因为它简单便捷，因此大部分电子设备都支持该通讯方式， 电子工程师在调试设备时也经常使用该通讯方式输出调试信息。
+
+在计算机科学里，大部分复杂的问题都可以通过分层来简化。如芯片被分为内核层和片上外设；STM32标准库则是在寄存器与用户代码之间的软件层。 对于通讯协议，我们也以分层的方式来理解，最基本的是把它分为物理层和协议层。物理层规定通讯系统中具有机械、电子功能部分的特性， 确保原始数据在物理媒体的传输。协议层主要规定通讯逻辑，统一收发双方的数据打包、解包标准。 简单来说物理层规定我们用嘴巴还是用肢体来交流，协议层则规定我们用中文还是英文来交流。
+
+**物理层**
+
+串口通讯的物理层有很多标准及变种，我们主要讲解RS-232标准 ，RS-232标准主要规定了信号的用途、通讯接口以及信号的电平标准。
+
+使用RS-232标准的串口设备间常见的通讯结构见图 串口通讯结构图。  
+![在这里插入图片描述](pic_win/43452632dd1c41daeb4f1a7593136908.png)
+
+在上面的通讯方式中，两个通讯设备的“DB9接口”之间通过串口信号线建立起连接，串口信号线中使用“RS-232标准”传输数据信号。 由于RS-232电平标准的信号不能直接被控制器直接识别，所以这些信号会经过一个“电平转换芯片”转换成控制器能识别的“TTL标准”的电平信号，才能实现通讯。
+
+**电平标准**
+
+根据通讯使用的电平标准不同，串口通讯可分为TTL标准及RS-232标准，见表 TTL电平标准与RS232电平标准。  
+![在这里插入图片描述](pic_win/843de18d0180fc946388746e3c573238.png)
+
+我们知道常见的电子电路中常使用TTL的电平标准，理想状态下，使用5V表示二进制逻辑1，使用0V表示逻辑0； 而为了增加串口通讯的远距离传输及抗干扰能力，它使用-15V表示逻辑1，+15V表示逻辑0。 使用RS232与TTL电平校准表示同一个信号时的对比见图 RS-232与TTL电平标准下表示同一个信号。  
+![在这里插入图片描述](pic_win/d219af106e5412be30b02579adf71381.png)
+
+因为控制器一般使用TTL电平标准，所以常常会使用MAX3232芯片对TTL及RS-232电平的信号进行互相转换。
+
+**RS-232信号线**
+
+在最初的应用中，RS-232串口标准常用于计算机、路由与调制调解器(MODEN，俗称“猫”)之间的通讯 ，在这种通讯系统中， 设备被分为数据终端设备DTE(计算机、路由)和数据通讯设备DCE(调制调解器)。我们以这种通讯模型讲解它们的信号线连接方式及各个信号线的作用。
+
+在旧式的台式计算机中一般会有RS-232标准的COM口(也称DB9接口)，见图 电脑主板上的COM口及串口线。  
+![在这里插入图片描述](pic_win/cf4e3d37ecc3da770feca775bd51f14b.png)
+
+其中接线口以针式引出信号线的称为公头，以孔式引出信号线的称为母头。在计算机中一般引出公头接口，而在调制调解器设备中引出的一般为母头，使用上图中的串口线即可把它与计算机连接起来。通讯时，串口线中传输的信号就是使用前面讲解的RS-232标准调制的。
+
+在这种应用场合下，DB9接口中的公头及母头的各个引脚的标准信号线接法见图 DB9标准的公头及母头接法 及表 DB9信号线说明。
+
+![在这里插入图片描述](pic_win/0059497ebc4e72c72687ee6cb306cce2.png)
+
+![在这里插入图片描述](pic_win/19ab48f357c73605bf50f7f977eade06.png)
+
+上表中的是计算机端的DB9公头标准接法，由于两个通讯设备之间的收发信号(RXD与TXD)应交叉相连， 所以调制调解器端的DB9母头的收发信号接法一般与公头的相反，两个设备之间连接时，只要使用“直通型”的串口线连接起来即可， 见图 计算机与调制调解器的信号线连接。
+
+![在这里插入图片描述](pic_win/d878f035dc42e8063f3eb795bf62d071.png)
+
+串口线中的RTS、CTS、DSR、DTR及DCD信号，使用逻辑 1表示信号有效，逻辑0表示信号无效。 例如，当计算机端控制DTR信号线表示为逻辑1时，它是为了告知远端的调制调解器，本机已准备好接收数据，0则表示还没准备就绪。
+
+在目前的其它工业控制使用的串口通讯中，一般只使用RXD、TXD以及GND三条信号线， 直接传输数据信号，而RTS、CTS、DSR、DTR及DCD信号都被裁剪掉了。
+
+### 02\. 串口协议
+
+**协议层**
+
+串口通讯的数据包由发送设备通过自身的TXD接口传输到接收设备的RXD接口。在串口通讯的协议层中， 规定了数据包的内容，它由启始位、主体数据、校验位以及停止位组成，通讯双方的数据包格式要约定一致才能正常收发数据， 其组成见图 串口数据包的基本组成。
+
+![在这里插入图片描述](pic_win/0e21a362e935fc2cbbe1991078ff37c8.png)
+
+**波特率**
+
+本章中主要讲解的是串口异步通讯，异步通讯中由于没有时钟信号(如前面讲解的DB9接口中是没有时钟信号的)， 所以两个通讯设备之间需要约定好波特率，即每个码元的长度，以便对信号进行解码， 图 串口数据包的基本组成 中用虚线分开的每一格就是代表一个码元。常见的波特率为4800、9600、115200等。
+
+**通讯的起始和停止信号**
+
+串口通讯的一个数据包从起始信号开始，直到停止信号结束。数据包的起始信号由一个逻辑0的数据位表示， 而数据包的停止信号可由0.5、1、1.5或2个逻辑1的数据位表示，只要双方约定一致即可。
+
+**有效数据**
+
+在数据包的起始位之后紧接着的就是要传输的主体数据内容，也称为有效数据，有效数据的长度常被约定为5、6、7或8位长。
+
+**数据校验**
+
+在有效数据之后，有一个可选的数据校验位。由于数据通信相对更容易受到外部干扰导致传输数据出现偏差， 可以在传输过程加上校验位来解决这个问题。校验方法有奇校验(odd)、偶校验(even)、0校验(space)、1校验(mark)以及无校验(noparity)。
+
+奇校验要求有效数据和校验位中“1”的个数为奇数，比如一个8位长的有效数据为：01101001，此时总共有4个“1”， 为达到奇校验效果，校验位为“1”，最后传输的数据将是8位的有效数据加上1位的校验位总共9位。
+
+偶校验与奇校验要求刚好相反，要求帧数据和校验位中“1”的个数为偶数， 比如数据帧：11001010，此时数据帧“1”的个数为4个，所以偶校验位为“0”。
+
+0校验是不管有效数据中的内容是什么，校验位总为“0”，1校验是校验位总为“1”。
+
+### 03\. USART简介
+
+•USART（Universal Synchronous/Asynchronous Receiver/Transmitter）通用同步/异步收发器
+
+•USART是STM32内部集成的硬件外设，可根据数据寄存器的一个字节数据自动生成数据帧时序，从TX引脚发送出去，也可自动接收RX引脚的数据帧时序，拼接为一个字节数据，存放在数据寄存器里
+
+•自带波特率发生器，最高达4.5Mbits/s
+
+•可配置数据位长度（8/9）、停止位长度（0.5/1/1.5/2）
+
+•可选校验位（无校验/奇校验/偶校验）
+
+•支持同步模式、硬件流控制、DMA、智能卡、IrDA、LIN
+
+•STM32F103C8T6 USART资源： USART1、 USART2、 USART3
+
+### 04\. USART框图
+
+![在这里插入图片描述](pic_win/0a502d05df210c0cf19ed107e4010020.png)
+
+### 05\. USART基本结构
+
+![在这里插入图片描述](pic_win/ea833f0f540401336956f975e0efcba7.png)
+
+### 06\. 数据帧
+
+![在这里插入图片描述](pic_win/485e3d03097508d4f6281c7b356241df.png)
+
+![在这里插入图片描述](pic_win/992212d8a91b131def24caf681b3a0ef.png)
+
+### 07\. 起始位侦测
+
+![在这里插入图片描述](pic_win/a88fa24ffb073ad64111660824524ebb.png)
+
+### 08\. 数据采样
+
+![在这里插入图片描述](pic_win/c9aef37c39f37f61453e234bdf4c7a43.png)
+
+### 09\. 波特率发生器
+
+![在这里插入图片描述](pic_win/9090bbe0c57c09c4cc43f047b4e91ef9.png)
+
+![在这里插入图片描述](pic_win/21a4df0e06759ffb01183a2fa9f98243.png)
+
