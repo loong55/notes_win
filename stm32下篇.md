@@ -1190,6 +1190,10 @@ nCTS： 清除以发送(Clear To Send)，n表示低电平有效。如果使能CT
 
 看一下接收端这里，也是类似的。数据从RX引脚通向接收移位寄存器，在接收器控制的驱动下，一位一位地读取RX电平，先放在最高位，然后向右移，移位8次之后，就能接收一个字节了。同样，因为串口协议规定是低位先行，所以接收移位寄存器是从高位往低位这个方向移动的。之后，当一个字节移位完成之后，这一个字节的数据就会整体地，一下子转移到接收数据寄存器RDR里来，在转移的过程中，也会置一个标志位叫RXNE （RXNot Empty），接收数据寄存器非空，当我们检测到RXNE置1之后，就可以把数据读走了。同样，这里也是两个寄存器进行缓存，当数据从移位寄存器转移到RDR时，就可以直接移位接收下一帧数据了。
 
+==总结就是：==
+==发送数据寄存器（TDR）把数据发送到  发送移位寄存器后，TXE标志位置1，表示可以发送下一条数据了==
+==接收数据寄存器（RDR）将接收数据移走后，RXNE标志位置0，表示可以接受下一条数据了==
+
 这就是USART外设整个的工作流程，其实讲到这里，这个外设的主要功能就差不多了。大体上，就是数据寄存器和移位寄存器，发送移位寄存器往TX引脚移位，接收移位寄存器从RX引脚移位。当然发送还需要加上帧头帧尾，接收还需要剔除帧头帧尾，这些操作，它内部有电路会自动执行。我们知道有硬件帮我们做了这些工作就行了。
 
 接着我们继续看一下下面的控制部分和一些其他的增强功能
@@ -1206,7 +1210,7 @@ nCTS： 清除以发送(Clear To Send)，n表示低电平有效。如果使能CT
 
 首先，我们需要找到一个支持流控的串口，并将它的TX连接到我们的RX。同时，我们的RTS需要输出一个接收反馈信号，并将其连接到对方的CTS。当我们可以接收数据时，RTS会置为低电平，请求对方发送。对方的CTS接收到信号后，就可以继续发送数据。如果处理不过来，比如接收数据寄存器未及时读取，导致新数据无法接收，此时RTS会置为高电平，对方的CTS接收到信号后，就会暂停发送，直到接收数据寄存器被读走，RTS重新置为低电平，数据才会继续发送。
 
-反过来当我们的TX向对方发送数据时，对方的RTS会连接到我们的CTS，用于判断对方是否可以接收数据。TX和CTS是一对对应的信号，RX和RTS也是一对对应的信号。此外，CTS和RTS之间也需要交叉连接，这就是流控的工作模式。然而，我们一般不使用流控，因此只需要了解一下即可。
+反过来当我们的TX向对方发送数据时，对方的RTS会连接到我们的CTS，用于判断对方是否可以接收数据。TX和CTS是一对对应的信号，RX和RTS也是一对对应的信号。此外，CTS和RTS之间也需要交叉连接，这就是流控的工作模式。==然而，我们一般不使用流控，因此只需要了解一下即可。==
 
 SCLK控制：
 
@@ -1215,19 +1219,19 @@ SCLK控制：
 接着继续看右边这个模块，这部分电路用于产生同步的时钟信号，它是配合发送移位寄存器输出的，发送寄存器每移位一次，同步时钟电平就跳变一个周期。时钟告诉对方，我移出去一位数据，你看要不要让我这个时钟信号来指导你接收一下？当然这个时钟只支持输出，不支持输入，所以两个USART之间，不能实现同步的串口通信。
 
 那这个时钟信号有什么用呢？  
-兼容别的协议。比如串口加上时钟之后，就跟SPI协议特别像,所以有了时钟输出的串口，就可以兼容SPI。另外这个时钟也可以做自适应波特率，比如接收设备不确定发送设备给的什么波特率，就可以先测量一下这个时钟的周期，然后再计算得到波特率，不过这就需要另外写程序来实现这个功能了。这个时钟功能，我们一般不用，所以也是了解一下就行
+兼容别的协议。比如串口加上时钟之后，就跟SPI协议特别像,所以有了时钟输出的串口，就可以兼容SPI。另外这个时钟也可以做自适应波特率，比如接收设备不确定发送设备给的什么波特率，就可以先测量一下这个时钟的周期，然后再计算得到波特率，不过这就需要另外写程序来实现这个功能了。==这个时钟功能，我们一般不用，所以也是了解一下就行==
 
 唤醒单元：
 
 ![在这里插入图片描述](pic_win/3d23af36972ca8f3a51399f65677a423.png)
 
-这部分的作用是实现串口挂载多设备。我们之前说，串口一般是点对点的通信（只支持两个设备互相通信）。而多设备，在一条总线上，可以接多个从设备，每个设备分配一个地址，我想跟某个设备通信，就先进行寻址，确定通信对象，再进行数据收发。那回到这里，这个唤醒单元就可以用来实现多设备的功能，在这里可以给串口分配一个地址，当你发送指定地址时，此设备唤醒开始工作，当你发送别的设备地址时，别的设备就唤醒工作，这个设备没收到地址，就会保持沉默。这样就可以实现多设备的串口通信了，这部分功能我们一般不用。
+这部分的作用是实现串口挂载多设备。我们之前说，串口一般是点对点的通信（只支持两个设备互相通信）。而多设备，在一条总线上，可以接多个从设备，每个设备分配一个地址，我想跟某个设备通信，就先进行寻址，确定通信对象，再进行数据收发。那回到这里，这个唤醒单元就可以用来实现多设备的功能，在这里可以给串口分配一个地址，当你发送指定地址时，此设备唤醒开始工作，当你发送别的设备地址时，别的设备就唤醒工作，这个设备没收到地址，就会保持沉默。这样就可以实现多设备的串口通信了，==这部分功能我们一般不用。==
 
 中断输出控制：
 
 ![在这里插入图片描述](pic_win/453434db1d63abbed29c9aacee88f282.png)
 
-中断申请位，就是状态寄存器这里的各种标志位，状态寄存器这里，有两个标志位比较重要，一个是TXE发送寄存器空，另一个是RXNE接收寄存器非空，这两个是判断发送状态和接收状态的必要标志位，剩下的标志位，了解一下就行。中断输出控制这里，就是配置中断是不是能通向NVIC，这个应该好理解。
+中断申请位，就是状态寄存器这里的各种标志位，状态寄存器这里，有两个标志位比较重要，一个是TXE发送寄存器空（表示），另一个是RXNE接收寄存器非空（非空表示），这两个是判断发送状态和接收状态的必要标志位，剩下的标志位，了解一下就行。中断输出控制这里，就是配置中断是不是能通向NVIC，这个应该好理解。
 
 波特率发生器部分：
 
@@ -1313,12 +1317,6 @@ USB转串口模块的内部电路图
 
 最左边这里是usb的端口，usb有四根线，usb标准供电是5V，然后中间D+和D-是通信线，走的也是usb协议，所以这里需要加一个ch340芯片转换一下，转换之后输出的就是txd和rxd是串口协议，最后通过这里的排针引出来，那需要注意的就是这边的供电策略，首先所有的电都是从这个vcc +5V来的，然后vcc +5V通过这个稳压管电路进行稳压，得到vcc +3.3V之后，vcc +5V和vcc +3.3V都通过排针引出来了，所以这个第六脚和第四脚是分别由5V和3.3V输出的。
 
-。。
-
-**参考手册**
-
-。。
-
 ### 代码实战：串口发送单字节
 
 9-1串口发送：
@@ -1341,7 +1339,7 @@ USB转串口模块的内部电路图
 
 那初始化完成之后，如果要发送数据，调用一个发送函数就行了；如果要接收数据，就调用接收的函数；如果要获取发送和接收的状态，就调用获取标志位的函数，这就是USART外设的使用思路。
 
-![在这里插入图片描述](pic_win/a43c63c75a2887422b3b825d89fb84e8.png)
+<img src="pic_win/a43c63c75a2887422b3b825d89fb84e8.png" alt="在这里插入图片描述" style="zoom:150%;" />
 
 看一下库函数里面都有哪些库函数，我们找一下usart.h的文件，拖到最后这里函数一眼看上去还是挺多的，但是这里面很多都是那些增强功能和兼容其他协议的函数，真正常用的其实很少。
 
@@ -1369,7 +1367,7 @@ void Serial_Printf(char *format, ...);
 Serial.c：
 
 ```c
-#include "stm32f10x.h"                  // Device header
+#include "stm32f10x.h"   // Device header
 #include <stdio.h>//重定向printf 重写fputc
 #include <stdarg.h>
 
@@ -1387,7 +1385,8 @@ void Serial_Init(void)
 	/*GPIO初始化*/
 	GPIO_InitTypeDef GPIO_InitStructure;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;			//复用推挽输出
-	//PA10要选择输入模式,输入模式并不分什么普通输入复用输入,一根线只能有一个输出,但可以有多个输入,但可以有多个输入,但可以有多个输入,所以输入脚，外设和GPIO都可以同时用
+	//PA10要选择输入模式,输入模式并不分什么普通输入复用输入,一根线只能有一个输出,
+    //但可以有多个输入,所以输入脚，外设和GPIO都可以同时用
 	//一般RX配置是浮空输入或者上拉输入,因为串口波形空闲状态是高电平,所以不使用下拉输入
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
@@ -1395,16 +1394,18 @@ void Serial_Init(void)
 	
 	/*USART初始化*/
 	USART_InitTypeDef USART_InitStructure;					//定义结构体变量
-	USART_InitStructure.USART_BaudRate = 9600;				//波特率  写完之后这个函数内部会自动算好9600对应的分频系数,然后写到BRR寄存器
-	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;	//硬件流控制，不需要
+	USART_InitStructure.USART_BaudRate = 9600;	
+    //波特率  写完之后这个函数内部会自动算好9600对应的分频系数,然后写到BRR寄存器
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;	
+    //硬件流控制，不需要
 	USART_InitStructure.USART_Mode = USART_Mode_Tx;			//模式，选择为发送模式
 	USART_InitStructure.USART_Parity = USART_Parity_No;		//奇偶校验，不需要
 	USART_InitStructure.USART_StopBits = USART_StopBits_1;	//停止位，选择1位
-	USART_InitStructure.USART_WordLength = USART_WordLength_8b;		//字长，选择8位
-	USART_Init(USART1, &USART_InitStructure);				//将结构体变量交给USART_Init，配置USART1
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;	//字长，选择8位
+	USART_Init(USART1, &USART_InitStructure);	//将结构体变量交给USART_Init，配置USART1
 	
 	/*USART使能*/
-	USART_Cmd(USART1, ENABLE);								//使能USART1，串口开始运行
+	USART_Cmd(USART1, ENABLE);				//使能USART1，串口开始运行
 }
 
 /**
@@ -1414,8 +1415,9 @@ void Serial_Init(void)
   */
 void Serial_SendByte(uint8_t Byte)
 {
-	USART_SendData(USART1, Byte);		//将字节数据写入数据寄存器，写入后USART自动生成时序波形
+	USART_SendData(USART1, Byte);//将字节数据写入数据寄存器，写入后USART自动生成时序波形
 	while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);	//等待发送完成
+    //reset表示0，txe：tx_empty,txe=0表示tx寄存器非空，txe=1表示tx寄存器空
 	/*查看数据手册，下次写入数据寄存器会自动清除发送完成标志位，故此循环后，无需清除标志位*/
 }
 
@@ -1475,7 +1477,8 @@ void Serial_SendNumber(uint32_t Number, uint8_t Length)
 	uint8_t i;
 	for (i = 0; i < Length; i ++)		//根据数字长度遍历数字的每一位
 	{
-		Serial_SendByte(Number / Serial_Pow(10, Length - i - 1) % 10 + '0');	//依次调用Serial_SendByte发送每位数字
+		Serial_SendByte(Number / Serial_Pow(10, Length - i - 1) % 10 + '0');
+        //依次调用Serial_SendByte发送每位数字,先发低位，再发高位
 	}
 }
 
@@ -1536,7 +1539,8 @@ int main(void)
 	uint8_t MyArray[] = {0x42, 0x43, 0x44, 0x45};	//定义数组
 	Serial_SendArray(MyArray, 4);		//串口发送一个数组
 	
-	Serial_SendString("HelloWorld！");	//字符串用双引号括起来，编译器自动追加结束位，所以字符串的存储空间会比字符的个数大1
+	Serial_SendString("HelloWorld！");	
+    //字符串用双引号括起来，编译器自动追加结束位，所以字符串的存储空间会比字符的个数大1
 	Serial_SendString("\r\nNum1=");		//串口发送字符串 \r\n表示换行，ASCII表里有
 	
 	Serial_SendNumber(111, 3);			//串口发送数字
@@ -1547,7 +1551,8 @@ int main(void)
 	/*方法1：直接重定向printf，重定向到串口1了，串口2再用就没有了*/
 	printf("\r\nNum2=%d", 222);			
 	
-	/*方法2：使用sprintf打印到字符数组，再用串口发送字符数组，此方法打印到字符数组，之后想怎么处理都可以，可在多处使用*/
+	/*方法2：使用sprintf打印到字符数组，再用串口发送字符数组，
+	此方法打印到字符数组，之后想怎么处理都可以，可在多处使用*/
 	char String[100];					//定义字符数组
 	sprintf(String, "\r\nNum3=%d", 333);//使用sprintf，把格式化字符串打印到字符数组
 	Serial_SendString(String);			//串口发送字符数组（字符串）
@@ -1796,8 +1801,8 @@ void USART1_IRQHandler(void)
 		Serial_RxData = USART_ReceiveData(USART1);				//读取数据寄存器，存放在接收的数据变量
 		Serial_RxFlag = 1;										//置接收标志位变量为1
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);			//清除USART1的RXNE标志位
-																//读取数据寄存器会自动清除此标志位
-																//如果已经读取了数据寄存器，也可以不执行此代码
+															//读取数据寄存器会自动清除此标志位
+													//如果已经读取了数据寄存器，也可以不执行此代码
 	}
 }
 
@@ -5089,7 +5094,7 @@ void MyRTC_ReadTime(void)
 
 最后一个DIV正在快速的自减，自减的范围是32767~0，DIV每自减一轮，CNT秒数加1，有了这个数我们就可以对秒数进行更细的划分，获取分秒厘秒毫秒这些参数了。
 
-## 十二、PWR电源控制
+## PWR电源控制
 
 **实验现象**  
 1、修改主频  
@@ -5405,7 +5410,7 @@ int main(void)
 
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/be54cc88bffcd8ec52f537c6107b7dac.png)
 
-## 十三、看门狗WDG
+## 看门狗WDG
 
 ### 13.1 WDG简介
 
@@ -5633,7 +5638,7 @@ int main(void)
 
 ```
 
-## STM32内部FLASH闪存
+## 内部FLASH闪存
 
 **程序现象：**
 
